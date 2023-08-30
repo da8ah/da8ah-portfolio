@@ -1,13 +1,28 @@
+import { motion } from 'framer-motion'
+
 export type LogoProps = {
-    src: string,
-    href: string,
+    img: {
+        style?: React.CSSProperties,
+        src: string,
+        alt: string,
+        className: string
+    },
+    style?: React.CSSProperties,
     className: string,
-    alt: string
-    style?: React.CSSProperties
+    duration: number
 }
 
 export default function Logo(props: LogoProps) {
-    return <a style={props.style} href={props.href} target="_blank" rel="noopener noreferrer">
-        <img {...props} />
-    </a>
+    return <div {...props}>
+        <motion.img
+            {...props.img}
+            animate={{
+                rotate: -360
+            }}
+            transition={{
+                duration: props.duration,
+                repeat: Infinity
+            }}
+        />
+    </div>
 }
