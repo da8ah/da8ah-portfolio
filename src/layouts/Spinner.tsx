@@ -84,8 +84,8 @@ export default function Spinner() {
 
     return <div className='w-[30em] h-[30em] relative flex justify-center items-center'>
         <motion.div
-            // id='loader'
-            className='absolute w-[55%] h-[55%] flex justify-center items-center bg-white cursor-not-allowed bg-gradient-to-r from-[#AA367C] to-[#4A2FBD] text-white focus:outline-none focus:shadow-2xl focus:shadow-purple-500'
+            className='absolute w-[55%] h-[55%] flex justify-center items-center'
+            // className='absolute w-[55%] h-[55%] flex justify-center items-center bg-white cursor-not-allowed bg-gradient-to-r from-[#AA367C] to-[#4A2FBD] text-white focus:outline-none focus:shadow-2xl focus:shadow-purple-500'
             animate={{
                 rotate: 360
             }}
