@@ -1,55 +1,20 @@
-import Stats from "@/layouts/Stats";
-import { motion } from 'framer-motion';
-import { useState } from "react";
-import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
+import Tooltip from "@/components/Tooltip";
 
-export default function Skills(props: { text: { page1: { h1: string, roles: string[], profiles: string[], skills: string[], skillItems: [string[], string[]] } } }) {
-    const [direction, setDirection] = useState<'right' | 'left'>()
-    const [index, setIndex] = useState(0)
-
-    const variants = {
-        right: {
-            translateX: [10, 0]
-        },
-        left: {
-            translateX: [-10, 0]
-        }
-    }
-
-    return <div className='flex flex-col'>
-        <div className='py-5'>
-            <h1 className='uppercase'>{props.text.page1.h1}</h1>
-            <div className='py-5 flex flex-row justify-center items-center'>
-                <button onClick={() => {
-                    setDirection('left')
-                    setIndex(rol => rol === 0 ? 2 : rol - 1)
-                }}
-                ><HiArrowCircleLeft /></button>
-                <motion.h2
-                    key={index}
-                    className='capitalize w-[200px] mx-2'
-                    variants={variants}
-                    initial={{ translateX: 0 }}
-                    animate={direction && variants[direction]}
-                >{props.text.page1.roles[index]}</motion.h2>
-                <button onClick={() => {
-                    setDirection('right')
-                    setIndex(rol => rol === 2 ? 0 : rol + 1)
-                }}
-                ><HiArrowCircleRight /></button>
-            </div>
-            <motion.div
-                key={index}
-                className="px-20 flex flex-col justify-center items-center"
-                variants={variants}
-                initial={{ translateX: 0 }}
-                animate={direction && variants[direction]}
-            >
-                {props.text.page1.profiles.map((profile, i) => {
-                    return index === i && <p>{profile}</p>
-                })}
-            </motion.div>
+export default function Skills(props: { text: { page1: { skills: string[], skillItems: string[][] } } }) {
+    return <div className='w-full'>
+        <div className='py-5 flex flex-row justify-evenly items-center'>
+            {props.text.page1.skills.map((skill, i) => (
+                <div key={`skill-container-${i}`}>
+                    <h1 key={`skill-${i}`}>{skill}</h1>
+                    <ul key={`items-${i}`} className="py-5 text-left">
+                        {props.text.page1.skillItems[i].map((item, j) => (
+                            <li key={`items-${i}-${j}`} className="py-2">
+                                <Tooltip key={`tooltip-${i}-${j}`} /> {item}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
-        <Stats text={props.text} />
     </div>
 }

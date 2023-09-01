@@ -1,9 +1,9 @@
-import Skills from "@/layouts/Skills";
-import Spinner from "@/layouts/Spinner";
+import Build from "@/layouts/Build";
+import Toolkit from "@/layouts/Toolkit";
 import { motion } from 'framer-motion';
 import bgImg from "/cyberpunk.png";
 
-export default function Page1(props: { className: string, text: { page1: { h1: string, roles: string[], profiles: string[], skills: string[], skillItems: [string[], string[]] } } }) {
+export default function Page1(props: { className: string, text: { page1: { h1: string, roles: string[], profiles: string[], skills: string[], skillItems: string[][] } } }) {
     return <div className={props.className}>
         <div className='relative overflow-hidden w-full h-screen rounded-[20px] flex flex-row justify-center items-center'>
             <motion.div
@@ -18,12 +18,12 @@ export default function Page1(props: { className: string, text: { page1: { h1: s
             />
             <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-[#242424] shadow-[inset_0_0_50px_10px_#4A2FBD]'>
                 <div className='w-[60%]'>
-                    <Skills text={{ ...props.text }} />
+                    <Build text={{ ...props.text }} />
                 </div>
                 <div className='w-[40%] py-2 flex flex-col justify-center items-center'>
                     <img className='relative object-cover h-[90%]' src={bgImg} alt='library' />
                     <div className='absolute top-5'>
-                        <Spinner />
+                        <Toolkit />
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import reactLogo from '/react.svg'
 import viteLogo from '/vite.svg'
 
-export default function Spinner() {
+export default function Toolkit() {
 
     const initialTime = 30
     const logos: Omit<LogoProps, 'style'>[] = [
