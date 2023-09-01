@@ -1,7 +1,7 @@
 import styles from '@/assets/animations.module.css'
-import reactLogo from '@/assets/react.svg'
 import Logo, { LogoProps } from '@/components/Logo'
 import { motion } from 'framer-motion'
+import reactLogo from '/react.svg'
 import viteLogo from '/vite.svg'
 
 export default function Spinner() {

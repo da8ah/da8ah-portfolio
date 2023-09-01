@@ -1,0 +1,15 @@
+{
+    "page1": {
+        "h1": "Welcome!",
+        "roles": [
+            "Developer",
+            "Designer",
+            "Technical Support"
+        ],
+        "profile": [
+            "El software y el diseño son dos de mis tantas pasiones. Me gusta que las cosas funcionen y el software es el perfecto medio para lograrlo. Si necesitas que la información se mueva conozco los medios por los cuales se puede materializar en la realidad lo que tanto anhelas.",
+            "El diseño requiere de una visualización precisa de lo que la imaginación quiere manifestar en la realidad. En el plano abstracto yace el perfecto espacio para construir en la imaginación el perfecto producto constituido de la forma más precisa que logre manifestarse de forma artística.",
+            "El soporte técnico es algo que siempre se necesita. Se averió algo dentro de tu arsenal. Tienes problemas con tus dispositivos, o necesitas de algún sabio consejo, pues has llegado al lugar perfecto. Permíteme ser tu guía y consejero acerca de lo que para ti no es familiar."
+        ]
+    }
+}
