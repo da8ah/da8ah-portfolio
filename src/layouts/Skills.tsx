@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useState } from "react";
 import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 
-export default function Skills(props: { text: { page1: { h1: string, roles: string[], profile: string[] } } }) {
+export default function Skills(props: { text: { page1: { h1: string, roles: string[], profiles: string[], skills: string[], skillItems: [string[], string[]] } } }) {
     const [direction, setDirection] = useState<'right' | 'left'>()
     const [index, setIndex] = useState(0)
 
@@ -45,11 +45,11 @@ export default function Skills(props: { text: { page1: { h1: string, roles: stri
                 initial={{ translateX: 0 }}
                 animate={direction && variants[direction]}
             >
-                {props.text.page1.profile.map((profile, i) => {
+                {props.text.page1.profiles.map((profile, i) => {
                     return index === i && <p>{profile}</p>
                 })}
             </motion.div>
         </div>
-        <Stats />
+        <Stats text={props.text} />
     </div>
 }

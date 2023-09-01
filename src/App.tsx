@@ -11,15 +11,15 @@ export default function App() {
   const className = 'relative snap-always snap-center w-full h-screen flex flex-col justify-center items-center'
   return (
     <>
-      <Page1 className={className} text={isES ? textES : textEn} />
-      <Page2 className={className} />
-      <Page3 className={className} />
       <button
         type='button'
         title='lang'
-        className='z-100 fixed top-5 left-5 w-[100px] h-[30px] bg-black text-white rounded-[50px]'
+        className='z-[100] fixed top-5 left-10 w-[50px] h-[50px] bg-black text-white rounded-[80px]'
         onClick={() => toggleLanguage(isES => !isES)}
-      >Language</button>
+      >{isES ? "ES" : "EN"}</button>
+      <Page1 className={className} text={isES ? textES : textEn} />
+      <Page2 className={className} />
+      <Page3 className={className} />
     </>
   )
 }
