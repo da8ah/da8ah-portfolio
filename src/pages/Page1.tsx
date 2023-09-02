@@ -2,7 +2,7 @@ import Build from "@/layouts/Build";
 import Toolkit from "@/layouts/Toolkit";
 import { motion } from 'framer-motion';
 import { useState } from "react";
-import bgImg from "/cyberpunk.png";
+import bgImg from "/magician.mp4";
 
 export default function Page1(props: { className: string }) {
     const [direction, setDirection] = useState<'left' | 'right'>()
@@ -44,11 +44,13 @@ export default function Page1(props: { className: string }) {
                 }}
             />
             <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-[#242424] shadow-[inset_0_0_50px_10px_#4A2FBD]'>
-                <div className='w-[60%]'>
+                <div className='z-[1] w-[60%]'>
                     <Build index={index} animation={animation} onLeftPress={onLeftPress} onRightPress={onRightPress} />
                 </div>
                 <div className='w-[40%] py-2 flex flex-col justify-center items-center'>
-                    <img className='relative object-cover h-[90%]' src={bgImg} alt='library' />
+                    <video className='z-0 absolute object-contain w-[90%] h-[90%]' muted loop autoPlay>
+                        <source src={bgImg} type="video/mp4" />
+                    </video>
                     <div className='absolute top-5'>
                         <Toolkit />
                     </div>
