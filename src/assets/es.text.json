@@ -18,16 +18,46 @@
             ],
             "items": [
                 [
-                    "Informática",
-                    "Programación",
-                    "Diseño",
-                    "Base de Datos"
+                    [
+                        "Informática",
+                        "Programación",
+                        "Diseño",
+                        "Base de Datos"
+                    ],
+                    [
+                        "Atención a detalles",
+                        "Creatividad",
+                        "Paciencia",
+                        "Ética Laboral"
+                    ]
                 ],
                 [
-                    "Atención a detalles",
-                    "Creatividad",
-                    "Paciencia",
-                    "Ética Laboral"
+                    [
+                        "Diseño",
+                        "Bocetado",
+                        "Coloreado",
+                        "UI/UX"
+                    ],
+                    [
+                        "Atención a detalles",
+                        "Creatividad",
+                        "Paciencia",
+                        "Ética Laboral"
+                    ]
+                ],
+                [
+                    [
+                        "Asistencia Remota",
+                        "Diagnóstico",
+                        "Limpieza Lógica",
+                        "Respaldo de Datos"
+                    ],
+                    [
+                        "Atención a detalles",
+                        "Creatividad",
+                        "Paciencia",
+                        "Ética Laboral"
+                    ]
                 ]
             ]
         }

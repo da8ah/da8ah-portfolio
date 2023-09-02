@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 type ThemeType = 'dark' | 'light'
 
@@ -9,6 +9,8 @@ export const ThemeContext = createContext({
 
 export default function ThemeProvider(props: { children: JSX.Element }) {
     const [themeMode, setThemeMode] = useState<ThemeType>(localStorage.getItem('theme') as ThemeType || 'dark')
+
+    useEffect(() => { themeMode === 'dark' && document.documentElement.classList.add('dark') }, [])
 
     const toggleThemeMode = () => {
         localStorage.setItem('theme', themeMode === 'dark' ? 'light' : 'dark')
