@@ -20,7 +20,7 @@ export default function Build() {
 
     return <div className='flex flex-col'>
         <div className='py-5'>
-            <h1 className='uppercase'>{text.page1.h1}</h1>
+            <h1 className='uppercase'>{text.page1.title}</h1>
             <div className='py-5 flex flex-row justify-center items-center'>
                 <button onClick={() => {
                     setDirection('left')

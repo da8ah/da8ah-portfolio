@@ -16,7 +16,7 @@ export default function Page1(props: { className: string }) {
                     repeat: Infinity
                 }}
             />
-            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-[#242424] shadow-[inset_0_0_50px_10px_#4A2FBD]'>
+            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-[#242424] shadow-[inset_0_0_50px_10px_#4A2FBD]'>
                 <div className='w-[60%]'>
                     <Build />
                 </div>

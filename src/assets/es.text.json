@@ -1,6 +1,6 @@
 {
     "page1": {
-        "h1": "Bienvenidos",
+        "title": "Bienvenidos",
         "roles": [
             "Desarrollador",
             "Diseñador",
@@ -11,23 +11,25 @@
             "El diseño requiere de una visualización precisa de lo que la imaginación quiere manifestar en la realidad. En el plano abstracto yace el perfecto espacio para construir en la imaginación el perfecto producto constituido de la forma más precisa que logre manifestarse de forma artística.",
             "El soporte técnico es algo que siempre se necesita. Se averió algo dentro de tu arsenal. Tienes problemas con tus dispositivos, o necesitas de algún sabio consejo, pues has llegado al lugar perfecto. Permíteme ser tu guía y consejero acerca de lo que para ti no es familiar."
         ],
-        "skills": [
-            "Habilidades Técnicas",
-            "Habilidades Blandas"
-        ],
-        "skillItems": [
-            [
-                "Informática",
-                "Programación",
-                "Diseño",
-                "Base de Datos"
+        "skills": {
+            "titles": [
+                "Habilidades Técnicas",
+                "Habilidades Blandas"
             ],
-            [
-                "Atención a detalles",
-                "Creatividad",
-                "Paciencia",
-                "Ética Laboral"
+            "items": [
+                [
+                    "Informática",
+                    "Programación",
+                    "Diseño",
+                    "Base de Datos"
+                ],
+                [
+                    "Atención a detalles",
+                    "Creatividad",
+                    "Paciencia",
+                    "Ética Laboral"
+                ]
             ]
-        ]
+        }
     }
 }

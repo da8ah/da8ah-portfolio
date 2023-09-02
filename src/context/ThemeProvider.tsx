@@ -12,6 +12,9 @@ export default function ThemeProvider(props: { children: JSX.Element }) {
 
     const toggleThemeMode = () => {
         localStorage.setItem('theme', themeMode === 'dark' ? 'light' : 'dark')
+        themeMode === 'dark'
+            ? document.documentElement.classList.remove('dark')
+            : document.documentElement.classList.add('dark');
         setThemeMode(prev => prev === 'dark' ? 'light' : 'dark')
     }
 
