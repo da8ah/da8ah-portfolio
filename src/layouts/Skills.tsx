@@ -9,15 +9,18 @@ export default function Skills(props: { index: number, animation: MotionProps })
         <div className='py-5 flex flex-row justify-evenly items-center'>
             {text.page1.skills.titles.map((skill, i) => (
                 <div key={`skill-container-${i}`}>
-                    <h1 key={`skill-${i}`}>{skill}</h1>
-                    <ul key={`items-${i}`} className="py-5 text-left">
+                    <h1 key={`skill-title-${i}`}>{skill}</h1>
+                    <ul key={`skill-items-${i}`} className="py-5 text-left">
                         {text.page1.skills.items[props.index][i].map((item, j) => (
                             <motion.li
                                 {...props.animation}
-                                key={`items-${i}-${j}`}
+                                key={`skill-${props.index}-item-${j}`}
                                 className="py-2"
                             >
-                                <Tooltip key={`tooltip-${i}-${j}`} /> {item}
+                                <Skill key={`skill-${i}-item-${j}`}>
+                                    <div>{item}</div>
+                                    <div className='w-full h-full space-x-4'>Hello World</div>
+                                </Skill>
                             </motion.li>
                         ))}
                     </ul>
@@ -25,4 +28,10 @@ export default function Skills(props: { index: number, animation: MotionProps })
             ))}
         </div>
     </div>
+}
+
+function Skill(props: { key: string, children: [JSX.Element, JSX.Element] }) {
+    return <Tooltip key={props.key} cardClassName='z-[100] w-[100px] h-[100px] bg-black'>
+        {props.children}
+    </Tooltip>
 }

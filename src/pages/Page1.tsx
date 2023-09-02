@@ -8,6 +8,15 @@ export default function Page1(props: { className: string }) {
     const [direction, setDirection] = useState<'left' | 'right'>()
     const [index, setIndex] = useState(0)
 
+    const onLeftPress = () => {
+        setDirection('left')
+        setIndex(rol => rol === 0 ? 2 : rol - 1)
+    }
+    const onRightPress = () => {
+        setDirection('right')
+        setIndex(rol => rol === 2 ? 0 : rol + 1)
+    }
+
     const animations = {
         left: {
             translateX: [-10, 0]
@@ -20,15 +29,6 @@ export default function Page1(props: { className: string }) {
         key: index,
         initial: { translateX: 0 },
         animate: direction && animations[direction]
-    }
-
-    const onLeftPress = () => {
-        setDirection('left')
-        setIndex(rol => rol === 0 ? 2 : rol - 1)
-    }
-    const onRightPress = () => {
-        setDirection('right')
-        setIndex(rol => rol === 2 ? 0 : rol + 1)
     }
 
     return <section className={props.className}>

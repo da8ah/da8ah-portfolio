@@ -1,18 +1,24 @@
 import * as HoverCard from '@radix-ui/react-hover-card';
 
-export default function Tooltip(props: { key: string }) {
+export default function Tooltip(props: {
+    key: string,
+    children: [JSX.Element, JSX.Element],
+    cardClassName: string,
+    align?: "center" | "end" | "start",
+    side?: "left" | "top" | "right" | "bottom"
+}) {
     return <HoverCard.Root key={props.key}>
         <HoverCard.Trigger asChild>
-            <div>...</div>
+            {props.children[0]}
         </HoverCard.Trigger>
         <HoverCard.Portal>
             <HoverCard.Content
                 forceMount
-                align='end'
-                side='left'
-                className='z-[100] w-[100px] h-[100px] bg-black'
+                align={props.align || 'end'}
+                side={props.side || 'left'}
+                className={props.cardClassName}
             >
-                <div className='w-full h-full space-x-4'>Hello World</div>
+                {props.children[1]}
                 <HoverCard.Arrow className="fill-black text-white" />
             </HoverCard.Content>
         </HoverCard.Portal>
