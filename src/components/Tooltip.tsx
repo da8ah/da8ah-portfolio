@@ -7,12 +7,13 @@ export default function Tooltip(props: { key: string }) {
         </HoverCard.Trigger>
         <HoverCard.Portal>
             <HoverCard.Content
-                className='z-[100]'
-                side='left'
                 forceMount
+                align='end'
+                side='left'
+                className='z-[100] w-[100px] h-[100px] bg-black'
             >
-                <HoverCard.Arrow className="fill-current text-white dark:text-gray-800" />
-                <div className='lex h-full w-full space-x-4'>Hello World</div>
+                <div className='w-full h-full space-x-4'>Hello World</div>
+                <HoverCard.Arrow className="fill-black text-white" />
             </HoverCard.Content>
         </HoverCard.Portal>
     </HoverCard.Root>
