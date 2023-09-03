@@ -23,7 +23,7 @@ export default function Configuration() {
         <button
             type='button'
             title='theme'
-            className='w-[50px] h-[50px] bg-white dark:bg-black text-black dark:text-white rounded-[80px] uppercase'
+            className='w-[50px] h-[50px] bg-white dark:bg-[#242424] text-black dark:text-white rounded-[80px] uppercase'
             onClick={() => {
                 toggleCycle(prev => prev === 0 ? 1 : 0)
                 setTimeout(() => {
@@ -35,7 +35,7 @@ export default function Configuration() {
             disabled
             type='button'
             title='lang'
-            className='-z-[1] w-[50px] h-[25px] -ml-1 bg-black text-white rounded-[0_10px_10px_0] uppercase'
+            className='-z-[1] w-[50px] h-[25px] -ml-1 bg-[#242424] text-white rounded-[0_10px_10px_0] uppercase'
             onClick={() => changeLang(lang === 'es' ? 'en' : 'es')}
         >{lang}</button>
     </div>
