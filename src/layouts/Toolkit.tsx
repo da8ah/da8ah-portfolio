@@ -82,9 +82,9 @@ export default function Toolkit() {
         }
     ]
 
-    return <div className='w-[30em] h-[30em] relative flex justify-center items-center'>
+    return <div className='box-content w-[250px] h-[250px] relative flex justify-center items-center'>
         <motion.div
-            className='absolute w-[55%] h-[55%] flex justify-center items-center'
+            className='absolute w-[95%] h-[95%] flex justify-center items-center'
             // className='absolute w-[55%] h-[55%] flex justify-center items-center bg-white cursor-not-allowed bg-gradient-to-r from-[#AA367C] to-[#4A2FBD] text-white focus:outline-none focus:shadow-2xl focus:shadow-purple-500'
             animate={{
                 rotate: 360

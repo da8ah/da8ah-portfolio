@@ -35,9 +35,9 @@ export default function Page1(props: { className: string }) {
     }
 
     return <section className={props.className}>
-        <div className='relative overflow-hidden w-full h-screen rounded-[20px] flex flex-row justify-center items-center dark:shadow-[0_0_20px_10px_#4A2FBD]'>
+        <div className='relative overflow-hidden w-full h-screen rounded-[20px] flex flex-row justify-center items-center dark:shadow-[0_0_20px_10px_#ff617c]'>
             {themeMode === 'dark' && <motion.span
-                className={`absolute z-0 w-[110%] h-[110%] content-none bg-gradient-to-r from-[#3a98f0] to-[#4A2FBD]`}
+                className={`absolute z-0 w-[110%] h-[110%] content-none bg-gradient-to-r from-[#ff284c] to-[#ac0e0e]`}
                 animate={{
                     rotate: 360
                 }}
@@ -46,20 +46,20 @@ export default function Page1(props: { className: string }) {
                     repeat: Infinity
                 }}
             />}
-            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-black dark:shadow-[inset_0_0_20px_10px_#4A2FBD]'>
+            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-black dark:shadow-[inset_0_0_20px_10px_#ac0e0e]'>
                 <div className='z-[1] w-[60%] flex flex-col justify-center items-center'>
                     {/* <img className='z-[0] absolute object-contain w-[90%] h-[90%]' src={bgImg} alt='library' /> */}
                     <Build index={index} animation={animation} onLeftPress={onLeftPress} onRightPress={onRightPress} />
                 </div>
-                <div className='w-[40%] py-2 flex flex-col justify-center items-center'>
+                <div className='box-content w-[40%] py-2 flex flex-col justify-center items-center'>
                     {themeMode === 'dark' ?
                         <video className='z-0 absolute object-contain w-[90%] h-[90%]' muted loop autoPlay>
                             <source src={bgVideo} type="video/mp4" />
                         </video>
                         :
-                        <img className='z-0 absolute object-contain w-[90%] h-[90%]' src={bgImg} alt='library' />
+                        <img className='z-0 absolute object-contain w-[50%] h-[80%]' src={bgImg} alt='library' />
                     }
-                    <div className='absolute top-5'>
+                    <div className='flex flex-col justify-center items-center'>
                         <Toolkit />
                     </div>
                 </div>
