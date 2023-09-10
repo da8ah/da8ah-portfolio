@@ -4,7 +4,7 @@ import { LangContext } from "@/context/LangProvider";
 import Skills from "@/layouts/Skills";
 import { MotionProps, motion } from 'framer-motion';
 import { useContext, useEffect, useState } from "react";
-import { HiArrowLeftCircle, HiArrowRightCircle } from "react-icons/hi2";
+import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 
 export default function Build(props: { index: number, animation: MotionProps, onLeftPress: (value?: number) => void, onRightPress: (value?: number) => void }) {
     const { text } = useContext(LangContext)
@@ -27,7 +27,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
                     <button
                         className='p-1 rounded-[10px_0_0_10px] bg-gradient-to-b from-[#3a98f0] to-[#4A2FBD]'
                         onClick={() => props.onLeftPress()}
-                    ><HiArrowLeftCircle /></button>
+                    ><ArrowLeftIcon /></button>
                     <motion.div
                         className='capitalize w-[200px] mx-2 shadow-lg shadow-purple-500 tracking-wide ring-1 ring-white bg-gradient-to-r from-[#AA367C] to-[#4A2FBD]'
                         {...props.animation}
@@ -38,7 +38,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
                     <button
                         className='p-1 rounded-[0_10px_10px_0] bg-gradient-to-b from-[#3a98f0] to-[#4A2FBD]'
                         onClick={() => props.onRightPress()}
-                    ><HiArrowRightCircle /></button>
+                    ><ArrowRightIcon /></button>
                 </div>
             </div>
             <motion.div

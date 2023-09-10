@@ -3,8 +3,6 @@ import * as HoverCard from '@radix-ui/react-hover-card';
 export default function Tooltip(props: {
     key: string,
     children: [JSX.Element, JSX.Element],
-    cardClassName: string,
-    arrowClassName: string,
     align?: "center" | "end" | "start",
     side?: "left" | "top" | "right" | "bottom"
 }) {
@@ -17,10 +15,10 @@ export default function Tooltip(props: {
                 forceMount
                 align={props.align || 'end'}
                 side={props.side || 'right'}
-                className={props.cardClassName}
+                className='z-[100] w-[170px] h-[200px] rounded-sm bg-black bg-opacity-80 ring-1 ring-white'
             >
                 {props.children[1]}
-                <HoverCard.Arrow className={props.arrowClassName} />
+                <HoverCard.Arrow className='fill-white' />
             </HoverCard.Content>
         </HoverCard.Portal>
     </HoverCard.Root>

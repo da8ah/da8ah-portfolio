@@ -21,8 +21,6 @@ export default function Abilities() {
         {abilities.map((ability, index) => (
             <Tooltip
                 key={`ability-${index}`}
-                cardClassName='z-[100] w-[100px] h-[100px] bg-[orange]'
-                arrowClassName='fill-[orange]'
                 align='start'
                 side='left'
             >

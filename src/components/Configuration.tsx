@@ -2,6 +2,7 @@ import { LangContext } from '@/context/LangProvider'
 import { ThemeContext } from '@/context/ThemeProvider'
 import { motion } from 'framer-motion'
 import { useContext, useState } from 'react'
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 
 export default function Configuration() {
     const { themeMode, toggleThemeMode } = useContext(ThemeContext)
@@ -23,14 +24,14 @@ export default function Configuration() {
         <button
             type='button'
             title='theme'
-            className='w-[50px] h-[50px] bg-white dark:bg-[#242424] text-black dark:text-white rounded-[80px] uppercase'
+            className='w-[50px] h-[50px] bg-[#242424] rounded-[80px] flex justify-center items-center'
             onClick={() => {
                 toggleCycle(prev => prev === 0 ? 1 : 0)
                 setTimeout(() => {
                     toggleThemeMode()
                 }, 200)
             }}
-        >{themeMode}</button>
+        >{themeMode === 'dark' ? <SunIcon height={30} width={30} /> : <MoonIcon height={30} width={30} />}</button>
         <button
             disabled
             type='button'
