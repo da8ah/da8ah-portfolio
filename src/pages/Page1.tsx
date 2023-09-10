@@ -1,23 +1,27 @@
+import { LangContext } from "@/context/LangProvider";
+import { ThemeContext } from "@/context/ThemeProvider";
 import Build from "@/layouts/Build";
 import Toolkit from "@/layouts/Toolkit";
 import { motion } from 'framer-motion';
 import { useContext, useState } from "react";
-import { ThemeContext } from "@/context/ThemeProvider";
-import bgVideo from "/page1/magician.mp4";
 import bgImg from "/page1/library.jpg";
+import bgVideo from "/page1/magician.mp4";
 
 export default function Page1(props: { className: string }) {
+    const { text } = useContext(LangContext)
     const { themeMode } = useContext(ThemeContext)
     const [direction, setDirection] = useState<'left' | 'right'>()
     const [index, setIndex] = useState(0)
 
-    const onLeftPress = () => {
+    const onLeftPress = (value?: number) => {
         setDirection('left')
-        setIndex(rol => rol === 0 ? 2 : rol - 1)
+        if (value === undefined) setIndex(rol => rol === 0 ? text.page1.roles.length - 1 : rol - 1)
+        else setIndex(value)
     }
-    const onRightPress = () => {
+    const onRightPress = (value?: number) => {
         setDirection('right')
-        setIndex(rol => rol === 2 ? 0 : rol + 1)
+        if (value === undefined) setIndex(rol => rol === text.page1.roles.length - 1 ? 0 : rol + 1)
+        else setIndex(value)
     }
 
     const animations = {

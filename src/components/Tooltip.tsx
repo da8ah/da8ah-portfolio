@@ -15,7 +15,7 @@ export default function Tooltip(props: {
             <HoverCard.Content
                 forceMount
                 align={props.align || 'end'}
-                side={props.side || 'left'}
+                side={props.side || 'right'}
                 className={props.cardClassName}
             >
                 {props.children[1]}

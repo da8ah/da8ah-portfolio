@@ -1,11 +1,12 @@
+import SelectMenu from "@/components/SelectMenu";
 import ShiningText from "@/components/ShiningText";
 import { LangContext } from "@/context/LangProvider";
 import Skills from "@/layouts/Skills";
 import { MotionProps, motion } from 'framer-motion';
 import { useContext, useEffect, useState } from "react";
-import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
+import { HiArrowLeftCircle, HiArrowRightCircle } from "react-icons/hi2";
 
-export default function Build(props: { index: number, animation: MotionProps, onLeftPress: () => void, onRightPress: () => void }) {
+export default function Build(props: { index: number, animation: MotionProps, onLeftPress: (value?: number) => void, onRightPress: (value?: number) => void }) {
     const { text } = useContext(LangContext)
     const [start, setStart] = useState(true)
 
@@ -25,16 +26,19 @@ export default function Build(props: { index: number, animation: MotionProps, on
                 <div className='flex flex-row justify-center items-center'>
                     <button
                         className='p-1 rounded-[10px_0_0_10px] bg-gradient-to-b from-[#3a98f0] to-[#4A2FBD]'
-                        onClick={props.onLeftPress}
-                    ><HiArrowCircleLeft /></button>
-                    <motion.h2
+                        onClick={() => props.onLeftPress()}
+                    ><HiArrowLeftCircle /></button>
+                    <motion.div
                         className='capitalize w-[200px] mx-2 shadow-lg shadow-purple-500 tracking-wide ring-1 ring-white bg-gradient-to-r from-[#AA367C] to-[#4A2FBD]'
                         {...props.animation}
-                    >{text.page1.roles[props.index]}</motion.h2>
+                    >
+                        <SelectMenu selected={props.index} data={text.page1.roles} handlers={{ left: props.onLeftPress, right: props.onRightPress }} />
+                        {/* {text.page1.roles[props.index]} */}
+                    </motion.div>
                     <button
                         className='p-1 rounded-[0_10px_10px_0] bg-gradient-to-b from-[#3a98f0] to-[#4A2FBD]'
-                        onClick={props.onRightPress}
-                    ><HiArrowCircleRight /></button>
+                        onClick={() => props.onRightPress()}
+                    ><HiArrowRightCircle /></button>
                 </div>
             </div>
             <motion.div
