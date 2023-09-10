@@ -4,6 +4,7 @@ export default function Tooltip(props: {
     key: string,
     children: [JSX.Element, JSX.Element],
     cardClassName: string,
+    arrowClassName: string,
     align?: "center" | "end" | "start",
     side?: "left" | "top" | "right" | "bottom"
 }) {
@@ -19,7 +20,7 @@ export default function Tooltip(props: {
                 className={props.cardClassName}
             >
                 {props.children[1]}
-                <HoverCard.Arrow className="fill-black text-white" />
+                <HoverCard.Arrow className={props.arrowClassName} />
             </HoverCard.Content>
         </HoverCard.Portal>
     </HoverCard.Root>

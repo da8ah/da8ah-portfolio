@@ -18,8 +18,8 @@ export default function SelectMenu(props: {
             <Select.Trigger
                 asChild
                 defaultChecked
-                className="w-full"
-                title="trigger"
+                className="cursor-pointer w-full"
+                title="Click"
                 color="indigo"
             >
                 <span>{props.data[props.selected]}</span>
@@ -37,10 +37,9 @@ export default function SelectMenu(props: {
                             && <Select.Item
                                 key={`item-${index}`}
                                 value={item}
-                                className="flex flex-row"
+                                className="cursor-pointer flex flex-row"
                             >
                                 <span>{item}</span>
-                                <Select.ItemIndicator><HiChevronDown /></Select.ItemIndicator>
                             </Select.Item>
                     })
                 }

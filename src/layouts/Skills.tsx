@@ -35,7 +35,11 @@ export default function Skills(props: { index: number, animation: MotionProps })
 }
 
 function Skill(props: { key: string, children: [JSX.Element, JSX.Element] }) {
-    return <Tooltip key={props.key} cardClassName='z-[100] w-[100px] h-[100px] bg-black'>
+    return <Tooltip
+        key={props.key}
+        cardClassName='z-[100] w-[100px] h-[100px] bg-[orange]'
+        arrowClassName='fill-[orange]'
+    >
         {props.children}
     </Tooltip>
 }
