@@ -49,7 +49,7 @@ export default function Page1(props: { className: string }) {
                     "easeInOut": "linear"
                 }}
             />}
-            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-[#242424] dark:shadow-[inset_0_0_20px_10px_#ac0e0e]'>
+            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-[#242424]'>
                 <div className='z-[1] w-[60%] flex flex-col justify-center items-center'>
                     <Build index={index} animation={animation} onLeftPress={onLeftPress} onRightPress={onRightPress} />
                 </div>

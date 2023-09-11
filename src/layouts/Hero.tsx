@@ -4,7 +4,7 @@ import Abilities from "@/layouts/Abilities";
 import Toolkit from "@/layouts/Toolkit";
 import { useContext } from "react";
 import bgImg from "/page1/library.jpg";
-import bgVideo from "/page1/magician.mp4";
+import bgVideo from "/page1/bg-magician.mp4";
 
 export default function Hero() {
     const { themeMode } = useContext(ThemeContext)
