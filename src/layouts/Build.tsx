@@ -13,7 +13,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
     useEffect(() => { setStart(false) }, [])
 
     return <div className='flex flex-col'>
-        <div className='py-5'>
+        <div className='py-3'>
             <h1
                 className='cursor-pointer uppercase font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-orange-500 to-red-600 drop-shadow-[0_0_50px_10px_black]'
                 onClick={() => setStart(true)}
@@ -29,7 +29,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
                         onClick={() => props.onLeftPress()}
                     ><ArrowLeftIcon /></button>
                     <motion.div
-                        className='capitalize w-[200px] mx-2 shadow-lg shadow-purple-500 tracking-wide ring-1 ring-white bg-gradient-to-r from-[#AA367C] to-[#4A2FBD]'
+                        className='capitalize w-[250px] py-1 mx-2 rounded-[5px] hover:shadow-lg hover:shadow-purple-500 tracking-wide bg-gradient-to-r from-[#AA367C] to-[#4A2FBD]'
                         {...props.animation}
                     >
                         <SelectMenu selected={props.index} data={text.page1.roles} handlers={{ left: props.onLeftPress, right: props.onRightPress }} />
@@ -42,10 +42,12 @@ export default function Build(props: { index: number, animation: MotionProps, on
                 </div>
             </div>
             <motion.div
-                className="py-5 px-20 flex flex-col justify-center items-center"
+                className="py-3 px-20 flex justify-center items-center"
                 {...props.animation}
             >
-                {text.page1.profiles[props.index]}
+                <p className="p-2 rounded-[5px] shadow-[0_0_5px_0_black] hover:shadow-lg hover:shadow-purple-500 text-justify">
+                    {text.page1.profiles[props.index]}
+                </p>
             </motion.div>
         </div>
         <Skills index={props.index} animation={props.animation} />

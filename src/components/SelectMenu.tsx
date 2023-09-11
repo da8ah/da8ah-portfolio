@@ -19,7 +19,7 @@ export default function SelectMenu(props: {
                 className="cursor-pointer w-full"
                 color="indigo"
             >
-                <div className='w-full flex flex-row justify-between items-center'>
+                <div className='w-full flex flex-row justify-between items-center font-bold'>
                     <div className='w-[20%]' />
                     <Select.Value>
                         {props.data[props.selected]}
@@ -30,7 +30,7 @@ export default function SelectMenu(props: {
                 </div>
             </Select.Trigger>
             <Select.Content
-                className="z-[100] w-[205px] p-1 rounded-[5px] bg-gray-800"
+                className="z-[100] w-[255px] p-1 rounded-[5px] bg-[#242424] shadow-[0_0_5px_0_black]"
                 align="center"
                 defaultValue={props.data[props.selected]}
             >
@@ -40,7 +40,7 @@ export default function SelectMenu(props: {
                             return <Select.Item
                                 key={`item-${index}`}
                                 value={item}
-                                className={`cursor-pointer py-1 rounded-[5px] w-full flex flex-row ${index === props.selected ? 'justify-between' : 'justify-center'} items-center hover:bg-gray-950`}
+                                className={`cursor-pointer py-1 rounded-[5px] w-full flex flex-row ${index === props.selected ? 'justify-between' : 'justify-center'} items-center hover:outline-none hover:bg-gray-950`}
                             >
                                 {index === props.selected && <div className="w-[15%]" />}
                                 <Select.ItemText>{item}</Select.ItemText>

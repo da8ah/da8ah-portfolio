@@ -37,18 +37,19 @@ export default function Page1(props: { className: string }) {
     }
 
     return <section className={props.className}>
-        <div className='relative overflow-hidden w-full h-screen rounded-[20px] flex flex-row justify-center items-center dark:shadow-[0_0_20px_10px_#ff617c]'>
+        <div className='relative overflow-hidden w-full h-screen rounded-[20px] flex flex-row justify-center items-center'>
             {themeMode === 'dark' && <motion.span
-                className={`absolute z-0 w-[110%] h-[110%] content-none bg-gradient-to-r from-[#ff284c] to-[#ac0e0e]`}
+                className={`absolute z-0 w-[200%] h-[50%] content-none bg-gradient-to-r from-[#ff284c] to-[#ac0e0e]`}
                 animate={{
                     rotate: 360
                 }}
                 transition={{
                     duration: 10,
-                    repeat: Infinity
+                    repeat: Infinity,
+                    "easeInOut": "linear"
                 }}
             />}
-            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-black dark:shadow-[inset_0_0_20px_10px_#ac0e0e]'>
+            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-[#242424] dark:shadow-[inset_0_0_20px_10px_#ac0e0e]'>
                 <div className='z-[1] w-[60%] flex flex-col justify-center items-center'>
                     <Build index={index} animation={animation} onLeftPress={onLeftPress} onRightPress={onRightPress} />
                 </div>
