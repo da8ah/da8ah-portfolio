@@ -45,7 +45,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
                 className="py-3 px-20 flex justify-center items-center"
                 {...props.animation}
             >
-                <p className="p-2 rounded-[5px] shadow-[0_0_40px_20px_teal] dark:shadow-[0_0_5px_0_black] dark:hover:shadow-[0_0_40px_20px_teal] text-justify">
+                <p className="p-2 rounded-[5px] shadow-[0_0_40px_10px_teal] dark:shadow-[0_0_5px_0_black] dark:hover:shadow-[0_0_40px_20px_teal] text-justify">
                     {text.page1.profiles[props.index]}
                 </p>
             </motion.div>

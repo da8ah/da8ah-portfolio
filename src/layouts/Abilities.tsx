@@ -27,7 +27,7 @@ export default function Abilities() {
                 align='start'
                 side='left'
             >
-                <div title={ability.title} className='cursor-pointer rounded-full w-[50px] h-[50px] my-2 p-2 flex justify-center items-center dark:bg-[#242424] dark:shadow-[0_0_5px_0_black] hover:bg-gradient-to-b hover:from-yellow-800 hover:to-yellow-300'>
+                <div title={ability.title} className='cursor-pointer rounded-full w-[50px] h-[50px] my-2 p-2 flex justify-center items-center dark:bg-[#242424] dark:shadow-[0_0_5px_0_black] hover:dark:shadow-[0_0_20px_10px_yellow] hover:bg-gradient-to-b hover:from-yellow-800 hover:to-yellow-300'>
                     <img className={imgClassName} src={ability.src} alt={ability.alt} />
                 </div>
                 <div>Ability</div>
