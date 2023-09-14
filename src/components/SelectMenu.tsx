@@ -1,5 +1,6 @@
-import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons"
-import * as Select from "@radix-ui/react-select"
+import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
+import * as Select from "@radix-ui/react-select";
+import { motion } from 'framer-motion';
 
 export default function SelectMenu(props: {
     selected: number
@@ -19,7 +20,10 @@ export default function SelectMenu(props: {
                 className="cursor-pointer w-full"
                 color="indigo"
             >
-                <div className='w-full flex flex-row justify-between items-center font-bold'>
+                <motion.div
+                    className='w-full flex flex-row justify-between items-center font-bold'
+                        whileHover={{ scale: 1.1 }}
+                    >
                     <div className='w-[20%]' />
                     <Select.Value>
                         {props.data[props.selected]}
@@ -27,7 +31,7 @@ export default function SelectMenu(props: {
                     <Select.Icon className='w-[20%] flex justify-center items-center'>
                         <ChevronDownIcon />
                     </Select.Icon>
-                </div>
+                </motion.div>
             </Select.Trigger>
             <Select.Content
                 className="z-[100] w-[255px] p-1 rounded-[5px] bg-gray-200 text-black dark:text-white dark:bg-[#242424] dark:shadow-[0_0_5px_0_black]"

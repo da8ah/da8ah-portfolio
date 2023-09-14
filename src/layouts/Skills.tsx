@@ -1,9 +1,9 @@
 import Tooltip from "@/components/Tooltip";
 import { LangContext } from "@/context/LangProvider";
+import { DotFilledIcon } from "@radix-ui/react-icons";
 import { MotionProps, motion } from 'framer-motion';
 import { useContext } from "react";
-import laptop from '/page1/skills/icons8-laptop-coding-96.png'
-import { DotFilledIcon } from "@radix-ui/react-icons";
+import laptop from '/page1/skills/icons8-laptop-coding-96.png';
 
 export default function Skills(props: { index: number, animation: MotionProps }) {
     const { text } = useContext(LangContext)
@@ -23,10 +23,13 @@ export default function Skills(props: { index: number, animation: MotionProps })
                                 className="py-1"
                             >
                                 <Skill key={`skill-${i}-item-${j}`}>
-                                    <div className={`cursor-pointer w-[200px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b ${i === 0 ? 'hover:from-[#f0463a] hover:to-[#ff284c]' : 'hover:from-[#516dca] hover:to-[#3054ce]'}`}>
+                                    <motion.div
+                                        className={`cursor-pointer w-[200px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b ${i === 0 ? 'hover:from-[#f0463a] hover:to-[#ff284c]' : 'hover:from-[#516dca] hover:to-[#3054ce]'}`}
+                                        whileHover={{ scale: 1.1 }}
+                                    >
                                         <Icon i={i} j={j} />
                                         <p>{item}</p>
-                                    </div>
+                                    </motion.div>
                                     <div className='w-full h-full space-x-4'>Hello World</div>
                                 </Skill>
                             </motion.li>

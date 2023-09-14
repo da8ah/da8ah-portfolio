@@ -45,9 +45,12 @@ export default function Build(props: { index: number, animation: MotionProps, on
                 className="py-3 px-20 flex justify-center items-center"
                 {...props.animation}
             >
-                <p className="p-2 rounded-[5px] shadow-[0_0_40px_10px_teal] dark:shadow-[0_0_5px_0_black] dark:hover:shadow-[0_0_40px_20px_teal] text-justify">
+                <motion.p
+                    className="p-2 rounded-[5px] ring-1 ring-black dark:ring-0 dark:shadow-[0_0_5px_0_black] dark:hover:shadow-[0_0_40px_20px_teal] text-justify"
+                    whileHover={{ scale: 1.1 }}
+                >
                     {text.page1.profiles[props.index]}
-                </p>
+                </motion.p>
             </motion.div>
         </div>
         <Skills index={props.index} animation={props.animation} />
