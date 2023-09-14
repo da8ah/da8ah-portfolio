@@ -1,8 +1,8 @@
 import styles from '@/assets/animations.module.css'
 import Logo, { LogoProps } from '@/components/Logo'
 import { motion } from 'framer-motion'
-import reactLogo from '/page1/toolkit/react.svg'
-import viteLogo from '/page1/toolkit/vite.svg'
+import reactLogo from '/page1/tooling/react.svg'
+import viteLogo from '/page1/tooling/vite.svg'
 
 export default function Toolkit() {
 

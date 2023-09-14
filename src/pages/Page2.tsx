@@ -1,36 +1,17 @@
 import Card from "@/components/Card";
 import { ThemeContext } from "@/context/ThemeProvider";
 import { motion } from 'framer-motion';
-import { useContext, useState } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { useContext } from "react";
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/free-mode';
+import { Autoplay, EffectCoverflow, FreeMode } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import libraryImg from "/page1/library.jpg";
+import spaceImg from "/page1/slides/space.png";
 
 export default function Page2(props: { className: string }) {
-
     const { themeMode } = useContext(ThemeContext)
-    const [autoPlay0, setAutoPlay0] = useState(true)
-    const [autoPlay1, setAutoPlay1] = useState(true)
-
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 3,
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3,
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 1,
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1,
-        },
-    }
 
     return <section className={props.className}>
         <div className='w-full flex flex-col justify-center items-center'>
@@ -48,57 +29,76 @@ export default function Page2(props: { className: string }) {
                 />}
                 <div className='z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-col justify-evenly items-center bg-white dark:bg-[#242424]'>
                     <div
-                        className='relative bg-[teal] w-full flex flex-col justify-center items-center'
-                        onMouseEnter={() => setAutoPlay0(false)}
-                        onMouseLeave={() => setAutoPlay0(true)}
+                        style={{ backgroundImage: `url(${spaceImg})` }}
+                        className='relative bg-contain bg-center bg-no-repeat bg-[rgba(36,36,36,.8)] w-full h-full flex flex-col justify-center items-center'
                     >
                         <h2 className='py-2'>Carousel 1</h2>
-                        <Carousel
-                            infinite
-                            centerMode
-                            responsive={responsive}
-                            className="z-10 w-full owl-carousel owl-theme text-center"
-                            itemClass="flex justify-center"
-                            autoPlay={autoPlay0}
-                            customTransition={autoPlay0 ? "transform 10s linear" : undefined}
-                            transitionDuration={autoPlay0 ? 10000 : 100}
-                            keyBoardControl={true}
+                        <Swiper
+                            modules={[Autoplay, EffectCoverflow, FreeMode]}
+                            key='carousel-0'
+                            rewind
+                            className='w-full h-full py-32 flex justify-center items-center'
+                            effect={'coverflow'}
+                            grabCursor={true}
+                            centeredSlides={true}
+                            slidesPerView={'auto'}
+                            coverflowEffect={{
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows: true,
+                            }}
+                            freeMode={true}
+                            loop={true}
+                            autoplay={{
+                                delay: 5000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }}
                         >
-                            {Array(3).fill(null).map((_, i) => <Card
-                                key={`carousel-0-card-${i}`}
-                                title="Si"
-                                description="Si"
-                                imgURL={libraryImg}
-                            />)}
-                        </Carousel>
+                            {Array(5).fill(null).map((_, i) => (
+                                <SwiperSlide
+                                    key={`carousel-0-card-${i}`}
+                                    virtualIndex={i}
+                                    className='w-[90%] flex justify-center items-center'
+                                >
+                                    <Card
+                                        title="Project"
+                                        description="Tipo"
+                                        imgURL={libraryImg}
+                                    />
+                                </SwiperSlide>
+                            )
+                            )}
+                        </Swiper>
                     </div>
-                    <div
+                    {/* <div
                         className='relative bg-[teal] w-full flex flex-col justify-center items-center'
-                        onMouseEnter={() => setAutoPlay1(false)}
-                        onMouseLeave={() => setAutoPlay1(true)}
+                        onMouseEnter={() => setAutoPlay(false)}
+                        onMouseLeave={() => setAutoPlay(true)}
                     >
                         <h2 className='py-2'>Carousel 2</h2>
-                        <Carousel
-                            rtl
-                            infinite
-                            centerMode
-                            responsive={responsive}
+                        <Swiper
+                            key='carousel-1'                            
+                            rewind
                             className="z-10 w-full owl-carousel owl-theme text-center"
-                            itemClass="flex justify-center"
-                            autoPlay={autoPlay1}
-                            autoPlaySpeed={100}
-                            customTransition="transform 10s linear"
-                            transitionDuration={10000}
-                            keyBoardControl={true}
+                            autoplay
                         >
-                            {Array(3).fill(null).map((_, i) => <Card
-                                key={`carousel-1-card-${i}`}
+                            {Array(6).fill(null).map((_, i) => (
+                                <SwiperSlide
+                                    key={`carousel-1-card-${i}`}
+                                >
+                                <Card
                                 title="Si"
                                 description="Si"
                                 imgURL={libraryImg}
-                            />)}
-                        </Carousel>
-                    </div>
+                                />
+                                </SwiperSlide>
+                            )
+                            )}
+                        </Swiper>
+                    </div> */}
                 </div>
             </div>
         </div>
