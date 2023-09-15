@@ -28,7 +28,7 @@ export default function Hero() {
                     align='center'
                     side='top'
                 >
-                    <div className='cursor-pointer absolute rounded-full w-[250px] h-[250px]' />
+                    <div className='cursor-help absolute rounded-full w-[250px] h-[250px]' />
                     <div>Toolkit</div>
                 </Tooltip>
             </div>

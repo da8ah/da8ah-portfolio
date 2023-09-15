@@ -24,7 +24,7 @@ export default function Skills(props: { index: number, animation: MotionProps })
                             >
                                 <Skill key={`skill-${i}-item-${j}`}>
                                     <motion.div
-                                        className={`cursor-pointer w-[200px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b ${i === 0 ? 'hover:from-[#f0463a] hover:to-[#ff284c]' : 'hover:from-[#516dca] hover:to-[#3054ce]'}`}
+                                        className={`cursor-help w-[200px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b ${i === 0 ? 'hover:from-[#f0463a] hover:to-[#ff284c]' : 'hover:from-[#516dca] hover:to-[#3054ce]'}`}
                                         whileHover={{ scale: 1.1 }}
                                     >
                                         <Icon i={i} j={j} />

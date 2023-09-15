@@ -47,7 +47,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
             >
                 <motion.p
                     className="p-2 rounded-[5px] ring-1 ring-black dark:ring-0 dark:shadow-[0_0_5px_0_black] dark:hover:shadow-[0_0_40px_20px_teal] text-justify"
-                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                 >
                     {text.page1.profiles[props.index]}
                 </motion.p>
