@@ -17,14 +17,14 @@ export default function Page2(props: { className: string }) {
         <div className='w-full flex flex-col justify-center items-center'>
             <div className='relative overflow-hidden w-full h-screen rounded-[20px] flex flex-row justify-center items-center'>
                 {themeMode === 'dark' && <motion.span
-                    className={`absolute z-0 w-[200%] h-[50%] content-none bg-gradient-to-r from-[#ff284c] to-[#ac0e0e]`}
+                    className='absolute z-0 w-[200%] h-[50%] content-none bg-gradient-to-r from-[#ff284c] to-[#ac0e0e]'
                     animate={{
                         rotate: -360
                     }}
                     transition={{
                         duration: 10,
                         repeat: Infinity,
-                        "easeInOut": "linear"
+                        easeInOut: "linear"
                     }}
                 />}
                 <div className='z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-col justify-evenly items-center bg-white dark:bg-[#242424]'>
