@@ -29,7 +29,7 @@ export default function Card(props: {
                     exit={{ display: "none" }}
                     transition={{
                         duration: 0.1,
-                        "easeInOut": "linear"
+                        easeInOut: "linear"
                     }}
                 >
                     <h4 className="my-1 text-2xl font-bold">{title}</h4>

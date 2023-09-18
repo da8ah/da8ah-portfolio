@@ -1,4 +1,3 @@
-import Card from "@/components/Card";
 import { ThemeContext } from "@/context/ThemeProvider";
 import { motion } from 'framer-motion';
 import { useContext } from "react";
@@ -7,7 +6,6 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/free-mode';
 import { Autoplay, EffectCoverflow, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import libraryImg from "/page1/library.jpg";
 import spaceImg from "/page1/slides/space.png";
 
 export default function Page2(props: { className: string }) {
@@ -63,11 +61,7 @@ export default function Page2(props: { className: string }) {
                                     virtualIndex={i}
                                     className='w-[90%] flex justify-center items-center'
                                 >
-                                    <Card
-                                        title="Project"
-                                        description="Tipo"
-                                        imgURL={libraryImg}
-                                    />
+                                    <div>Project</div>
                                 </SwiperSlide>
                             )
                             )}
