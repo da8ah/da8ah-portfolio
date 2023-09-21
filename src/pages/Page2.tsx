@@ -1,14 +1,17 @@
 import { ThemeContext } from "@/context/ThemeProvider";
 import { motion } from 'framer-motion';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import libraryImg from "/page1/library.jpg";
 import spaceImg from "/page1/slides/space.png";
 
 export default function Page2(props: { className: string }) {
     const { themeMode } = useContext(ThemeContext)
+    const images = [spaceImg, libraryImg]
+    const [bgIndex, setBgIndex] = useState(0)
 
     return <section className={props.className}>
         <div className='w-full flex flex-col justify-center items-center'>
@@ -25,7 +28,7 @@ export default function Page2(props: { className: string }) {
                     }}
                 />}
                 <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-col justify-evenly items-center bg-white dark:bg-[#242424]'>
-                    <img className='z-0 absolute object-contain w-full h-[80%]' src={spaceImg} alt='library' />
+                    <img className='z-0 absolute object-contain w-full h-[80%]' src={images[bgIndex]} alt='library' />
                     <h2 className='py-2'>Carousel 1</h2>
                     <Swiper
                         modules={[Autoplay, EffectCoverflow]}
@@ -49,6 +52,7 @@ export default function Page2(props: { className: string }) {
                             disableOnInteraction: false,
                             pauseOnMouseEnter: true
                         }}
+                        onSlideChange={() => setBgIndex(prev => (prev === images.length - 1 ? 0 : prev + 1))}
                     >
                         {Array(5).fill(null).map((_, i) => (
                             <SwiperSlide
