@@ -52,7 +52,7 @@ export default function Page2(props: { className: string }) {
                             disableOnInteraction: false,
                             pauseOnMouseEnter: true
                         }}
-                        onSlideChange={() => setBgIndex(prev => (prev === images.length - 1 ? 0 : prev + 1))}
+                        onSlideChangeTransitionEnd={() => setBgIndex(prev => (prev === images.length - 1 ? 0 : prev + 1))}
                     >
                         {Array(5).fill(null).map((_, i) => (
                             <SwiperSlide
