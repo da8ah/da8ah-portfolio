@@ -31,6 +31,16 @@ export default function Card(props: {
                         duration: 0.1,
                         easeInOut: "linear"
                     }}
+                />
+                <motion.div
+                    className="absolute rounded-3xl top-0 w-full text-center flex flex-col justify-end items-start bg-gradient-to-r from-[rgba(170,54,124,0.9)] to-[rgba(74,47,189,0.9)]"
+                    animate={isOpen ? "open" : "close"}
+                    variants={variants}
+                    exit={{ display: "none" }}
+                    transition={{
+                        duration: 0.1,
+                        easeInOut: "linear"
+                    }}
                 >
                     <h4 className="my-1 text-2xl font-bold">{title}</h4>
                     <span className="italic tracking-wider">{description}</span>

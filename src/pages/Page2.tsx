@@ -12,6 +12,7 @@ export default function Page2(props: { className: string }) {
     const { themeMode } = useContext(ThemeContext)
     const images = [spaceImg, libraryImg]
     const [bgIndex, setBgIndex] = useState(0)
+    const changeSlide = () => setBgIndex(prev => (prev === images.length - 1 ? 0 : prev + 1))
 
     return <section className={props.className}>
         <div className='w-full flex flex-col justify-center items-center'>
@@ -28,7 +29,16 @@ export default function Page2(props: { className: string }) {
                     }}
                 />}
                 <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-col justify-evenly items-center bg-white dark:bg-[#242424]'>
-                    <img className='z-0 absolute object-contain w-full h-[80%]' src={images[bgIndex]} alt='library' />
+                    <motion.img
+                        className='z-0 absolute object-contain w-full h-[80%]'
+                        src={images[bgIndex]}
+                        alt='library'
+                        transition={{
+                            opacity: 0.1,
+                            duration: 0.1,
+                            easeInOut: "linear"
+                        }}
+                    />
                     <h2 className='py-2'>Carousel 1</h2>
                     <Swiper
                         modules={[Autoplay, EffectCoverflow]}
@@ -52,7 +62,8 @@ export default function Page2(props: { className: string }) {
                             disableOnInteraction: false,
                             pauseOnMouseEnter: true
                         }}
-                        onSlideChangeTransitionEnd={() => setBgIndex(prev => (prev === images.length - 1 ? 0 : prev + 1))}
+                        onSlideChange={changeSlide}
+                        onSlideChangeTransitionEnd={changeSlide}
                     >
                         {Array(5).fill(null).map((_, i) => (
                             <SwiperSlide
