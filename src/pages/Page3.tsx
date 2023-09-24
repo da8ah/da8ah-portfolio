@@ -23,7 +23,7 @@ export default function Page3(props: { className: string }) {
             <div className='z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-col justify-evenly items-center bg-white dark:bg-[#242424]'>
                 <h2>Page 3</h2>
                 <div className='py-10 flex flex-wrap flex-row justify-center items-center'>
-                    {Array(8).fill(null).map((_, i) => (
+                    {Array(4).fill(null).map((_, i) => (
                         <Card
                             key={`card-${i}`}
                             title="Project"

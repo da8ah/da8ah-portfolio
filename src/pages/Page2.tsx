@@ -30,14 +30,13 @@ export default function Page2(props: { className: string }) {
                 />}
                 <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-col justify-evenly items-center bg-white dark:bg-[#242424]'>
                     <motion.img
+                        key={images[bgIndex]}
                         className='z-0 absolute object-contain w-full h-[80%]'
                         src={images[bgIndex]}
                         alt='library'
-                        transition={{
-                            opacity: 0.1,
-                            duration: 0.1,
-                            easeInOut: "linear"
-                        }}
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5 }}
                     />
                     <h2 className='py-2'>Carousel 1</h2>
                     <Swiper

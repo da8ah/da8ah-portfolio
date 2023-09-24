@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function Card(props: {
@@ -13,6 +13,10 @@ export default function Card(props: {
         open: { display: "flex", height: "200px" },
         close: { height: "0px" }
     }
+    const textVariants = {
+        open: { display: "flex", bottom: 40 },
+        close: { bottom: -10, display: "none" }
+    }
 
     return (
         <div
@@ -21,31 +25,27 @@ export default function Card(props: {
             onMouseEnter={() => setOpenState(true)}
             onMouseLeave={() => setOpenState(false)}
         >
-            <AnimatePresence>
-                <motion.div
-                    className="absolute rounded-3xl top-0 w-full text-center flex flex-col justify-end items-start bg-gradient-to-r from-[rgba(170,54,124,0.9)] to-[rgba(74,47,189,0.9)]"
-                    animate={isOpen ? "open" : "close"}
-                    variants={variants}
-                    exit={{ display: "none" }}
-                    transition={{
-                        duration: 0.1,
-                        easeInOut: "linear"
-                    }}
-                />
-                <motion.div
-                    className="absolute rounded-3xl top-0 w-full text-center flex flex-col justify-end items-start bg-gradient-to-r from-[rgba(170,54,124,0.9)] to-[rgba(74,47,189,0.9)]"
-                    animate={isOpen ? "open" : "close"}
-                    variants={variants}
-                    exit={{ display: "none" }}
-                    transition={{
-                        duration: 0.1,
-                        easeInOut: "linear"
-                    }}
-                >
-                    <h4 className="my-1 text-2xl font-bold">{title}</h4>
-                    <span className="italic tracking-wider">{description}</span>
-                </motion.div>
-            </AnimatePresence>
+            <motion.div
+                className="absolute rounded-3xl top-0 w-full bg-gradient-to-r from-[rgba(170,54,124,0.9)] to-[rgba(74,47,189,0.9)]"
+                animate={isOpen ? "open" : "close"}
+                variants={variants}
+                transition={{
+                    duration: 0.1,
+                    easeInOut: "linear"
+                }}
+            />
+            <motion.div
+                className="absolute rounded-3xl left-10 w-full text-center flex flex-col justify-end items-start"
+                animate={isOpen ? "open" : "close"}
+                variants={textVariants}
+                transition={{
+                    duration: 0.3,
+                    easeInOut: "linear"
+                }}
+            >
+                <h4 className="my-1 text-2xl font-bold">{title}</h4>
+                <span className="italic tracking-wider">{description}</span>
+            </motion.div>
         </div>
     );
 }
