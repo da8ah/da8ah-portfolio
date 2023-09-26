@@ -2,63 +2,53 @@
     "page1": {
         "title": "Bienvenidos",
         "roles": [
-            "Desarrollador",
-            "Diseñador",
+            "Desarrollador Web",
+            "Desarrollador de Apps",
+            "Programador",
             "Soporte Técnico"
         ],
         "profiles": [
-            "El software y el diseño son dos de mis tantas pasiones. Me gusta que las cosas funcionen y el software es el perfecto medio para lograrlo. Si necesitas que la información se mueva conozco los medios por los cuales se puede materializar en la realidad lo que tanto anhelas.",
-            "El diseño requiere de una visualización precisa de lo que la imaginación quiere manifestar en la realidad. En el plano abstracto yace el perfecto espacio para construir en la imaginación el perfecto producto constituido de la forma más precisa que logre manifestarse de forma artística.",
-            "El soporte técnico es algo que siempre se necesita. Se averió algo dentro de tu arsenal. Tienes problemas con tus dispositivos, o necesitas de algún sabio consejo, pues has llegado al lugar perfecto. Permíteme ser tu guía y consejero acerca de lo que para ti no es familiar."
+            "Construcción de páginas, sitios o aplicaciones Web utilizando tecnologías populares en el mercado. Colaboración con equipos y trabajos autónomos creando o traduciendo diseños a código.",
+            "Diseño y construcción de aplicaciones móviles Android utilizando tecnologías híbridas. Despliegue de aplicaciones en la tienda digital Google Play.",
+            "Desarrollo y asesoría para el modelado y la construcción de programas y scripts. Dominio de distintos lenguajes de programación tanto visuales como codificados.",
+            "Enseñanza de programación y TICs. Asesoría en la instalación y el manejo de programas. Respaldo de información (NO recuperación). Limpieza física y lógica de computadoras."
         ],
         "skills": {
             "titles": [
                 "Habilidades Técnicas",
                 "Habilidades Blandas"
             ],
-            "items": [
+            "hard": [
                 [
-                    [
-                        "Informática",
-                        "Programación",
-                        "Diseño",
-                        "Base de Datos"
-                    ],
-                    [
-                        "Atención a detalles",
-                        "Creatividad",
-                        "Paciencia",
-                        "Ética Laboral"
-                    ]
+                    "Diseño de Web",
+                    "Programación",
+                    "Base de Datos",
+                    "Despliegue"
                 ],
                 [
-                    [
-                        "Diseño",
-                        "Bocetado",
-                        "Coloreado",
-                        "UI/UX"
-                    ],
-                    [
-                        "Atención a detalles",
-                        "Creatividad",
-                        "Paciencia",
-                        "Ética Laboral"
-                    ]
+                    "Diseño de UI/UX",
+                    "Programación",
+                    "Animaciones",
+                    "Despliegue"
                 ],
                 [
-                    [
-                        "Asistencia Remota",
-                        "Diagnóstico",
-                        "Limpieza Lógica",
-                        "Respaldo de Datos"
-                    ],
-                    [
-                        "Atención a detalles",
-                        "Creatividad",
-                        "Paciencia",
-                        "Ética Laboral"
-                    ]
+                    "Diseño de Programas",
+                    "Programación",
+                    "Testing",
+                    "Construcción de Ejecutables"
+                ],
+                [
+                    "Asesoría en TICs",
+                    "Asistencia Remota",
+                    "Diagnóstico y Respaldo",
+                    "Limpieza Física y Lógica"
                 ]
+            ],
+            "soft": [
+                "Atención a detalles",
+                "Responsabilidad",
+                "Organización",
+                "Ética Laboral"
             ]
         }
     }

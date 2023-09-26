@@ -29,11 +29,10 @@ export default function Build(props: { index: number, animation: MotionProps, on
                         onClick={() => props.onLeftPress()}
                     ><TriangleLeftIcon /></button>
                     <motion.div
-                        className='capitalize w-[250px] py-1 mx-2 rounded-[5px] text-white hover:shadow-lg hover:shadow-purple-500 tracking-wide bg-gradient-to-r from-[#AA367C] to-[#4A2FBD]'
+                        className='w-[300px] py-1 mx-2 rounded-[5px] text-white hover:shadow-lg hover:shadow-purple-500 tracking-wide bg-gradient-to-r from-[#AA367C] to-[#4A2FBD]'
                         {...props.animation}
                     >
                         <SelectMenu selected={props.index} data={text.page1.roles} handlers={{ left: props.onLeftPress, right: props.onRightPress }} />
-                        {/* {text.page1.roles[props.index]} */}
                     </motion.div>
                     <button
                         className='p-1 rounded-[0_10px_10px_0] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b hover:from-[#3a98f0] hover:to-[#4A2FBD]'
@@ -46,7 +45,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
                 {...props.animation}
             >
                 <motion.p
-                    className="p-2 rounded-[5px] ring-1 ring-black dark:ring-0 dark:shadow-[0_0_5px_0_black] dark:hover:shadow-[0_0_40px_20px_teal] text-justify"
+                    className="p-2 rounded-[5px] text-justify ring-1 ring-black dark:ring-0 dark:shadow-[0_0_5px_0_black] dark:hover:shadow-[0_0_40px_20px_teal]"
                     whileTap={{ scale: 0.9 }}
                 >
                     {text.page1.profiles[props.index]}

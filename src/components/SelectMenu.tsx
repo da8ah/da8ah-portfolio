@@ -22,8 +22,8 @@ export default function SelectMenu(props: {
             >
                 <motion.div
                     className='w-full flex flex-row justify-between items-center font-bold'
-                        whileHover={{ scale: 1.1 }}
-                    >
+                    whileHover={{ scale: 0.9 }}
+                >
                     <div className='w-[20%]' />
                     <Select.Value>
                         {props.data[props.selected]}

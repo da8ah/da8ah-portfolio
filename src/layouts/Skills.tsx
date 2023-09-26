@@ -9,34 +9,51 @@ export default function Skills(props: { index: number, animation: MotionProps })
     const { text } = useContext(LangContext)
     return <div className='w-full'>
         <div className='flex flex-row justify-evenly items-center'>
-            {text.page1.skills.titles.map((skill, i) => (
-                <div key={`skill-container-${i}`} className='w-[50%] flex flex-col items-center'>
-                    <h1
-                        key={`skill-title-${i}`}
-                        className='flex italic'
-                    ><DotFilledIcon color={i === 0 ? 'red' : 'royalblue'} />{skill}</h1>
-                    <ul key={`skill-items-${i}`} className="py-2 text-left">
-                        {text.page1.skills.items[props.index][i].map((item, j) => (
-                            <motion.li
-                                {...props.animation}
-                                key={`skill-${props.index}-item-${j}`}
-                                className="py-1"
-                            >
-                                <Skill key={`skill-${i}-item-${j}`}>
-                                    <motion.div
-                                        className={`cursor-help w-[200px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b ${i === 0 ? 'hover:from-[#f0463a] hover:to-[#ff284c]' : 'hover:from-[#516dca] hover:to-[#3054ce]'}`}
-                                        whileHover={{ scale: 1.1 }}
-                                    >
-                                        <Icon i={i} j={j} />
-                                        <p>{item}</p>
-                                    </motion.div>
-                                    <div className='w-full h-full space-x-4'>Hello World</div>
-                                </Skill>
-                            </motion.li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
+            <div className='w-[50%] flex flex-col items-center'>
+                <h1 className='flex italic'><DotFilledIcon color='red' />{text.page1.skills.titles[0]}</h1>
+                <ul className="py-2 text-left">
+                    {text.page1.skills.hard[props.index].map((item, j) => (
+                        <motion.li
+                            {...props.animation}
+                            key={`skill-${props.index}-item-${j}`}
+                            className="py-1"
+                        >
+                            <Skill key={`skill-hard-item-${j}`}>
+                                <motion.div
+                                    className='cursor-help w-[250px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b hover:from-[#f0463a] hover:to-[#ff284c]'
+                                    whileHover={{ scale: 1.1 }}
+                                >
+                                    <Icon i={0} j={j} />
+                                    <p>{item}</p>
+                                </motion.div>
+                                <div className='w-full h-full space-x-4'>Hello World</div>
+                            </Skill>
+                        </motion.li>
+                    ))}
+                </ul>
+            </div>
+            <div className='w-[50%] flex flex-col items-center'>
+                <h1 className='flex italic'><DotFilledIcon color='royalblue' />{text.page1.skills.titles[1]}</h1>
+                <ul className="py-2 text-left">
+                    {text.page1.skills.soft.map((item, j) => (
+                        <li
+                            key={`skill-${props.index}-item-${j}`}
+                            className="py-1"
+                        >
+                            <Skill key={`skill-soft-item-${j}`}>
+                                <motion.div
+                                    className='cursor-help w-[200px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b hover:from-[#516dca] hover:to-[#3054ce]'
+                                    whileHover={{ scale: 1.1 }}
+                                >
+                                    <Icon i={1} j={j} />
+                                    <p>{item}</p>
+                                </motion.div>
+                                <div className='w-full h-full space-x-4'>Hello World</div>
+                            </Skill>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     </div>
 }

@@ -21,12 +21,12 @@ export default function Card(props: {
     return (
         <div
             style={{ backgroundImage: `url(${imgURL})` }}
-            className='relative rounded-3xl bg-cover bg-no-repeat w-[300px] h-[200px]'
+            className='relative rounded-lg overflow-hidden bg-cover bg-no-repeat w-[300px] h-[200px]'
             onMouseEnter={() => setOpenState(true)}
             onMouseLeave={() => setOpenState(false)}
         >
             <motion.div
-                className="absolute rounded-3xl top-0 w-full bg-gradient-to-r from-[rgba(170,54,124,0.9)] to-[rgba(74,47,189,0.9)]"
+                className="absolute top-0 w-full bg-gradient-to-r from-[rgba(170,54,124,0.9)] to-[rgba(74,47,189,0.9)]"
                 animate={isOpen ? "open" : "close"}
                 variants={variants}
                 transition={{
@@ -35,7 +35,7 @@ export default function Card(props: {
                 }}
             />
             <motion.div
-                className="absolute rounded-3xl left-10 w-full text-center flex flex-col justify-end items-start"
+                className="absolute left-10 w-full text-center flex flex-col justify-end items-start"
                 animate={isOpen ? "open" : "close"}
                 variants={textVariants}
                 transition={{
