@@ -77,6 +77,7 @@ export default function Page2(props: { className: string }) {
                 />}
                 <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-col justify-center items-center bg-white dark:bg-[#242424]'>
                     <Carousel
+                        showDots
                         infinite
                         // rewind
                         // rewindWithAnimation
@@ -98,33 +99,42 @@ export default function Page2(props: { className: string }) {
                                 className='relative w-full h-full flex justify-center items-center bg-transparent shadow-[10px_40px_10px_5px_black]'
                                 onClick={() => setHover(true)}
                             >
-                                <motion.img
-                                    key={`slide-img-${bgIndex}`}
-                                    className='object-contain rounded-lg'
-                                    src={img.src}
-                                    alt='library'
-                                    animate={{
-                                        scale: [0.9, 1],
-                                        // opacity: [0.5, 1]
-                                    }}
-                                    transition={{ duration: 0.5 }}
-                                />
-                                {bgIndex === i && <div className={`absolute ${isHover ? "hidden" : "flex"} bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]`}>
-                                    {img.animations}
-                                </div>}
-                                {bgIndex === i && <motion.div
-                                    className={`absolute ${isHover ? "bg-opacity-80" : "opacity-0 z-[-1]"} z-[10] cursor-pointer rounded-xl w-full h-full bg-black p-2`}
-                                    animate={isHover ? "open" : "close"}
-                                    variants={variants}
-                                    transition={{ duration: 0.5 }}
-                                    onMouseLeave={() => setHover(false)}
-                                >
-                                    <h3>Project {bgIndex}</h3>
-                                    <p>Description</p>
-                                    <ul>
-                                        <li>Tech Stack</li>
-                                    </ul>
-                                </motion.div>}
+                                {bgIndex === i ? <>
+                                    <motion.img
+                                        key={`slide-img-${bgIndex}`}
+                                        className='object-contain rounded-lg'
+                                        src={img.src}
+                                        alt='library'
+                                        animate={{
+                                            // scale: [0.9, 1],
+                                            opacity: [0.5, 1]
+                                        }}
+                                        transition={{ duration: 0.5 }}
+                                    />
+                                    <div className={`absolute ${isHover ? "hidden" : "flex"} bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]`}>
+                                        {img.animations}
+                                    </div>
+                                    <motion.div
+                                        className={`absolute ${isHover ? "bg-opacity-80" : "opacity-0 z-[-1]"} z-[10] cursor-pointer rounded-xl w-full h-full bg-black p-2`}
+                                        animate={isHover ? "open" : "close"}
+                                        variants={variants}
+                                        transition={{ duration: 0.5 }}
+                                        onMouseLeave={() => setHover(false)}
+                                    >
+                                        <h3>Project {bgIndex}</h3>
+                                        <p>Description</p>
+                                        <ul>
+                                            <li>Tech Stack</li>
+                                        </ul>
+                                    </motion.div>
+                                </>
+                                    :
+                                    <img
+                                        key={`slide-img-${bgIndex}`}
+                                        className='object-contain rounded-lg opacity-10'
+                                        src={img.src}
+                                        alt='library'
+                                    />}
                             </div>
                         )
                         )}
