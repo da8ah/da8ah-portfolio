@@ -84,18 +84,16 @@ export default function Page2(props: { className: string }) {
                         itemClass="px-1 flex justify-center"
                         keyBoardControl={true}
                         afterChange={(_, { currentSlide }) => {
-                            const index = currentSlide - 2
-                            console.log(`c:${index}`)
-                            // r 0,1,2
+                            let index = 0
+                            if (currentSlide >= images.length) index = currentSlide - 2
+                            else index = currentSlide + 1
                             setBgIndex(index === images.length ? 0 : index)
-
-                            // l 2,1,0
                         }}
                     >
                         {images.map((img, i) => (
                             <div
                                 key={`slide-${i}`}
-                                className={`relative ${bgIndex !== i ? "h-[90%]" : "h-full"} w-full flex justify-center items-center bg-transparent shadow-[10px_40px_10px_5px_black]`}
+                                className={`relative ${bgIndex !== i ? "w-[90%]" : "w-full"} h-full rounded-lg flex justify-center items-center bg-transparent shadow-[10px_40px_10px_5px_black]`}
                                 onClick={() => setHover(true)}
                             >
                                 {bgIndex !== i ?
