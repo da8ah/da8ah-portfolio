@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useContext, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import slide4 from "/page1/slides/bookstore.png";
 import slide3 from "/page1/slides/digency.png";
 import slide2 from "/page1/slides/krypto.png";
 import slide1 from "/page1/slides/space.png";
@@ -56,9 +57,20 @@ export default function Page2(props: { className: string }) {
             src: slide3,
             alt: "",
             animations: undefined
-        }
+        },
+        {
+            src: slide4,
+            alt: "",
+            animations: undefined
+        },
     ]
     const [bgIndex, setBgIndex] = useState(0)
+    const changeSlide = (previousSlide: number, currentSlide: number, dataSize: number) => {
+        let index = 0
+        if (previousSlide < currentSlide) index = currentSlide - 2
+        else index = currentSlide + (currentSlide === dataSize - 1 ? -2 : 2)
+        setBgIndex(index === dataSize ? 0 : index)
+    }
 
     return <section className={props.className}>
         <div className='w-full flex flex-col justify-center items-center'>
@@ -83,12 +95,7 @@ export default function Page2(props: { className: string }) {
                         className="w-full h-[70%] owl-carousel owl-theme text-center"
                         itemClass="px-1 flex justify-center"
                         keyBoardControl={true}
-                        afterChange={(_, { currentSlide }) => {
-                            let index = 0
-                            if (currentSlide >= images.length) index = currentSlide - 2
-                            else index = currentSlide + 1
-                            setBgIndex(index === images.length ? 0 : index)
-                        }}
+                        afterChange={(previousSlide, { currentSlide }) => changeSlide(previousSlide, currentSlide, images.length)}
                     >
                         {images.map((img, i) => (
                             <div
