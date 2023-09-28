@@ -83,7 +83,14 @@ export default function Page2(props: { className: string }) {
                         className="w-full h-[70%] owl-carousel owl-theme text-center"
                         itemClass="px-1 flex justify-center"
                         keyBoardControl={true}
-                        afterChange={(previousSlide, { currentSlide }) => setBgIndex(currentSlide)}
+                        afterChange={(_, { currentSlide }) => {
+                            const index = currentSlide - 2
+                            console.log(`c:${index}`)
+                            // r 0,1,2
+                            setBgIndex(index === images.length ? 0 : index)
+
+                            // l 2,1,0
+                        }}
                     >
                         {images.map((img, i) => (
                             <div
@@ -94,7 +101,7 @@ export default function Page2(props: { className: string }) {
                                 {bgIndex !== i ?
                                     <img
                                         key={`slide-img-${bgIndex}`}
-                                        className='object-contain rounded-lg opacity-10'
+                                        className='pointer-events-none object-contain rounded-lg opacity-10'
                                         src={img.src}
                                         alt='library'
                                     />
