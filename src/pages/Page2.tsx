@@ -1,7 +1,7 @@
 import { ThemeContext } from "@/context/ThemeProvider";
 import { SpaceAnimations } from "@/layouts/SlideAnimations";
 import { motion } from 'framer-motion';
-import { useCallback, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import slide4 from "/page1/slides/bookstore.png";
@@ -32,13 +32,13 @@ export default function Page2(props: { className: string }) {
         }
     };
 
-    const [isHover, setHover] = useState(false)
+    const [isModalOpen, setModalState] = useState(false)
     const variants = {
         open: { opacity: [0, 1], scale: [0.9, 1] },
-        close: { scale: [1, 1.1, 1] }
+        close: { scale: [1, 1.1] }
     }
 
-    const [bgIndex, setBgIndex] = useState(0)
+    const [activeIndex, setActiveIndex] = useState(0)
     const images = [
         {
             src: slide1,
@@ -55,31 +55,19 @@ export default function Page2(props: { className: string }) {
             alt: "",
             animations: undefined
         },
-        // {
-        //     src: slide4,
-        //     alt: "",
-        //     animations: undefined
-        // },
+        {
+            src: slide4,
+            alt: "",
+            animations: undefined
+        },
     ]
     const changeSlide = (previousSlide: number, currentSlide: number, dataSize: number) => {
-        let index = 0
-        if (previousSlide < currentSlide) {
-            index = currentSlide - 2
-            setBgIndex(index === dataSize ? 0 : index)
-        }
-        else {
-            // 1,0,5,4,3,2
-            // 5,4,3,2,1,0
-            // 1,0,4,3,2
-            // 4,3,2,1,0
-            // 1,0,3,2
-            // 3,2,1,0
-            index = currentSlide + (currentSlide <= dataSize && currentSlide >= 2
-                ? -2
-                : dataSize - 2)
-            setBgIndex(index)
-        }
-        console.log(`c:${currentSlide} ${index}`)
+        let activeSlide = 0
+        // right arrow
+        if (previousSlide < currentSlide) activeSlide = currentSlide - 2 === dataSize ? 0 : currentSlide - 2
+        // left arrow
+        else activeSlide = currentSlide + (currentSlide <= dataSize && currentSlide >= 2 ? -2 : dataSize - 2);
+        setActiveIndex(activeSlide)
     }
 
     return <section className={props.className}>
@@ -98,52 +86,47 @@ export default function Page2(props: { className: string }) {
                 />}
                 <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-col justify-center items-center bg-white dark:bg-[#242424]'>
                     <Carousel
+                        keyBoardControl
                         infinite
-                        autoPlay
                         centerMode
+                        autoPlay={!isModalOpen}
                         responsive={responsive}
                         className="w-full h-[70%] owl-carousel owl-theme text-center"
                         itemClass="px-1 flex justify-center"
-                        keyBoardControl={true}
                         afterChange={(previousSlide, { currentSlide }) => changeSlide(previousSlide, currentSlide, images.length)}
                     >
                         {images.map((img, i) => (
                             <div
                                 key={`slide-${i}`}
-                                className={`relative ${bgIndex !== i ? "w-[90%]" : "w-full"} h-full rounded-[10px] flex justify-center items-center bg-transparent shadow-[10px_40px_10px_5px_black]`}
+                                className={`relative ${activeIndex !== i ? "w-[90%]" : "w-full"} h-full rounded-[10px] flex justify-center items-center bg-transparent shadow-[10px_40px_10px_5px_black]`}
+                                onClick={() => activeIndex === i && setModalState(prev => !prev)}
                             >
-                                {bgIndex !== i ?
+                                {activeIndex !== i ?
                                     <img
-                                        key={`slide-img-${bgIndex}`}
                                         className='pointer-events-none object-contain rounded-[10px] opacity-10'
                                         src={img.src}
-                                        alt='library'
+                                        alt={img.alt}
                                     />
                                     :
                                     <>
                                         <motion.img
-                                            key={`slide-img-${bgIndex}`}
-                                            className='object-contain rounded-[10px]'
+                                            key={`slide-img-${activeIndex}`}
+                                            className='object-contain rounded-[10px] shadow-[inset_2px_2px_2px_5px_black]'
                                             src={img.src}
-                                            alt='library'
-                                            animate={{
-                                                // scale: [0.9, 1],
-                                                opacity: [0.5, 1]
-                                            }}
+                                            alt={img.alt}
+                                            animate={{ opacity: [0.5, 1] }}
                                             transition={{ duration: 0.5 }}
-                                            onClick={() => setHover(true)}
                                         />
-                                        <div className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]'>
+                                        {!isModalOpen && <div className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]'>
                                             {img.animations}
-                                        </div>
+                                        </div>}
                                         <motion.div
-                                            className={`absolute ${isHover ? "bg-opacity-80" : "opacity-0 z-[-1]"} rounded-[10px] z-[10] cursor-pointer w-full h-full bg-black p-2`}
-                                            animate={isHover ? "open" : "close"}
+                                            className={`absolute ${isModalOpen ? "bg-opacity-80" : "opacity-0 z-[-1]"} rounded-[10px] z-[10] cursor-pointer w-full h-full bg-black p-2 shadow-[0_0_5px_2px_black]`}
+                                            animate={isModalOpen ? "open" : "close"}
                                             variants={variants}
                                             transition={{ duration: 0.5 }}
-                                            onMouseLeave={() => setHover(false)}
                                         >
-                                            <h3>Project {bgIndex}</h3>
+                                            <h3>Project {activeIndex}</h3>
                                             <p>Description</p>
                                             <ul>
                                                 <li>Tech Stack</li>
