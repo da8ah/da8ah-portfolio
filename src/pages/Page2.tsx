@@ -1,7 +1,7 @@
 import { ThemeContext } from "@/context/ThemeProvider";
 import { SpaceAnimations } from "@/layouts/SlideAnimations";
 import { motion } from 'framer-motion';
-import { useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import slide4 from "/page1/slides/bookstore.png";
@@ -16,24 +16,20 @@ export default function Page2(props: { className: string }) {
         superLargeDesktop: {
             // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
-            items: 1,
-            // partialVisibilityGutter: 100
+            items: 1
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 1,
-            // partialVisibilityGutter: 30
+            items: 1
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 1,
-            // partialVisibilityGutter: 30
+            items: 1
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1,
-            // partialVisibilityGutter: 0
-        },
+            items: 1
+        }
     };
 
     const [isHover, setHover] = useState(false)
@@ -42,6 +38,7 @@ export default function Page2(props: { className: string }) {
         close: { scale: [1, 1.1, 1] }
     }
 
+    const [bgIndex, setBgIndex] = useState(0)
     const images = [
         {
             src: slide1,
@@ -58,18 +55,31 @@ export default function Page2(props: { className: string }) {
             alt: "",
             animations: undefined
         },
-        {
-            src: slide4,
-            alt: "",
-            animations: undefined
-        },
+        // {
+        //     src: slide4,
+        //     alt: "",
+        //     animations: undefined
+        // },
     ]
-    const [bgIndex, setBgIndex] = useState(0)
     const changeSlide = (previousSlide: number, currentSlide: number, dataSize: number) => {
         let index = 0
-        if (previousSlide < currentSlide) index = currentSlide - 2
-        else index = currentSlide + (currentSlide === dataSize - 1 ? -2 : 2)
-        setBgIndex(index === dataSize ? 0 : index)
+        if (previousSlide < currentSlide) {
+            index = currentSlide - 2
+            setBgIndex(index === dataSize ? 0 : index)
+        }
+        else {
+            // 1,0,5,4,3,2
+            // 5,4,3,2,1,0
+            // 1,0,4,3,2
+            // 4,3,2,1,0
+            // 1,0,3,2
+            // 3,2,1,0
+            index = currentSlide + (currentSlide <= dataSize && currentSlide >= 2
+                ? -2
+                : dataSize - 2)
+            setBgIndex(index)
+        }
+        console.log(`c:${currentSlide} ${index}`)
     }
 
     return <section className={props.className}>
@@ -100,13 +110,12 @@ export default function Page2(props: { className: string }) {
                         {images.map((img, i) => (
                             <div
                                 key={`slide-${i}`}
-                                className={`relative ${bgIndex !== i ? "w-[90%]" : "w-full"} h-full rounded-lg flex justify-center items-center bg-transparent shadow-[10px_40px_10px_5px_black]`}
-                                onClick={() => setHover(true)}
+                                className={`relative ${bgIndex !== i ? "w-[90%]" : "w-full"} h-full rounded-[10px] flex justify-center items-center bg-transparent shadow-[10px_40px_10px_5px_black]`}
                             >
                                 {bgIndex !== i ?
                                     <img
                                         key={`slide-img-${bgIndex}`}
-                                        className='pointer-events-none object-contain rounded-lg opacity-10'
+                                        className='pointer-events-none object-contain rounded-[10px] opacity-10'
                                         src={img.src}
                                         alt='library'
                                     />
@@ -114,7 +123,7 @@ export default function Page2(props: { className: string }) {
                                     <>
                                         <motion.img
                                             key={`slide-img-${bgIndex}`}
-                                            className='object-contain rounded-lg'
+                                            className='object-contain rounded-[10px]'
                                             src={img.src}
                                             alt='library'
                                             animate={{
@@ -122,12 +131,13 @@ export default function Page2(props: { className: string }) {
                                                 opacity: [0.5, 1]
                                             }}
                                             transition={{ duration: 0.5 }}
+                                            onClick={() => setHover(true)}
                                         />
                                         <div className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]'>
                                             {img.animations}
                                         </div>
                                         <motion.div
-                                            className={`absolute ${isHover ? "bg-opacity-80" : "opacity-0 z-[-1]"} z-[10] cursor-pointer rounded-xl w-full h-full bg-black p-2`}
+                                            className={`absolute ${isHover ? "bg-opacity-80" : "opacity-0 z-[-1]"} rounded-[10px] z-[10] cursor-pointer w-full h-full bg-black p-2`}
                                             animate={isHover ? "open" : "close"}
                                             variants={variants}
                                             transition={{ duration: 0.5 }}
