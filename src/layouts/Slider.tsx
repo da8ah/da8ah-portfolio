@@ -1,7 +1,7 @@
 import { LangContext } from "@/context/LangProvider";
 import { SpaceAnimations } from "@/layouts/SlideAnimations";
 import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useContext, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -11,7 +11,6 @@ import slide2 from "/page1/slides/krypto.png";
 import slide1 from "/page1/slides/space.png";
 
 export default function Slider() {
-    const { text } = useContext(LangContext)
 
     const responsive = {
         // the naming can be any, depends on you.
@@ -91,47 +90,29 @@ export default function Slider() {
                             animate={{ opacity: [0.5, 1] }}
                             transition={{ duration: 0.5 }}
                         />
-                        {!isModalOpen && <div className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]'>
-                            {img.animations}
-                        </div>}
+                        <AnimatePresence>
+                            {!isModalOpen &&
+                                <motion.div
+                                    key={activeIndex}
+                                    className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]'
+                                    animate={{ scale: [0.5, 1] }}
+                                    exit={{
+                                        opacity: 0,
+                                        scale: [1, 0.9],
+                                        display: !isModalOpen ? "flex" : "none"
+                                    }}
+                                >
+                                    {img.animations}
+                                </motion.div>
+                            }
+                        </AnimatePresence>
                         <motion.div
-                            className={`absolute ${isModalOpen ? "bg-opacity-80" : "opacity-0 z-[-1]"} rounded-[10px] z-[10] cursor-pointer w-full h-full bg-black p-2 shadow-[0_0_5px_2px_black]`}
+                            className={`absolute ${isModalOpen ? "bg-opacity-80 hover:bg-opacity-100" : "opacity-0 z-[-1]"} rounded-[10px] z-[10] cursor-pointer w-full h-full bg-black p-2 shadow-[0_0_5px_2px_black]`}
                             animate={isModalOpen ? "open" : "close"}
                             variants={variants}
                             transition={{ duration: 0.5 }}
                         >
-                            <div className='w-full h-full flex flex-col justify-center items-center' >
-                                <div className='z-10 w-full flex justify-between items-center'>
-                                    <span className='w-[30%]' />
-                                    <h1 className='w-[30%]'>{text.page2.slides[0].title}</h1>
-                                    <div className='w-[30%] flex justify-end items-center'>
-                                        <a
-                                            className='px-2 flex justify-end items-center hover:text-[royalblue]'
-                                            href={text.page2.slides[0].repo}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            Repo <GitHubLogoIcon />
-                                        </a>
-                                        <a
-                                            className='px-2 flex justify-end items-center hover:text-[royalblue]'
-                                            href={text.page2.slides[0].demo}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            Demo <ExternalLinkIcon />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className='flex-1 flex flex-col justify-center items-center'>
-                                    <p>{text.page2.slides[0].desc}</p>
-                                    <ul>
-                                        <li>Tech Stack</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <Modal activeIndex={0} />
                         </motion.div>
                     </>
                 }
@@ -139,4 +120,46 @@ export default function Slider() {
         )
         )}
     </Carousel>
+}
+
+function Modal(props: { activeIndex: number }) {
+    const { text } = useContext(LangContext)
+
+    return <div className='w-full h-full flex flex-col justify-center items-center' >
+        <div className='rounded-lg z-10 py-2 w-full flex justify-between items-center bg-black'>
+            <span className='w-[20%] text-xl'>📌</span>
+            <h1 className='w-[60%] text-2xl'>{text.page2.slides[props.activeIndex].title}</h1>
+            <ul className='w-[20%] flex justify-end items-center'>
+                <li>
+                    <a
+                        className='rounded-xl px-2 flex justify-end items-center bg-[teal] hover:bg-black'
+                        href={text.page2.slides[props.activeIndex].repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className='mx-1'>Repo</div><GitHubLogoIcon />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        className='rounded-xl px-2 flex justify-end items-center bg-[royalblue] hover:bg-black'
+                        href={text.page2.slides[props.activeIndex].demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        Demo <ExternalLinkIcon />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div className='flex-1 flex justify-center items-center'>
+            <ul className='w-[30%]'>
+                <li>React</li>
+                <li>Tailwind</li>
+            </ul>
+            <p>{text.page2.slides[props.activeIndex].desc}</p>
+        </div>
+    </div>
 }
