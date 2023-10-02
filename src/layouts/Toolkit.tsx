@@ -3,6 +3,8 @@ import Logo, { LogoProps } from '@/components/Logo'
 import { motion } from 'framer-motion'
 import reactLogo from '/page1/tooling/react.svg'
 import viteLogo from '/page1/tooling/vite.svg'
+import tsLogo from '/page1/tooling/typescript.svg'
+import qwikLogo from '/page1/tooling/qwik.svg'
 
 export default function Toolkit() {
 
@@ -19,8 +21,8 @@ export default function Toolkit() {
         },
         {
             img: {
-                src: viteLogo,
-                alt: 'Vite logo',
+                src: tsLogo,
+                alt: 'Typescript logo',
                 className: styles.SpinnerImage,
             },
             className: styles.SpinnerItem,
@@ -28,8 +30,8 @@ export default function Toolkit() {
         },
         {
             img: {
-                src: viteLogo,
-                alt: 'Vite logo',
+                src: qwikLogo,
+                alt: 'Qwik logo',
                 className: styles.SpinnerImage,
             },
             className: styles.SpinnerItem,

@@ -24,12 +24,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@layer base {
-  html {
-    scroll-snap-type: y mandatory;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;

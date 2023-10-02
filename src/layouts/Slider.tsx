@@ -8,7 +8,11 @@ import "react-multi-carousel/lib/styles.css";
 import slide4 from "/page1/slides/bookstore.png";
 import slide3 from "/page1/slides/digency.png";
 import slide2 from "/page1/slides/krypto.png";
-import slide1 from "/page1/slides/space.png";
+import slide1 from "/page1/slides/space/space.png";
+import qwikLogo from '/page1/tooling/qwik.svg';
+import reactLogo from '/page1/tooling/react.svg';
+import tsLogo from '/page1/tooling/typescript.svg';
+import viteLogo from '/page1/tooling/vite.svg';
 
 export default function Slider() {
 
@@ -95,7 +99,8 @@ export default function Slider() {
                                 <motion.div
                                     key={activeIndex}
                                     className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]'
-                                    animate={{ scale: [0.5, 1] }}
+                                    initial={{ opacity: 0.5 }}
+                                    animate={{ opacity: 1, scale: [0.5, 1] }}
                                     exit={{
                                         opacity: 0,
                                         scale: [1, 0.9],
@@ -107,7 +112,7 @@ export default function Slider() {
                             }
                         </AnimatePresence>
                         <motion.div
-                            className={`absolute ${isModalOpen ? "bg-opacity-80 hover:bg-opacity-100" : "opacity-0 z-[-1]"} rounded-[10px] z-[10] cursor-pointer w-full h-full bg-black p-2 shadow-[0_0_5px_2px_black]`}
+                            className={`absolute ${isModalOpen ? "bg-opacity-80" : "opacity-0 z-[-1]"} rounded-[10px] z-[10] cursor-pointer w-full h-full bg-black p-2 shadow-[0_0_5px_2px_black]`}
                             animate={isModalOpen ? "open" : "close"}
                             variants={variants}
                             transition={{ duration: 0.5 }}
@@ -124,12 +129,32 @@ export default function Slider() {
 
 function Modal(props: { activeIndex: number }) {
     const { text } = useContext(LangContext)
+    const logos = [
+        {
+            src: viteLogo,
+            alt: 'Vite logo',
+        },
+        {
+            src: tsLogo,
+            alt: 'Typescript logo',
+        },
+        {
+            src: qwikLogo,
+            alt: 'Qwik logo',
+        },
+        {
+            src: reactLogo,
+            alt: 'React logo',
+        }
+    ]
 
     return <div className='w-full h-full flex flex-col justify-center items-center' >
-        <div className='rounded-lg z-10 py-2 w-full flex justify-between items-center bg-black'>
-            <span className='w-[20%] text-xl'>📌</span>
-            <h1 className='w-[60%] text-2xl'>{text.page2.slides[props.activeIndex].title}</h1>
-            <ul className='w-[20%] flex justify-end items-center'>
+        <div className='rounded-lg z-10 py-2 w-full flex justify-between items-center'>
+            <span className='w-[20%] text-xl bg-[royalblue] rounded-tl-lg'>📌</span>
+            <h1 className='w-[60%] uppercase font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-orange-500 to-red-600 drop-shadow-[0_0_50px_10px_black]'>
+                {text.page2.slides[props.activeIndex].title}
+            </h1>
+            <ul className='w-[20%] flex justify-center items-center'>
                 <li>
                     <a
                         className='rounded-xl px-2 flex justify-end items-center bg-[teal] hover:bg-black'
@@ -155,9 +180,12 @@ function Modal(props: { activeIndex: number }) {
             </ul>
         </div>
         <div className='flex-1 flex justify-center items-center'>
-            <ul className='w-[30%]'>
-                <li>React</li>
-                <li>Tailwind</li>
+            <ul className='w-[30%] my-2 grid grid-cols-2 gap-y-2 justify-items-center self-start'>
+                {logos.map((logo, i) => (
+                    <li key={i} className='w-[50px] h-[50px] flex justify-center items-center p-2 rounded-sm bg-white'>
+                        <img className='object-contain' src={logo.src} alt={logo.alt} />
+                    </li>
+                ))}
             </ul>
             <p>{text.page2.slides[props.activeIndex].desc}</p>
         </div>

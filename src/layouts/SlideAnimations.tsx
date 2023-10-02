@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import slide1Rocket from "/page1/slides/rocket.png";
-import slide1Planet1 from "/page1/slides/planet1.png";
+import slide1Rocket from "/page1/slides/space/rocket.png";
+import slide1Planet from "/page1/slides/space/planet.png";
 
 export const SpaceAnimations = () => {
     return <>
@@ -20,8 +20,8 @@ export const SpaceAnimations = () => {
         />
         <motion.img
             className='absolute w-[90px] h-[90px] bottom-0 left-0'
-            src={slide1Planet1}
-            alt={slide1Planet1}
+            src={slide1Planet}
+            alt={slide1Planet}
             animate={{
                 scale: [1, 0.9, 1]
             }}

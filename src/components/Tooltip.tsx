@@ -6,7 +6,7 @@ export default function Tooltip(props: {
     align?: "center" | "end" | "start",
     side?: "left" | "top" | "right" | "bottom"
 }) {
-    return <HoverCard.Root key={props.key}>
+    return <HoverCard.Root key={props.key} openDelay={1} closeDelay={0}>
         <HoverCard.Trigger asChild>
             {props.children[0]}
         </HoverCard.Trigger>

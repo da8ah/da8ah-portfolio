@@ -1,25 +1,17 @@
 import SelectMenu from "@/components/SelectMenu";
-import ShiningText from "@/components/ShiningText";
 import { LangContext } from "@/context/LangProvider";
 import Skills from "@/layouts/Skills";
-import { MotionProps, motion } from 'framer-motion';
-import { useContext, useEffect, useState } from "react";
 import { DotFilledIcon, TriangleLeftIcon, TriangleRightIcon } from "@radix-ui/react-icons";
+import { MotionProps, motion } from 'framer-motion';
+import { useContext } from "react";
 
 export default function Build(props: { index: number, animation: MotionProps, onLeftPress: (value?: number) => void, onRightPress: (value?: number) => void }) {
     const { text } = useContext(LangContext)
-    const [start, setStart] = useState(true)
-
-    useEffect(() => { setStart(false) }, [])
 
     return <div className='flex flex-col'>
         <div className='py-2'>
-            <h1
-                className='cursor-pointer uppercase font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-orange-500 to-red-600 drop-shadow-[0_0_50px_10px_black]'
-                onClick={() => setStart(true)}
-            >
-                {start && <ShiningText text={text.page1.title} setStartToFalse={() => setStart(false)} />}
-                {!start && text.page1.title}
+            <h1 className='uppercase font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-orange-500 to-red-600 drop-shadow-[0_0_50px_10px_black]'>
+                {text.page1.title}
             </h1>
             <div className='py-5 flex flex-col justify-around items-center'>
                 <span className='flex pb-3 italic'><DotFilledIcon color='#AA367C' />Roles</span>
