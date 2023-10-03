@@ -1,11 +1,18 @@
 {
     "page1": {
-        "title": "Bienvenidos",
         "roles": [
-            "Desarrollador Web",
-            "Desarrollador de Apps",
-            "Programador",
-            "Soporte Técnico"
+            [
+                "💻",
+                "📱",
+                "👨‍💻",
+                "🧰"
+            ],
+            [
+                "Desarrollador Web",
+                "Desarrollador de Apps",
+                "Programador",
+                "Soporte Técnico"
+            ]
         ],
         "profiles": [
             "Construcción de páginas, sitios o aplicaciones Web. Colaboración con equipos y trabajos autónomos creando o traduciendo diseños a código.",

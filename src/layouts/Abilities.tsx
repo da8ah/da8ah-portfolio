@@ -1,20 +1,20 @@
 import Tooltip from '@/components/Tooltip';
 import { motion } from 'framer-motion';
-import laptop from '/page1/skills/icons8-laptop-coding-96.png';
+import creativity from '/page1/abilities/icons8-creativity-96.png';
 
 export default function Abilities() {
     const abilities = [
         {
-            src: laptop,
-            alt: 'laptop'
+            src: creativity,
+            alt: 'creativity'
         },
         {
-            src: laptop,
-            alt: 'laptop'
+            src: creativity,
+            alt: 'creativity'
         },
         {
-            src: laptop,
-            alt: 'laptop'
+            src: creativity,
+            alt: 'creativity'
         }
     ]
     const imgClassName = 'object-contain w-[40px] h-[40px] mx-2'

@@ -14,8 +14,8 @@ export default function Card(props: {
         close: { height: "0px" }
     }
     const textVariants = {
-        open: { display: "flex", bottom: 40 },
-        close: { bottom: -10, display: "none" }
+        open: { display: "flex", bottom: 60 },
+        close: { bottom: 20, display: "none" }
     }
 
     return (

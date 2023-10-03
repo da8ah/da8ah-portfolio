@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import slide1Rocket from "/page1/slides/space/rocket.png";
-import slide1Planet from "/page1/slides/space/planet.png";
+import slide1Rocket from "/page2/slides/space/rocket.png";
+import slide1Planet from "/page2/slides/space/planet.png";
 
 export const SpaceAnimations = () => {
     return <>

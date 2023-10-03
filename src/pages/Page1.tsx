@@ -13,12 +13,12 @@ export default function Page1(props: { className: string }) {
 
     const onLeftPress = (value?: number) => {
         setDirection('left')
-        if (value === undefined) setIndex(rol => rol === 0 ? text.page1.roles.length - 1 : rol - 1)
+        if (value === undefined) setIndex(rol => rol === 0 ? text.page1.roles[1].length - 1 : rol - 1)
         else setIndex(value)
     }
     const onRightPress = (value?: number) => {
         setDirection('right')
-        if (value === undefined) setIndex(rol => rol === text.page1.roles.length - 1 ? 0 : rol + 1)
+        if (value === undefined) setIndex(rol => rol === text.page1.roles[1].length - 1 ? 0 : rol + 1)
         else setIndex(value)
     }
 

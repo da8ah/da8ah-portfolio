@@ -5,14 +5,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useContext, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import slide4 from "/page1/slides/bookstore.png";
-import slide3 from "/page1/slides/digency.png";
-import slide2 from "/page1/slides/krypto.png";
-import slide1 from "/page1/slides/space/space.png";
-import qwikLogo from '/page1/tooling/qwik.svg';
-import reactLogo from '/page1/tooling/react.svg';
-import tsLogo from '/page1/tooling/typescript.svg';
-import viteLogo from '/page1/tooling/vite.svg';
+import slide4 from "/page2/slides/bookstore.png";
+import slide3 from "/page2/slides/digency.png";
+import slide2 from "/page2/slides/krypto.png";
+import slide1 from "/page2/slides/space.png";
+import qwikLogo from '/tooling/qwik.svg';
+import reactLogo from '/tooling/react.svg';
+import tsLogo from '/tooling/typescript.svg';
+import viteLogo from '/tooling/vite.svg';
 
 export default function Slider() {
 
@@ -63,7 +63,6 @@ export default function Slider() {
     }
 
     return <Carousel
-        keyBoardControl
         infinite
         centerMode
         autoPlay={!isModalOpen}

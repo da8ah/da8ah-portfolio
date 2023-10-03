@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function SelectMenu(props: {
     selected: number
+    icons: string[]
     data: string[]
     handlers: { left: (value?: number) => void, right: (value?: number) => void }
 }) {
@@ -24,11 +25,11 @@ export default function SelectMenu(props: {
                     className='w-full flex flex-row justify-between items-center font-bold'
                     whileHover={{ scale: 0.9 }}
                 >
-                    <div className='w-[20%]' />
+                    <div className='w-[15%] flex justify-end items-center'>{props.icons[props.selected]}</div>
                     <Select.Value>
                         {props.data[props.selected]}
                     </Select.Value>
-                    <Select.Icon className='w-[20%] flex justify-center items-center'>
+                    <Select.Icon className='w-[15%] flex justify-center items-center'>
                         <ChevronDownIcon />
                     </Select.Icon>
                 </motion.div>
@@ -46,11 +47,12 @@ export default function SelectMenu(props: {
                                 value={item}
                                 className={`cursor-pointer py-1 rounded-[5px] w-full flex flex-row ${index === props.selected ? 'justify-between' : 'justify-center'} items-center hover:outline-none hover:bg-gray-950 hover:text-white`}
                             >
-                                {index === props.selected && <div className="w-[15%]" />}
+                                <div className='w-[15%] flex justify-center items-center'>{props.icons[index]}</div>
                                 <Select.ItemText>{item}</Select.ItemText>
                                 <Select.ItemIndicator className="w-[15%] flex justify-center items-center">
                                     <CheckIcon />
                                 </Select.ItemIndicator>
+                                {index !== props.selected && <div className="w-[15%]" />}
                             </Select.Item>
                         })
                     }
