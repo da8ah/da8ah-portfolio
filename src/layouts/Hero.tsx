@@ -1,12 +1,12 @@
-import Tooltip from "@/components/Tooltip";
 import { ThemeContext } from "@/context/ThemeProvider";
 import Abilities from "@/layouts/Abilities";
 import Toolkit from "@/layouts/Toolkit";
+import { MotionProps } from "framer-motion";
 import { useContext } from "react";
-import bgImg from "/page1/library.jpg";
 import bgVideo from "/page1/bg-magician.mp4";
+import bgImg from "/page1/library.jpg";
 
-export default function Hero() {
+export default function Hero(props: { index: number, animation: MotionProps }) {
     const { themeMode } = useContext(ThemeContext)
 
     return <>
@@ -22,15 +22,7 @@ export default function Hero() {
                 <Abilities />
             </div>
             <div className='z-[1] relative flex-1 flex flex-col justify-center items-center'>
-                <Toolkit />
-                <Tooltip
-                    key='toolkit'
-                    align='center'
-                    side='top'
-                >
-                    <div className='cursor-help absolute rounded-full w-[250px] h-[250px]' />
-                    <div>Toolkit</div>
-                </Tooltip>
+                <Toolkit index={props.index} animation={props.animation} />
             </div>
             <div className='flex-1 py-16' />
         </div>

@@ -3,24 +3,24 @@ import { LangContext } from "@/context/LangProvider";
 import { DotFilledIcon } from "@radix-ui/react-icons";
 import { MotionProps, motion } from 'framer-motion';
 import { useContext } from "react";
-import eye from '/page1/skills/soft/icons8-eye-64.png';
-import medal from '/page1/skills/soft/icons8-medal-96.png';
-import schedule from '/page1/skills/soft/icons8-schedule-96.png';
-import justice from '/page1/skills/soft/icons8-justice-96.png';
-import design from '/page1/skills/hard/icons8-design-96.png';
-import laptop from '/page1/skills/hard/icons8-laptop-coding-96.png';
+import clean from '/page1/skills/hard/icons8-clean-96.png';
 import database from '/page1/skills/hard/icons8-database-96.png';
-import cloud from '/page1/skills/hard/icons8-upload-to-the-cloud-96.png';
-import photo from '/page1/skills/hard/icons8-photo-editor-96.png';
-import video from '/page1/skills/hard/icons8-video-gallery-96.png';
-import store from '/page1/skills/hard/icons8-play-store-96.png';
+import design from '/page1/skills/hard/icons8-design-96.png';
 import diagram from '/page1/skills/hard/icons8-diagram-96.png';
 import lab from '/page1/skills/hard/icons8-lab-96.png';
-import file from '/page1/skills/hard/icons8-video-file-96.png';
+import laptop from '/page1/skills/hard/icons8-laptop-coding-96.png';
 import support from '/page1/skills/hard/icons8-online-support-96.png';
+import photo from '/page1/skills/hard/icons8-photo-editor-96.png';
+import store from '/page1/skills/hard/icons8-play-store-96.png';
 import remote from '/page1/skills/hard/icons8-remote-desktop-96.png';
 import save from '/page1/skills/hard/icons8-save-all-96.png';
-import clean from '/page1/skills/hard/icons8-clean-96.png';
+import cloud from '/page1/skills/hard/icons8-upload-to-the-cloud-96.png';
+import file from '/page1/skills/hard/icons8-video-file-96.png';
+import video from '/page1/skills/hard/icons8-video-gallery-96.png';
+import eye from '/page1/skills/soft/icons8-eye-64.png';
+import justice from '/page1/skills/soft/icons8-justice-96.png';
+import medal from '/page1/skills/soft/icons8-medal-96.png';
+import schedule from '/page1/skills/soft/icons8-schedule-96.png';
 
 export default function Skills(props: { index: number, animation: MotionProps }) {
     const { text } = useContext(LangContext)

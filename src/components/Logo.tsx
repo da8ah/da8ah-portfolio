@@ -17,7 +17,7 @@ export default function Logo(props: LogoProps) {
         <motion.img
             {...props.img}
             animate={{
-                rotate: -360
+                rotate: -45
             }}
             transition={{
                 duration: props.duration,

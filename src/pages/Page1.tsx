@@ -54,7 +54,7 @@ export default function Page1(props: { className: string }) {
                     <Build index={index} animation={animation} onLeftPress={onLeftPress} onRightPress={onRightPress} />
                 </div>
                 <div className='relative box-border w-[40%] h-full py-2 flex flex-col justify-center items-center'>
-                    <Hero />
+                    <Hero index={index} animation={animation} />
                 </div>
             </div>
         </div>
