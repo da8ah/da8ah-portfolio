@@ -1,10 +1,10 @@
 import styles from '@/assets/animations.module.css'
 import Logo, { LogoProps } from '@/components/Logo'
 import { motion } from 'framer-motion'
-import reactLogo from '/page1/tooling/react.svg'
-import viteLogo from '/page1/tooling/vite.svg'
-import tsLogo from '/page1/tooling/typescript.svg'
-import qwikLogo from '/page1/tooling/qwik.svg'
+import reactLogo from '/tooling/react.svg'
+import viteLogo from '/tooling/vite.svg'
+import tsLogo from '/tooling/typescript.svg'
+import qwikLogo from '/tooling/qwik.svg'
 
 export default function Toolkit() {
 

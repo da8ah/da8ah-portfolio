@@ -4,7 +4,7 @@ import { DotFilledIcon } from "@radix-ui/react-icons";
 import { MotionProps, motion } from 'framer-motion';
 import { useContext } from "react";
 import eye from '/page1/skills/soft/icons8-eye-64.png';
-import strength from '/page1/skills/soft/icons8-strength-96.png';
+import medal from '/page1/skills/soft/icons8-medal-96.png';
 import schedule from '/page1/skills/soft/icons8-schedule-96.png';
 import justice from '/page1/skills/soft/icons8-justice-96.png';
 import design from '/page1/skills/hard/icons8-design-96.png';
@@ -87,42 +87,48 @@ function IconLeft(props: { i: number, j: number }) {
     const { i, j } = props
     const icons = [
         [
-            { src: design, alt: 'design' },
-            { src: laptop, alt: 'laptop' },
-            { src: database, alt: 'database' },
-            { src: cloud, alt: 'cloud' }
+            { src: design, alt: 'design', href: 'https://icons8.com/icon/QVobCUiSKNwK/windows-10-personalization' },
+            { src: laptop, alt: 'laptop', href: 'https://icons8.com/icon/l0UsZRTvcGel/laptop-coding' },
+            { src: database, alt: 'database', href: 'https://icons8.com/icon/KZHjwwenS7oK/database' },
+            { src: cloud, alt: 'cloud', href: 'https://icons8.com/icon/qZ1FibjKOsRJ/upload-to-the-cloud' }
         ],
         [
-            { src: photo, alt: 'photo' },
-            { src: laptop, alt: 'laptop' },
-            { src: video, alt: 'video' },
-            { src: store, alt: 'store' },
+            { src: photo, alt: 'photo', href: 'https://icons8.com/icon/LbOP2UDmoEY6/photo-editor' },
+            { src: laptop, alt: 'laptop', href: 'https://icons8.com/icon/l0UsZRTvcGel/laptop-coding' },
+            { src: video, alt: 'video', href: 'https://icons8.com/icon/2TqzNz5iuT1a/video-gallery' },
+            { src: store, alt: 'store', href: 'https://icons8.com/icon/rZwnRdJyYqRi/google-play' },
         ],
         [
-            { src: diagram, alt: 'diagram' },
-            { src: laptop, alt: 'laptop' },
-            { src: lab, alt: 'lab' },
-            { src: file, alt: 'file' },
+            { src: diagram, alt: 'diagram', href: 'https://icons8.com/icon/2jHmblEslKYm/flow-chart' },
+            { src: laptop, alt: 'laptop', href: 'https://icons8.com/icon/l0UsZRTvcGel/laptop-coding' },
+            { src: lab, alt: 'lab', href: 'https://icons8.com/icon/AjHChwtr6ww5/microscope' },
+            { src: file, alt: 'file', href: 'https://icons8.com/icon/LKoXsvJgltGD/video-file' },
         ],
         [
-            { src: support, alt: 'support' },
-            { src: remote, alt: 'remote' },
-            { src: save, alt: 'save' },
-            { src: clean, alt: 'clean' },
+            { src: support, alt: 'support', href: 'https://icons8.com/icon/l342AIc0m0qQ/online-support' },
+            { src: remote, alt: 'remote', href: 'https://icons8.com/icon/GTUAnLIBADuV/remote-desktop' },
+            { src: save, alt: 'save', href: 'https://icons8.com/icon/V1DRq7E9daGm/save-all' },
+            { src: clean, alt: 'clean', href: 'https://icons8.com/icon/Xnx8cxDef16O/broom' },
         ]
     ]
 
-    return <img className='w-[30px] h-[30px] mr-1' src={icons[i][j].src} alt={icons[i][j].alt} />
+    return <img
+        className='w-[30px] h-[30px] mr-1' src={icons[i][j].src} alt={icons[i][j].alt}
+        onAuxClick={() => window.open(icons[i][j].href, '_blank', 'noopener noreferrer')}
+    />
 }
 
 function IconRight(props: { j: number }) {
     const { j } = props
     const icons = [
-        { src: eye, alt: 'eye' },
-        { src: strength, alt: 'strength' },
-        { src: schedule, alt: 'schedule' },
-        { src: justice, alt: 'justice' }
+        { src: eye, alt: 'eye', href: 'https://icons8.com/icon/QWBYZnd6mql8/eye' },
+        { src: medal, alt: 'medal', href: 'https://icons8.com/icon/KFssnxqXHKfA/medal' },
+        { src: schedule, alt: 'schedule', href: 'https://icons8.com/icon/13526/schedule' },
+        { src: justice, alt: 'justice', href: 'https://icons8.com/icon/12928/scales' }
     ]
 
-    return <img className='w-[30px] h-[30px] mr-1' src={icons[j].src} alt={icons[j].alt} />
+    return <img
+        className='w-[30px] h-[30px] mr-1' src={icons[j].src} alt={icons[j].alt}
+        onAuxClick={() => window.open(icons[j].href, '_blank', 'noopener noreferrer')}
+    />
 }
