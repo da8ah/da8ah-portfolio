@@ -38,7 +38,15 @@ export default function Abilities() {
                         onAuxClick={() => window.open(ability.href, '_blank', 'noopener noreferrer')}
                     />
                 </motion.div>
-                <div>Ability</div>
+                <div>
+                    <h1 className='flex justify-center items-center'>
+                        <img
+                            className='object-contain cursor-help w-[40px] h-[40px]' src={ability.src} alt={ability.alt}
+                            onAuxClick={() => window.open(ability.href, '_blank', 'noopener noreferrer')}
+                        />
+                        Ability
+                    </h1>
+                </div>
             </Tooltip>
         ))
         }

@@ -27,35 +27,95 @@
             ],
             "hard": [
                 [
-                    "Diseño de Web",
-                    "Programación",
-                    "Base de Datos",
-                    "Despliegue"
+                    [
+                        "Diseño de Web",
+                        ""
+                    ],
+                    [
+                        "Programación",
+                        ""
+                    ],
+                    [
+                        "Base de Datos",
+                        ""
+                    ],
+                    [
+                        "Despliegue",
+                        ""
+                    ]
                 ],
                 [
-                    "Diseño de UI/UX",
-                    "Programación",
-                    "Animaciones",
-                    "Despliegue"
+                    [
+                        "Diseño de UI/UX",
+                        ""
+                    ],
+                    [
+                        "Programación",
+                        ""
+                    ],
+                    [
+                        "Animaciones",
+                        ""
+                    ],
+                    [
+                        "Despliegue",
+                        ""
+                    ]
                 ],
                 [
-                    "Diseño de Programas",
-                    "Programación",
-                    "Testing",
-                    "Construcción de Ejecutables"
+                    [
+                        "Diseño de Programas",
+                        ""
+                    ],
+                    [
+                        "Programación",
+                        ""
+                    ],
+                    [
+                        "Testing",
+                        ""
+                    ],
+                    [
+                        "Construcción de Ejecutables",
+                        ""
+                    ]
                 ],
                 [
-                    "Asesoría en TICs",
-                    "Asistencia Remota",
-                    "Diagnóstico y Respaldo",
-                    "Limpieza Física y Lógica"
+                    [
+                        "Asesoría en TICs",
+                        ""
+                    ],
+                    [
+                        "Asistencia Remota",
+                        ""
+                    ],
+                    [
+                        "Diagnóstico y Respaldo",
+                        ""
+                    ],
+                    [
+                        "Limpieza Física y Lógica",
+                        ""
+                    ]
                 ]
             ],
             "soft": [
-                "Atención a detalles",
-                "Responsabilidad",
-                "Organización",
-                "Ética Laboral"
+                [
+                    "Atención a detalles",
+                    "Habilidad de observación perfilada. Permite visualizar y aplicar trabajos pulidos cuando sea requerido."
+                ],
+                [
+                    "Responsabilidad",
+                    "Habilidad de cumplimiento. Permite cumplir con el trabajo propuesto con cabalidad."
+                ],
+                [
+                    "Organización",
+                    "Habilidad para segmentar el trabajo. Permite mantener la distribución de tareas de forma adecuada."
+                ],
+                [
+                    "Ética Laboral",
+                    "Habilidad para actuar según valores y principios. Procura trabajar en función a los valores y principios de la empresa."
+                ]
             ]
         }
     },

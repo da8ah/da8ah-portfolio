@@ -41,9 +41,16 @@ export default function Skills(props: { index: number, animation: MotionProps })
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     <IconLeft i={props.index} j={j} />
-                                    <p>{item}</p>
+                                    <h2>{item}</h2>
                                 </motion.div>
-                                <div className='w-full h-full space-x-4'>Hello World</div>
+                                <div className='w-full h-full p-1'>
+                                    <h3 className='w-full text-sm text-center uppercase'>{item[0]}</h3>
+                                    <div className='w-full h-[1px] bg-white' />
+                                    <div className='w-full my-2 flex justify-center items-center'>
+                                        <IconLeft i={props.index} j={j} width={50} height={50} />
+                                    </div>
+                                    <p className='text-xs'>{item[1]}</p>
+                                </div>
                             </Skill>
                         </motion.li>
                     ))}
@@ -63,9 +70,16 @@ export default function Skills(props: { index: number, animation: MotionProps })
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     <IconRight j={j} />
-                                    <p>{item}</p>
+                                    <h2>{item[0]}</h2>
                                 </motion.div>
-                                <div className='w-full h-full space-x-4'>Hello World</div>
+                                <div className='w-full h-full p-1'>
+                                    <h3 className='w-full text-sm text-center uppercase'>{item[0]}</h3>
+                                    <div className='w-full h-[1px] bg-white' />
+                                    <div className='w-full my-2 flex justify-center items-center'>
+                                        <IconRight j={j} width={50} height={50} />
+                                    </div>
+                                    <p className='text-xs'>{item[1]}</p>
+                                </div>
                             </Skill>
                         </li>
                     ))}
@@ -83,7 +97,7 @@ function Skill(props: { key: string, children: [JSX.Element, JSX.Element] }) {
     </Tooltip>
 }
 
-function IconLeft(props: { i: number, j: number }) {
+function IconLeft(props: { i: number, j: number, width?: number, height?: number }) {
     const { i, j } = props
     const icons = [
         [
@@ -113,12 +127,12 @@ function IconLeft(props: { i: number, j: number }) {
     ]
 
     return <img
-        className='w-[30px] h-[30px] mr-1' src={icons[i][j].src} alt={icons[i][j].alt}
+        className={`w-[${props.width || 30}px] h-[${props.height || 30}px] mr-1`} src={icons[i][j].src} alt={icons[i][j].alt}
         onAuxClick={() => window.open(icons[i][j].href, '_blank', 'noopener noreferrer')}
     />
 }
 
-function IconRight(props: { j: number }) {
+function IconRight(props: { j: number, width?: number, height?: number }) {
     const { j } = props
     const icons = [
         { src: eye, alt: 'eye', href: 'https://icons8.com/icon/QWBYZnd6mql8/eye' },
@@ -128,7 +142,7 @@ function IconRight(props: { j: number }) {
     ]
 
     return <img
-        className='w-[30px] h-[30px] mr-1' src={icons[j].src} alt={icons[j].alt}
+        className={`w-[${props.width || 30}px] h-[${props.height || 30}px] mr-1`} src={icons[j].src} alt={icons[j].alt}
         onAuxClick={() => window.open(icons[j].href, '_blank', 'noopener noreferrer')}
     />
 }
