@@ -41,15 +41,19 @@ export default function Skills(props: { index: number, animation: MotionProps })
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     <IconLeft i={props.index} j={j} />
-                                    <h2>{item}</h2>
+                                    <h2>{item[0]}</h2>
                                 </motion.div>
                                 <div className='w-full h-full p-1'>
-                                    <h3 className='w-full text-sm text-center uppercase'>{item[0]}</h3>
+                                    <div className='flex justify-end items-center'>
+                                        <DotFilledIcon color='red' />
+                                        <h3 className='w-full text-sm text-center uppercase'>{item[0]}</h3>
+                                        <span className='w-[5%]' />
+                                    </div>
                                     <div className='w-full h-[1px] bg-white' />
                                     <div className='w-full my-2 flex justify-center items-center'>
                                         <IconLeft i={props.index} j={j} width={50} height={50} />
                                     </div>
-                                    <p className='text-xs'>{item[1]}</p>
+                                    <p className='flex-1 flex justify-center items-center p-1 text-xs text-justify'>{item[1]}</p>
                                 </div>
                             </Skill>
                         </motion.li>
@@ -73,12 +77,15 @@ export default function Skills(props: { index: number, animation: MotionProps })
                                     <h2>{item[0]}</h2>
                                 </motion.div>
                                 <div className='w-full h-full p-1'>
-                                    <h3 className='w-full text-sm text-center uppercase'>{item[0]}</h3>
+                                    <div className='flex justify-end items-center'>
+                                        <DotFilledIcon color='royalblue' />
+                                        <h3 className='w-full text-sm text-center uppercase'>{item[0]}</h3>
+                                    </div>
                                     <div className='w-full h-[1px] bg-white' />
                                     <div className='w-full my-2 flex justify-center items-center'>
                                         <IconRight j={j} width={50} height={50} />
                                     </div>
-                                    <p className='text-xs'>{item[1]}</p>
+                                    <p className='p-1 text-xs text-justify'>{item[1]}</p>
                                 </div>
                             </Skill>
                         </li>

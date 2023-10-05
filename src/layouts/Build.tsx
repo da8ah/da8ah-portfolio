@@ -1,3 +1,4 @@
+import { ThemeContext } from "@/context/ThemeProvider";
 import SelectMenu from "@/components/SelectMenu";
 import { LangContext } from "@/context/LangProvider";
 import Skills from "@/layouts/Skills";
@@ -7,11 +8,14 @@ import { useContext } from "react";
 
 export default function Build(props: { index: number, animation: MotionProps, onLeftPress: (value?: number) => void, onRightPress: (value?: number) => void }) {
     const { text } = useContext(LangContext)
+    const { themeMode } = useContext(ThemeContext)
 
     return <div className='flex flex-col'>
         <div className='py-2'>
-            <h1 className='uppercase font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-orange-500 to-red-600 drop-shadow-[0_0_50px_10px_black]'>
-                Danilo Ochoa Hidalgo (da8ah)
+            <h1 className='uppercase font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-b from-red-600 via-orange-500 to-yellow-500 drop-shadow-[0_0_50px_10px_black]'>
+                Danilo Ochoa Hidalgo
+                <br />
+                <span className={`text-lg ${themeMode === 'dark' ? 'capitalize' : 'lowercase'}`}>({themeMode === 'dark' ? 'Tiber' : 'da8ah'})</span>
             </h1>
             <div className='py-5 flex flex-col justify-around items-center'>
                 <span className='flex pb-3 italic'><DotFilledIcon color='#AA367C' />Roles</span>

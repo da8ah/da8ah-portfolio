@@ -15,10 +15,10 @@ export default function Tooltip(props: {
                 forceMount
                 align={props.align || 'end'}
                 side={props.side || 'right'}
-                className='z-[100] w-[170px] h-[200px] rounded-sm bg-black bg-opacity-80 ring-1 ring-white'
+                className='z-[100] w-[170px] h-[200px] rounded-[5px] text-black dark:text-white ring-1 ring-black dark:ring-0 bg-gradient-to-b from-white to-gray-200 dark:from-[#242424] dark:to-gray-800 dark:shadow-[0_0_5px_0_black]'
             >
                 {props.children[1]}
-                <HoverCard.Arrow className='fill-white' />
+                <HoverCard.Arrow className='fill-black dark:fill-white' />
             </HoverCard.Content>
         </HoverCard.Portal>
     </HoverCard.Root>

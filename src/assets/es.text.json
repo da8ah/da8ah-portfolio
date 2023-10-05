@@ -16,7 +16,7 @@
         ],
         "profiles": [
             "Construcción de páginas, sitios o aplicaciones Web. Colaboración con equipos y trabajos autónomos creando o traduciendo diseños a código.",
-            "Diseño y construcción de aplicaciones móviles Android utilizando tecnologías híbridas. Despliegue de aplicaciones en la tienda digital Google Play.",
+            "Diseño y construcción de aplicaciones móviles Android utilizando tecnologías híbridas. Despliegue de aplicaciones en la tienda digital Google Play Store.",
             "Desarrollo y asesoría para el modelado y la construcción de programas y scripts. Dominio de distintos lenguajes de programación tanto visuales como codificados.",
             "Capacitador en programación y TICs. Asesor en la instalación y el manejo de programas. Respaldo de información. Limpieza física y lógica de computadoras."
         ],
@@ -29,92 +29,92 @@
                 [
                     [
                         "Diseño de Web",
-                        ""
+                        "Bocetado, maquetación y diseño de páginas web mantieniendo altos estándares de calidad para su construcción."
                     ],
                     [
                         "Programación",
-                        ""
+                        "Traducción del diseño web a código mediante los lenguajes de programación, bibliotecas y frameworks estándares para la Web."
                     ],
                     [
                         "Base de Datos",
-                        ""
+                        "Diseño de estructuras para el almacenamiento adecuado de la información en bases de datos SQL y NoSQL con la debida seguridad."
                     ],
                     [
                         "Despliegue",
-                        ""
+                        "Exposición del producto a Internet mediante diferentes servicios de despliegue o hosting, dominios personalizados: https://www.midominio.com/"
                     ]
                 ],
                 [
                     [
                         "Diseño de UI/UX",
-                        ""
+                        "Bocetado, maquetación y diseño de interfaces de usuario (UI) y experiencia de usuario (UX) para aplicaciones móviles."
                     ],
                     [
                         "Programación",
-                        ""
+                        "Traducción del diseño a código mediante lenguajes de programación, bibliotecas y frameworks híbridos para dispositivos Android."
                     ],
                     [
                         "Animaciones",
-                        ""
+                        "Interacciones animadas que conectan al usuario con la aplicación móvil para brindar un sentimiento de familiaridad."
                     ],
                     [
                         "Despliegue",
-                        ""
+                        "Publicación de aplicaciones móviles en la tienda digital de Google, la Play Store, con actualizaciones y de forma automatizada."
                     ]
                 ],
                 [
                     [
                         "Diseño de Programas",
-                        ""
+                        "Análisis y diseño de programas para solventar problemáticas específicas en diferentes ámbitos de las TIC."
                     ],
                     [
                         "Programación",
-                        ""
+                        "Uso de lenguajes de programación variados para proveer de las soluciones requeridas para un determinado problema."
                     ],
                     [
                         "Testing",
-                        ""
+                        "Elaboración de pruebas para verificar que el código desarrollado esté controlado para evitar fallos inesperados."
                     ],
                     [
                         "Construcción de Ejecutables",
-                        ""
+                        "Compilación y construcción de archivos ejecutables para usarlos directamente en el sistema operativo mediante un click."
                     ]
                 ],
                 [
                     [
                         "Asesoría en TICs",
-                        ""
+                        "Capacitación en el manejo de cualquier software de ofimática, de diseño o en lenguajes de programación."
                     ],
                     [
                         "Asistencia Remota",
-                        ""
+                        "Ayuda de forma remota mediante aplicativos como Team Viewer o Any Desk para una asistencia personalizada."
                     ],
                     [
                         "Diagnóstico y Respaldo",
-                        ""
+                        "Análisis del estado de tu computador para verificar que no existan errores en el software o en las configuraciones."
                     ],
                     [
                         "Limpieza Física y Lógica",
-                        ""
+                        "Mantenimiento preventivo de tu equipo tanto físico como lógico para una limpieza completa."
                     ]
                 ]
             ],
             "soft": [
                 [
                     "Atención a detalles",
-                    "Habilidad de observación perfilada. Permite visualizar y aplicar trabajos pulidos cuando sea requerido."
+                    "Observación perfilada para visualizar los detalles imperceptibles a simple vista y brindar soluciones pulidas."
                 ],
                 [
                     "Responsabilidad",
-                    "Habilidad de cumplimiento. Permite cumplir con el trabajo propuesto con cabalidad."
+                    "Cumplimieto con cabalidad de las responsabilidades asignadas procurando mantener la calidad en los resultados."
                 ],
                 [
                     "Organización",
-                    "Habilidad para segmentar el trabajo. Permite mantener la distribución de tareas de forma adecuada."
+                    "Separación y distribución de tareas de forma adecuada a lo largo del tiempo para responder a las responsabilidades."
                 ],
                 [
                     "Ética Laboral",
-                    "Habilidad para actuar según valores y principios. Procura trabajar en función a los valores y principios de la empresa."
+                    "Trabajo realizado en función a los valores y principios de la empresa, y fundamentalmente a la ética de la profesión."
                 ]
             ]
         }
