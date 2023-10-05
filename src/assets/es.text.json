@@ -20,6 +20,27 @@
             "Desarrollo y asesoría para el modelado y la construcción de programas y scripts. Dominio de distintos lenguajes de programación tanto visuales como codificados.",
             "Capacitador en programación y TICs. Asesor en la instalación y el manejo de programas. Respaldo de información. Limpieza física y lógica de computadoras."
         ],
+        "abilities": {
+            "titles": [
+                "Certificación",
+                "Talento",
+                "Atributos"
+            ],
+            "desc": [
+                [
+                    "Sistemas Informáticos y Computación",
+                    "Inglés Avanzado"
+                ],
+                [
+                    "Creatividad",
+                    "Innovación"
+                ],
+                [
+                    "Persistencia",
+                    "Perfeccionismo"
+                ]
+            ]
+        },
         "skills": {
             "titles": [
                 "Habilidades Técnicas",
@@ -73,7 +94,7 @@
                     ],
                     [
                         "Testing",
-                        "Elaboración de pruebas para verificar que el código desarrollado esté controlado para evitar fallos inesperados."
+                        "Elaboración de pruebas para verificar que el código desarrollado esté controlado y evitar fallos inesperados."
                     ],
                     [
                         "Construcción de Ejecutables",
