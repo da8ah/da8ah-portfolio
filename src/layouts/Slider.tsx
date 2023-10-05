@@ -14,7 +14,7 @@ import reactLogo from '/tooling/react.svg';
 import tsLogo from '/tooling/typescript.svg';
 import viteLogo from '/tooling/vite.svg';
 
-export default function Slider() {
+export default function Slider(props: { inView: boolean }) {
 
     const responsive = {
         // the naming can be any, depends on you.
@@ -65,7 +65,7 @@ export default function Slider() {
     return <Carousel
         infinite
         centerMode
-        autoPlay={!isModalOpen}
+        autoPlay={props.inView && !isModalOpen}
         responsive={responsive}
         className="w-full h-[70%] owl-carousel owl-theme text-center"
         itemClass="px-1 flex justify-center"
