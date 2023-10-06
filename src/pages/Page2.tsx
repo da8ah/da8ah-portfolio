@@ -12,10 +12,6 @@ export default function Page2(props: { className: string }) {
     const [ref, inView] = useInView({ threshold: 0 })
     const [playing, setPlay] = useState(false)
     const [paused, setPause] = useState(false)
-    const variants = {
-        active: { opacity: [0.5, 1], scale: [0.7, 1] },
-        disabled: { opacity: [1, 0.5], scale: [1, 0.7] }
-    }
 
     useEffect(() => { if (!paused) setPlay(inView) }, [inView])
 
@@ -39,22 +35,13 @@ export default function Page2(props: { className: string }) {
                 >
                     <div className='w-full flex justify-center items-center'>
                         <motion.img
-                            className={`rounded-full p-1 w-[70px] h-[70px] ${!playing ? 'cursor-pointer hover:dark:shadow-[0_0_5px_0_black]' : 'cursor-not-allowed dark:shadow-[0_0_5px_0_black]'}`}
-                            src={play}
-                            alt="play"
-                            animate={playing ? 'active' : 'disabled'}
-                            variants={variants}
-                            onClick={() => { if (!playing) setPlay(true); setPause(false) }}
-                            onAuxClick={() => window.open('https://icons8.com/icon/GwYlS5m5Goz6/play', '_blank', 'noopener noreferrer')}
-                        />
-                        <motion.img
-                            className={`rounded-full p-1 w-[70px] h-[70px] ${playing ? 'cursor-pointer hover:dark:shadow-[0_0_5px_0_black]' : 'cursor-not-allowed dark:shadow-[0_0_5px_0_black]'}`}
-                            src={pause}
-                            alt="pause"
-                            animate={!playing ? 'active' : 'disabled'}
-                            variants={variants}
-                            onClick={() => { setPlay(false); setPause(true) }}
-                            onAuxClick={() => window.open('https://icons8.com/icon/Z2aInWmsldJ6/pause', '_blank', 'noopener noreferrer')}
+                            key={`button-${playing ? 'playing' : 'paused'}`}
+                            className={`rounded-full p-2 w-[70px] h-[70px] cursor-pointer ${playing && 'dark:shadow-[0_0_5px_0_black]'} hover:dark:shadow-[0_0_5px_1px_black]`}
+                            src={playing ? play : pause}
+                            alt={playing ? 'play' : 'pause'}
+                            animate={{ opacity: [0.5, 1], scale: [0.5, 1] }}
+                            onClick={() => { setPlay(!playing); setPause(playing) }}
+                            onAuxClick={() => window.open(playing ? 'https://icons8.com/icon/GwYlS5m5Goz6/play' : 'https://icons8.com/icon/Z2aInWmsldJ6/pause', '_blank', 'noopener noreferrer')}
                         />
                     </div>
                     <Slider inView={inView} isPlaying={playing} setPlay={setPlay} setPause={setPause} />

@@ -130,8 +130,9 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                 }
             </div>
         )
-        )}
-    </Carousel>
+        )
+        }
+    </Carousel >
 }
 
 function Modal(props: { activeIndex: number }) {
