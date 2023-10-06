@@ -100,7 +100,7 @@ export default function Abilities() {
                                     className='mx-1 rounded-[1px] dark:shadow-[0_0_5px_0_black] p-1 object-contain cursor-help w-[40px] h-[40px]' src={ability.icons[i].src} alt={ability.icons[i].alt}
                                     onAuxClick={() => window.open(ability.icons[i].href, '_blank', 'noopener noreferrer')}
                                 />
-                                <p className={`w-full p-1 ${index === 0 && i === 0 ? 'text-xs' : 'text-sm'}`}>{item}</p>
+                                <p className={`w-full p-1 ${index === 0 && i === 0 ? 'text-[0.6rem]' : 'text-sm'}`}>{item}</p>
                             </div>
                         ))}
                     </div>

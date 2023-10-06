@@ -2,7 +2,7 @@ import { LangContext } from "@/context/LangProvider";
 import { SpaceAnimations } from "@/layouts/SlideAnimations";
 import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from 'framer-motion';
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import slide4 from "/page2/slides/bookstore.png";
@@ -14,7 +14,9 @@ import reactLogo from '/tooling/react.svg';
 import tsLogo from '/tooling/typescript.svg';
 import viteLogo from '/tooling/vite.svg';
 
-export default function Slider(props: { inView: boolean }) {
+export default function Slider(props: { inView: boolean, isPlaying: boolean, setPlay: (value: boolean) => void, setPause: (value: boolean) => void }) {
+
+    useEffect(() => { if (props.isPlaying) setModalState(false) }, [props.isPlaying])
 
     const responsive = {
         // the naming can be any, depends on you.
@@ -65,17 +67,23 @@ export default function Slider(props: { inView: boolean }) {
     return <Carousel
         infinite
         centerMode
-        autoPlay={props.inView && !isModalOpen}
+        autoPlay={props.inView && props.isPlaying && !isModalOpen}
         responsive={responsive}
         className="w-full h-[70%] owl-carousel owl-theme text-center"
-        itemClass="px-1 flex justify-center"
+        itemClass="cursor-grab px-1 flex justify-center"
         afterChange={(previousSlide, { currentSlide }) => changeSlide(previousSlide, currentSlide, images.length)}
     >
         {images.map((img, i) => (
             <div
                 key={`slide-${i}`}
                 className={`relative ${activeIndex !== i ? "w-[90%]" : "w-full"} h-full rounded-[10px] flex justify-center items-center bg-transparent shadow-[10px_40px_10px_5px_black]`}
-                onClick={() => activeIndex === i && setModalState(prev => !prev)}
+                onClick={() => {
+                    if (activeIndex === i) {
+                        setModalState(prev => !prev)
+                        props.setPlay(isModalOpen)
+                        props.setPause(!isModalOpen)
+                    }
+                }}
             >
                 {activeIndex !== i ?
                     <img
