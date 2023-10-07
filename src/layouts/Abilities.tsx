@@ -2,15 +2,15 @@ import Tooltip from '@/components/Tooltip';
 import { LangContext } from '@/context/LangProvider';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
+import innovation from '/page1/abilities/icons8-build-64.png';
+import intelligence from '/page1/abilities/icons8-creativity-64.png';
 import creativity from '/page1/abilities/icons8-creativity-96.png';
 import diploma from '/page1/abilities/icons8-diploma-96.png';
-import strength from '/page1/abilities/icons8-strength-96.png';
-import graduation from '/page1/abilities/icons8-graduation-96.png';
 import usa from '/page1/abilities/icons8-first-flag-of-the-usa-96.png';
-import intelligence from '/page1/abilities/icons8-creativity-64.png';
-import innovation from '/page1/abilities/icons8-build-64.png';
-import hiking from '/page1/abilities/icons8-hiking-64.png';
 import focus from '/page1/abilities/icons8-focus-64.png';
+import graduation from '/page1/abilities/icons8-graduation-96.png';
+import hiking from '/page1/abilities/icons8-hiking-64.png';
+import strength from '/page1/abilities/icons8-strength-96.png';
 
 export default function Abilities() {
     const { text } = useContext(LangContext)

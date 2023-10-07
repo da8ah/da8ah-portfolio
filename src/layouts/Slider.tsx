@@ -1,11 +1,12 @@
 import { LangContext } from "@/context/LangProvider";
-import { SpaceAnimations } from "@/layouts/SlideAnimations";
+import { BocheAnimations, BookStoreAnimations, DigencyAnimations, KryptoAnimations, SpaceAnimations } from "@/layouts/SlideAnimations";
 import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from 'framer-motion';
 import { useContext, useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import slide4 from "/page2/slides/bookstore.png";
+import slide4 from "/page2/slides/boche.png";
+import slide5 from "/page2/slides/bookstore.png";
 import slide3 from "/page2/slides/digency.png";
 import slide2 from "/page2/slides/krypto.png";
 import slide1 from "/page2/slides/space.png";
@@ -36,24 +37,29 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
     const images = [
         {
             src: slide1,
-            alt: "",
+            alt: "space portfolio",
             animations: <SpaceAnimations />
         },
         {
             src: slide2,
-            alt: "",
-            animations: undefined
+            alt: "krypto website",
+            animations: <KryptoAnimations />
         },
         {
             src: slide3,
-            alt: "",
-            animations: undefined
+            alt: "digency website",
+            animations: <DigencyAnimations />
         },
         {
             src: slide4,
-            alt: "",
-            animations: undefined
+            alt: "boche website",
+            animations: <BocheAnimations />
         },
+        {
+            src: slide5,
+            alt: "bookstore app",
+            animations: <BookStoreAnimations />
+        }
     ]
     const changeSlide = (previousSlide: number, currentSlide: number, dataSize: number) => {
         let activeSlide = 0
@@ -105,7 +111,7 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                             {!isModalOpen &&
                                 <motion.div
                                     key={activeIndex}
-                                    className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px]'
+                                    className='absolute bg-transparent w-[200px] h-[200px] -left-[150px] -bottom-[50px] flex justify-center items-center'
                                     initial={{ opacity: 0.5 }}
                                     animate={{ opacity: 1, scale: [0.5, 1] }}
                                     exit={{
