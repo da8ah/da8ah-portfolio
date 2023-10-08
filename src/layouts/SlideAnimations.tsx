@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import slide4Brick from "/page2/slides/boche/icons8-brick-94.png";
 import slide4Horse from "/page2/slides/boche/icons8-rocking-horse-94.png";
 import slide4Bear from "/page2/slides/boche/icons8-teddy-bear-94.png";
-import slide5Bookshelf from "/page2/slides/bookstore/icons8-bookshelf-64.png";
-import slide5Book from "/page2/slides/bookstore/icons8-open-book-100.png";
+import slide5Coffee from "/page2/slides/bookstore/icons8-coffee-cup-64.png";
+import slide5Like from "/page2/slides/bookstore/icons8-like-64.png";
 import slide3Bell from "/page2/slides/digency/icons8-bell-94.png";
 import slide3Megaphone from "/page2/slides/digency/icons8-megaphone-94.png";
 import slide3Movie from "/page2/slides/digency/icons8-movie-94.png";
@@ -107,7 +107,7 @@ export const KryptoAnimations = () => {
 export const DigencyAnimations = () => {
     return <>
         <motion.img
-            className='absolute w-[70px] h-[60px] top-0 left-0'
+            className='absolute w-[70px] h-[60px] top-3 left-3'
             src={slide3Youtube}
             alt={slide3Youtube}
             animate={{
@@ -121,7 +121,7 @@ export const DigencyAnimations = () => {
             onAuxClick={() => window.open('https://icons8.com/icon/qLVB1tIe9Ts9/youtube', '_blank', 'noopener noreferrer')}
         />
         <motion.img
-            className='absolute w-[70px] h-[70px] bottom-0 left-0'
+            className='absolute w-[70px] h-[70px] bottom-3 left-3'
             src={slide3Wedding}
             alt={slide3Wedding}
             animate={{
@@ -135,7 +135,7 @@ export const DigencyAnimations = () => {
             onAuxClick={() => window.open('https://icons8.com/icon/HFfgVaJNpYdO/wedding-day', '_blank', 'noopener noreferrer')}
         />
         <motion.img
-            className='absolute w-[70px] h-[70px] bottom-0 right-0'
+            className='absolute w-[70px] h-[70px] bottom-3 right-3'
             src={slide3Movie}
             alt={slide3Movie}
             animate={{
@@ -149,7 +149,7 @@ export const DigencyAnimations = () => {
             onAuxClick={() => window.open('https://icons8.com/icon/F2R6V3ECtTmF/documentary', '_blank', 'noopener noreferrer')}
         />
         <motion.img
-            className='absolute w-[70px] h-[70px] top-0 right-0'
+            className='absolute w-[70px] h-[70px] top-3 right-3'
             src={slide3Megaphone}
             alt={slide3Megaphone}
             animate={{
@@ -229,23 +229,24 @@ export const BocheAnimations = () => {
 export const BookStoreAnimations = () => {
     return <>
         <motion.img
-            className='absolute w-[140px] h-[140px]'
-            src={slide5Bookshelf}
-            alt={slide5Bookshelf}
+            className='absolute w-[70px] h-[70px] left-7 top-0'
+            src={slide5Like}
+            alt={slide5Like}
             animate={{
-                scale: [1, 0.9, 1]
+                scale: [1, 0.9, 1],
+                rotateY: [180, 0, 180]
             }}
             transition={{
                 duration: 3,
                 repeat: Infinity,
                 easeInOut: 'linear'
             }}
-            onAuxClick={() => window.open('https://icons8.com/icon/h9jUcMzH6b9Y/bookshelf', '_blank', 'noopener noreferrer')}
+            onAuxClick={() => window.open('https://icons8.com/icon/rQRJn99727Xs/like', '_blank', 'noopener noreferrer')}
         />
         <motion.img
-            className='absolute w-[100px] h-[100px] right-3'
-            src={slide5Book}
-            alt={slide5Book}
+            className='absolute w-[70px] h-[70px] left-7 mt-4'
+            src={slide5Coffee}
+            alt={slide5Coffee}
             animate={{
                 scale: [1, 0.9, 1]
             }}
@@ -254,7 +255,7 @@ export const BookStoreAnimations = () => {
                 repeat: Infinity,
                 easeInOut: 'linear'
             }}
-            onAuxClick={() => window.open('https://icons8.com/icon/jnU5ze2ojiku/book-and-pencil', '_blank', 'noopener noreferrer')}
+            onAuxClick={() => window.open('https://icons8.com/icon/q2uqJux970cP/coffee-cup', '_blank', 'noopener noreferrer')}
         />
     </>
 }

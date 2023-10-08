@@ -111,7 +111,7 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                             {!isModalOpen &&
                                 <motion.div
                                     key={activeIndex}
-                                    className='absolute bg-transparent w-[200px] h-[200px] -left-[150px] -bottom-[50px] flex justify-center items-center'
+                                    className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px] flex justify-center items-center'
                                     initial={{ opacity: 0.5 }}
                                     animate={{ opacity: 1, scale: [0.5, 1] }}
                                     exit={{
