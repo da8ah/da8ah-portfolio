@@ -164,31 +164,31 @@ function Modal(props: { activeIndex: number }) {
 
     return <div className='w-full h-full flex flex-col justify-center items-center' >
         <div className='rounded-lg z-10 py-2 w-full flex justify-between items-center'>
-            <span className='w-[20%] text-xl bg-[royalblue] rounded-tl-lg'>📌</span>
+            <span className='w-[20%]' />
             <h1 className='w-[60%] uppercase font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-orange-500 to-red-600 drop-shadow-[0_0_50px_10px_black]'>
                 {text.page2.slides[props.activeIndex].title}
             </h1>
-            <ul className='w-[20%] flex justify-center items-center'>
+            <ul className='w-[20%] flex flex-col justify-center items-center'>
                 <li>
                     <a
-                        className='rounded-xl px-2 flex justify-end items-center bg-[teal] hover:bg-black'
+                        className='rounded-xl px-2 flex justify-end items-center bg-[royalblue] hover:bg-black hover:underline'
+                        href={text.page2.slides[props.activeIndex].demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className='mx-1'>Demo</div><ExternalLinkIcon />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        className='rounded-xl px-2 flex justify-end items-center bg-[crimson] hover:bg-black'
                         href={text.page2.slides[props.activeIndex].repo}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className='mx-1'>Repo</div><GitHubLogoIcon />
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className='rounded-xl px-2 flex justify-end items-center bg-[royalblue] hover:bg-black'
-                        href={text.page2.slides[props.activeIndex].demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        Demo <ExternalLinkIcon />
                     </a>
                 </li>
             </ul>
