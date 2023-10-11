@@ -1,8 +1,8 @@
-import { ThemeContext } from "@/context/ThemeProvider";
 import SelectMenu from "@/components/SelectMenu";
 import { LangContext } from "@/context/LangProvider";
+import { ThemeContext } from "@/context/ThemeProvider";
 import Skills from "@/layouts/Skills";
-import { DotFilledIcon, TriangleLeftIcon, TriangleRightIcon } from "@radix-ui/react-icons";
+import { TriangleLeftIcon, TriangleRightIcon } from "@radix-ui/react-icons";
 import { MotionProps, motion } from 'framer-motion';
 import { useContext } from "react";
 
@@ -10,7 +10,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
     const { text } = useContext(LangContext)
     const { themeMode } = useContext(ThemeContext)
 
-    return <div className='flex flex-col'>
+    return <div className='w-full flex flex-col'>
         <div className='py-2'>
             <h1 className='uppercase font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-b from-red-600 via-orange-500 to-yellow-500 drop-shadow-[0_0_50px_10px_black]'>
                 Danilo Ochoa Hidalgo
@@ -18,14 +18,13 @@ export default function Build(props: { index: number, animation: MotionProps, on
                 <span className={`text-lg ${themeMode === 'dark' ? 'capitalize' : 'lowercase'}`}>({themeMode === 'dark' ? 'Tiber' : 'da8ah'})</span>
             </h1>
             <div className='py-5 flex flex-col justify-around items-center'>
-                <span className='flex pb-3 italic'><DotFilledIcon color='#AA367C' />Roles</span>
-                <div className='flex flex-row justify-center items-center'>
+                <div className='w-full flex flex-row justify-center items-center'>
                     <button
                         className='p-1 rounded-[10px_0_0_10px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b hover:from-[#3a98f0] hover:to-[#4A2FBD]'
                         onClick={() => props.onLeftPress()}
                     ><TriangleLeftIcon /></button>
                     <motion.div
-                        className='w-[300px] py-1 mx-2 rounded-[5px] text-white hover:shadow-lg hover:shadow-purple-500 tracking-wide bg-gradient-to-r from-[#AA367C] to-[#4A2FBD]'
+                        className='w-[50%] py-1 mx-2 rounded-[5px] text-white hover:shadow-lg hover:shadow-purple-500 tracking-wide bg-gradient-to-r from-[#AA367C] to-[#4A2FBD]'
                         {...props.animation}
                     >
                         <SelectMenu selected={props.index} icons={text.page1.roles[0]} data={text.page1.roles[1]} handlers={{ left: props.onLeftPress, right: props.onRightPress }} />
@@ -36,17 +35,6 @@ export default function Build(props: { index: number, animation: MotionProps, on
                     ><TriangleRightIcon /></button>
                 </div>
             </div>
-            <motion.div
-                className="py-3 px-20 flex justify-center items-center"
-                {...props.animation}
-            >
-                <motion.p
-                    className="p-2 rounded-[5px] text-justify ring-1 ring-black dark:ring-0 dark:shadow-[0_0_5px_0_black] dark:hover:shadow-[0_0_40px_20px_teal]"
-                    whileTap={{ scale: 0.9 }}
-                >
-                    {text.page1.profiles[props.index]}
-                </motion.p>
-            </motion.div>
         </div>
         <Skills index={props.index} animation={props.animation} />
     </div>

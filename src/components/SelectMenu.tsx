@@ -25,9 +25,9 @@ export default function SelectMenu(props: {
                     className='w-full flex flex-row justify-between items-center font-bold'
                     whileHover={{ scale: 0.9 }}
                 >
-                    <div className='w-[15%] flex justify-end items-center'>{props.icons[props.selected]}</div>
+                    <div className='w-[15%] flex justify-end items-center text-lg'>{props.icons[props.selected]}</div>
                     <Select.Value>
-                        {props.data[props.selected]}
+                        <span className='uppercase'>{props.data[props.selected]}</span>
                     </Select.Value>
                     <Select.Icon className='w-[15%] flex justify-center items-center'>
                         <ChevronDownIcon />

@@ -50,7 +50,7 @@
                 [
                     [
                         "Diseño de Web",
-                        "Bocetado, maquetación y diseño de páginas web mantieniendo altos estándares de calidad para su construcción."
+                        "Bocetado, maquetación y diseño de páginas web responsivas mantieniendo altos estándares de calidad para su construcción."
                     ],
                     [
                         "Programación",
@@ -146,8 +146,9 @@
                 "title": "Portafolio del Espacio",
                 "demo": "https://da8ah.github.io/react-space-portfolio/",
                 "repo": "https://github.com/da8ah/react-space-portfolio",
-                "desc": "Simple portafolio con temática del espacio utilizando tecnologías de React y animaciones."
+                "desc": "Portafolio con temática del espacio desarrollado con tecnologías de React y bibliotecas de animaciones."
             }
-        ]
+        ],
+        "slideTitle": "Abrir"
     }
 }
