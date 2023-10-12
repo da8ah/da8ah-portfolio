@@ -150,5 +150,13 @@
             }
         ],
         "slideTitle": "Abrir"
+    },
+    "page3": {
+        "cards": [
+            {
+                "title": "Restauración de documentos",
+                "desc": "Uso del paquete de ofimática y herramientas de edición de imágenes para restaurar documentos físicos en documentos digitales."
+            }
+        ]
     }
 }

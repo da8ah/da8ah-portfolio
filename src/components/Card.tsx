@@ -14,8 +14,8 @@ export default function Card(props: {
         close: { height: "0px" }
     }
     const textVariants = {
-        open: { display: "flex", bottom: 60 },
-        close: { bottom: 20, display: "none" }
+        open: { display: "flex", bottom: 20 },
+        close: { bottom: 10, display: "none" }
     }
 
     return (
@@ -26,7 +26,7 @@ export default function Card(props: {
             onMouseLeave={() => setOpenState(false)}
         >
             <motion.div
-                className="absolute top-0 w-full bg-gradient-to-r from-[rgba(170,54,124,0.9)] to-[rgba(74,47,189,0.9)]"
+                className="absolute top-0 w-full bg-gradient-to-b from-[rgba(220,20,60,0.8)] to-[rgba(139,0,0,0.8)]"
                 animate={isOpen ? "open" : "close"}
                 variants={variants}
                 transition={{
@@ -35,7 +35,7 @@ export default function Card(props: {
                 }}
             />
             <motion.div
-                className="absolute left-10 w-full text-center flex flex-col justify-end items-start"
+                className="absolute w-full text-center flex flex-col justify-end items-start"
                 animate={isOpen ? "open" : "close"}
                 variants={textVariants}
                 transition={{
@@ -43,8 +43,12 @@ export default function Card(props: {
                     easeInOut: "linear"
                 }}
             >
-                <h4 className="my-1 text-2xl font-bold">{title}</h4>
-                <span className="italic tracking-wider">{description}</span>
+                <div className='w-full bg-[crimson]'>
+                    <h4 className="my-1 text-xl font-bold">{title}</h4>
+                </div>
+                <div className='w-full rounded-[2px] p-2 bg-opacity-70 bg-black'>
+                    <p className="tracking-wider text-justify">{description}</p>
+                </div>
             </motion.div>
         </div>
     );

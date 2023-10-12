@@ -21,18 +21,19 @@ export default function SelectMenu(props: {
                 className="cursor-pointer w-full"
                 color="indigo"
             >
-                <motion.div
-                    className='w-full flex flex-row justify-between items-center font-bold'
-                    whileHover={{ scale: 0.9 }}
-                >
+                <div className='w-full flex flex-row justify-between items-center font-bold'>
                     <div className='w-[15%] flex justify-end items-center text-lg'>{props.icons[props.selected]}</div>
-                    <Select.Value>
-                        <span className='uppercase'>{props.data[props.selected]}</span>
-                    </Select.Value>
+                    <motion.div
+                        whileHover={{ scale: 1.1 }}
+                    >
+                        <Select.Value>
+                            <span className='uppercase'>{props.data[props.selected]}</span>
+                        </Select.Value>
+                    </motion.div>
                     <Select.Icon className='w-[15%] flex justify-center items-center'>
                         <ChevronDownIcon />
                     </Select.Icon>
-                </motion.div>
+                </div>
             </Select.Trigger>
             <Select.Content
                 className="z-[100] w-[255px] p-1 rounded-[5px] text-black dark:text-white ring-1 ring-black dark:ring-0 bg-gradient-to-b from-white to-gray-200 dark:from-[#242424] dark:to-gray-800 dark:shadow-[0_0_5px_0_black]"
