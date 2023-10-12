@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import libraryImg from "/page1/library.jpg";
+import card1 from "/page3/card1.png";
 
 export default function Page3(props: { className: string }) {
     return <section className={props.className}>
@@ -10,7 +10,7 @@ export default function Page3(props: { className: string }) {
                         key={`card-${i}`}
                         title="Project"
                         description="Tipo"
-                        imgURL={libraryImg}
+                        imgURL={card1}
                     />)
                 )}
             </div>

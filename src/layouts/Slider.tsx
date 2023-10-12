@@ -130,7 +130,7 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                             variants={variants}
                             transition={{ duration: 0.5 }}
                         >
-                            <Modal activeIndex={0} />
+                            {isModalOpen && <Modal activeIndex={0} />}
                         </motion.div>
                     </>
                 }
@@ -147,22 +147,26 @@ function Modal(props: { activeIndex: number }) {
         {
             src: viteLogo,
             alt: 'Vite logo',
-            title: 'vite'
+            title: 'vite',
+            href: 'https://vitejs.dev/'
         },
         {
             src: tsLogo,
             alt: 'Typescript logo',
-            title: 'typescript'
+            title: 'typescript',
+            href: 'https://www.typescriptlang.org/'
         },
         {
             src: qwikLogo,
             alt: 'Qwik logo',
-            title: 'qwik'
+            title: 'qwik',
+            href: 'https://qwik.builder.io/'
         },
         {
             src: reactLogo,
             alt: 'React logo',
-            title: 'react'
+            title: 'react',
+            href: 'https://react.dev/'
         }
     ]
 
@@ -176,7 +180,11 @@ function Modal(props: { activeIndex: number }) {
         <div className='flex-1 flex flex-col justify-center items-center'>
             <ul className='w-full flex flex-wrap justify-around items-center'>
                 {logos.map((logo, i) => (
-                    <li key={i} className='w-[60px] h-[60px] flex flex-col justify-center items-center mx-2 p-2 rounded-sm bg-white dark:bg-[#242424]'>
+                    <li
+                        key={i}
+                        className='w-[60px] h-[60px] flex flex-col justify-center items-center mx-2 p-2 rounded-sm bg-white dark:bg-[#242424] hover:shadow-[0_0_2px_1px_white]'
+                        onClick={(e) => { e.stopPropagation(); window.open(logo.href, '_blank', 'noopener noreferrer') }}
+                    >
                         <div className='flex-1 flex p-1'>
                             <img className='object-contain w-full h-full' src={logo.src} alt={logo.alt} />
                         </div>
