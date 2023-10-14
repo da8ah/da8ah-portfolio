@@ -27,7 +27,7 @@ export default function Card(props: {
             onMouseLeave={() => setOpenState(false)}
         >
             <motion.div
-                className="absolute top-0 w-full bg-gradient-to-b from-[rgba(220,20,60,0.8)] to-[rgba(139,0,0,0.8)]"
+                className="absolute top-0 w-full bg-gradient-to-b from-[rgba(0,191,255,0.3)] to-[rgba(65,105,225,0.3)] dark:from-[rgba(220,20,60,0.3)] dark:to-[rgba(139,0,0,0.3)]"
                 animate={isOpen ? "open" : "close"}
                 variants={variants}
                 transition={{
@@ -44,10 +44,10 @@ export default function Card(props: {
                     easeInOut: "linear"
                 }}
             >
-                <div className='w-full bg-[crimson]'>
+                <div className='w-full bg-gradient-to-bl from-[deepskyblue] to-[royalblue] dark:from-[crimson] dark:to-[darkred]'>
                     <h4 className="my-1 text-xl font-bold">{title}</h4>
                 </div>
-                <div className='flex-1 flex w-full rounded-[2px] p-2 bg-opacity-70 bg-black'>
+                <div className='flex-1 flex w-full rounded-[2px] p-2 bg-opacity-20 hover:bg-opacity-90 bg-black'>
                     <p className="tracking-wider text-justify">
                         {description}
                         {index === 0 &&

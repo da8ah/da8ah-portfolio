@@ -6,12 +6,13 @@ import card4 from "/page3/card4.png";
 import card5 from "/page3/card5.png";
 import card6 from "/page3/card6.png";
 import card7 from "/page3/card7.png";
+import card8 from "/page3/card8.png";
 import { LangContext } from "@/context/LangProvider";
 import { useContext } from "react";
 
 export default function Page3(props: { className: string }) {
     const { text } = useContext(LangContext)
-    const cards = [card1, card2, card3, card4, card5, card6, card7]
+    const cards = [card1, card2, card3, card4, card5, card6, card7, card8]
 
     return <section className={props.className}>
         <div className='z-[1] w-full h-screen rounded-[20px] flex flex-col justify-evenly items-center bg-white dark:bg-[#242424]'>

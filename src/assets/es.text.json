@@ -167,7 +167,7 @@
             },
             {
                 "title": "Asesoría en MS Office",
-                "desc": "Asesoría para el uso de los distintos programas del paquete de MS Office (Word, Power Point, Excel, etc.) para tareas, tesis o trabajos."
+                "desc": "Asesoría para el uso de los distintos programas del paquete de MS Office (Word, Power Point, Excel, etc.) para tareas, tesis y trabajos."
             },
             {
                 "title": "Preparación de Computadoras",
@@ -180,6 +180,10 @@
             {
                 "title": "Asesoría en el uso de Software",
                 "desc": "Asistencia para el uso de distintos programas o paquetes de software para su configuración o uso en la realización de trabajos."
+            },
+            {
+                "title": "Seguridad de Cuentas",
+                "desc": "Asistencia en la configuración segura o recuperación de cuentas en distintos servicios de Internet como Microsoft, Google, o redes sociales."
             }
         ]
     }
