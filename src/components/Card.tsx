@@ -2,11 +2,12 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function Card(props: {
+    index: number
     title: string
     description: string
     imgURL: string
 }) {
-    const { title, description, imgURL } = props
+    const { index, title, description, imgURL } = props
     const [isOpen, setOpenState] = useState(false)
 
     const variants = {
@@ -14,14 +15,14 @@ export default function Card(props: {
         close: { height: "0px" }
     }
     const textVariants = {
-        open: { display: "flex", bottom: 20 },
-        close: { bottom: 10, display: "none" }
+        open: { display: "flex", bottom: 0 },
+        close: { bottom: -10, display: "none" }
     }
 
     return (
         <div
             style={{ backgroundImage: `url(${imgURL})` }}
-            className='relative rounded-lg overflow-hidden bg-cover bg-no-repeat w-[300px] h-[200px]'
+            className='relative rounded-lg overflow-hidden bg-cover bg-no-repeat w-[300px] h-[200px] text-white'
             onMouseEnter={() => setOpenState(true)}
             onMouseLeave={() => setOpenState(false)}
         >
@@ -35,7 +36,7 @@ export default function Card(props: {
                 }}
             />
             <motion.div
-                className="absolute w-full text-center flex flex-col justify-end items-start"
+                className="relative w-full h-full text-center flex flex-col items-start"
                 animate={isOpen ? "open" : "close"}
                 variants={textVariants}
                 transition={{
@@ -46,8 +47,21 @@ export default function Card(props: {
                 <div className='w-full bg-[crimson]'>
                     <h4 className="my-1 text-xl font-bold">{title}</h4>
                 </div>
-                <div className='w-full rounded-[2px] p-2 bg-opacity-70 bg-black'>
-                    <p className="tracking-wider text-justify">{description}</p>
+                <div className='flex-1 flex w-full rounded-[2px] p-2 bg-opacity-70 bg-black'>
+                    <p className="tracking-wider text-justify">
+                        {description}
+                        {index === 0 &&
+                            (<>
+                                <span> Web: </span>
+                                <a
+                                    className='text-[royalblue] underline'
+                                    href='https://beetech.ec/'
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >beetech.ec</a>
+                            </>)
+                        }
+                    </p>
                 </div>
             </motion.div>
         </div>

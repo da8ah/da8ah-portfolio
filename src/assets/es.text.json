@@ -154,8 +154,32 @@
     "page3": {
         "cards": [
             {
-                "title": "Restauración de documentos",
+                "title": "Mantenimiento de Sitio Web",
+                "desc": "Adecuación de sitio web mediante CSS para la actualización de marca (Branding) tanto de colores como de imágenes."
+            },
+            {
+                "title": "Restauración de Documentos",
                 "desc": "Uso del paquete de ofimática y herramientas de edición de imágenes para restaurar documentos físicos en documentos digitales."
+            },
+            {
+                "title": "Excel Intermedio",
+                "desc": "Asesoría en el manejo adecuado de fórmulas de Excel para la elaboración de informes, la automatización y el uso entre distintas hojas."
+            },
+            {
+                "title": "Asesoría en MS Office",
+                "desc": "Asesoría para el uso de los distintos programas del paquete de MS Office (Word, Power Point, Excel, etc.) para tareas, tesis o trabajos."
+            },
+            {
+                "title": "Preparación de Computadoras",
+                "desc": "Limpieza física, formateo e instalación de software básico para el laboratorio computacional de la institución \"El Tesoro del Saber\"."
+            },
+            {
+                "title": "Limpieza lógica de equipo",
+                "desc": "Limpieza con antivirus y programas como Malwarebytes y CCleaner de equipos computacionales de escritorio y portátiles."
+            },
+            {
+                "title": "Asesoría en el uso de Software",
+                "desc": "Asistencia para el uso de distintos programas o paquetes de software para su configuración o uso en la realización de trabajos."
             }
         ]
     }
