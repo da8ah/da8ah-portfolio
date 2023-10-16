@@ -147,6 +147,30 @@
                 "demo": "https://da8ah.github.io/react-space-portfolio/",
                 "repo": "https://github.com/da8ah/react-space-portfolio",
                 "desc": "Portafolio con temática del espacio desarrollado con tecnologías de React y bibliotecas de animaciones."
+            },
+            {
+                "title": "Sitio Web Krypto",
+                "demo": "https://da8ah.github.io/react-krypto-home/",
+                "repo": "https://github.com/da8ah/react-krypto-home",
+                "desc": "Portafolio con temática del espacio desarrollado con tecnologías de React y bibliotecas de animaciones."
+            },
+            {
+                "title": "Sitio Web Digency",
+                "demo": "https://da8ah.github.io/qwik-digency-home/",
+                "repo": "https://github.com/da8ah/qwik-digency-home",
+                "desc": "Portafolio con temática del espacio desarrollado con tecnologías de React y bibliotecas de animaciones."
+            },
+            {
+                "title": "Sitio Web Bochechito",
+                "demo": "https://bochecitomusical.com/",
+                "repo": "https://www.canva.com/",
+                "desc": "Portafolio con temática del espacio desarrollado con tecnologías de React y bibliotecas de animaciones."
+            },
+            {
+                "title": "App BookStore (Demo)",
+                "demo": "https://play.google.com/store/apps/details?id=com.daochoa6.bookstoreapp",
+                "repo": "https://github.com/da8ah/UTPL-TT-BookStoreApp",
+                "desc": "Portafolio con temática del espacio desarrollado con tecnologías de React y bibliotecas de animaciones."
             }
         ],
         "slideTitle": "Abrir"
@@ -183,7 +207,7 @@
             },
             {
                 "title": "Seguridad de Cuentas",
-                "desc": "Asistencia en la configuración segura o recuperación de cuentas en distintos servicios de Internet como Microsoft, Google, o redes sociales."
+                "desc": "Asistencia en la recuperación y configuración segura de cuentas en distintos servicios de Internet (Microsoft, Google y redes sociales)."
             }
         ]
     }

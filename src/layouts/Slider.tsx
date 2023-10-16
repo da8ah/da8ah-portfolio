@@ -10,10 +10,34 @@ import slide5 from "/page2/slides/bookstore.png";
 import slide3 from "/page2/slides/digency.png";
 import slide2 from "/page2/slides/krypto.png";
 import slide1 from "/page2/slides/space.png";
-import qwikLogo from '/tooling/qwik.svg';
-import reactLogo from '/tooling/react.svg';
-import tsLogo from '/tooling/typescript.svg';
-import viteLogo from '/tooling/vite.svg';
+import animate from '/tooling/animate.ico';
+import autoprefixer from '/tooling/autoprefixer.svg';
+import babel from '/tooling/babel.svg';
+import eslint from '/tooling/eslint.svg';
+import figma from '/tooling/figma.svg';
+import gimp from '/tooling/gimp.svg';
+import canva from '/tooling/icons8-canva-96.png';
+import office from '/tooling/icons8-microsoft-office-2019-96.png';
+import photos from '/tooling/icons8-photos-96.png';
+import npm from '/tooling/npm.svg';
+import pnpm from '/tooling/pnpm.svg';
+import postcss from '/tooling/postcss.svg';
+import prettier from '/tooling/prettier.png';
+import qwik from '/tooling/qwik.svg';
+import radix from '/tooling/radix.svg';
+import reacticons from '/tooling/react-icons.svg';
+import react from '/tooling/react.svg';
+import swc from '/tooling/swc.svg';
+import tailwindcss from '/tooling/tailwindcss.svg';
+import typescript from '/tooling/typescript.svg';
+import vite from '/tooling/vite.svg';
+import spiro from '/tooling/spiro.svg';
+import evaicons from '/tooling/heart.svg';
+import uikitten from '/tooling/uikitten.png';
+import expo from '/tooling/expo.svg';
+import zustand from '/tooling/zustand.ico';
+import flashlist from '/tooling/flashlist.png';
+import stripe from '/tooling/stripe.png';
 
 export default function Slider(props: { inView: boolean, isPlaying: boolean, setPlay: (value: boolean) => void, setPause: (value: boolean) => void }) {
 
@@ -130,91 +154,355 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                             variants={variants}
                             transition={{ duration: 0.5 }}
                         >
-                            {isModalOpen && <Modal activeIndex={0} />}
+                            {isModalOpen && <Modal activeIndex={activeIndex} />}
                         </motion.div>
                     </>
                 }
             </div>
-        )
-        )
-        }
+        ))}
     </Carousel >
 }
 
 function Modal(props: { activeIndex: number }) {
     const { text } = useContext(LangContext)
     const logos = [
-        {
-            src: viteLogo,
-            alt: 'Vite logo',
+        [{
+            src: vite,
+            alt: 'vite',
             title: 'vite',
             href: 'https://vitejs.dev/'
         },
         {
-            src: tsLogo,
+            src: typescript,
+            alt: 'typescript',
+            title: 'typescript',
+            href: 'https://www.typescriptlang.org/'
+        },
+        {
+            src: react,
+            alt: 'react',
+            title: 'react',
+            href: 'https://react.dev/'
+        },
+        {
+            src: reacticons,
+            alt: 'reacticons',
+            title: 'icons',
+            href: 'https://react.dev/'
+        },
+        {
+            src: tailwindcss,
+            alt: 'tailwindcss',
+            title: 'tailwind',
+            href: 'https://tailwindcss.com/'
+        },
+        {
+            src: animate,
+            alt: 'animate',
+            title: 'animate',
+            href: 'https://animate.style/'
+        },
+        {
+            src: radix,
+            alt: 'radix',
+            title: 'radix',
+            href: 'https://www.radix-ui.com/'
+        },
+        {
+            src: autoprefixer,
+            alt: 'autoprefixer',
+            title: 'autoprefixer',
+            href: 'https://github.com/postcss/autoprefixer'
+        },
+        {
+            src: postcss,
+            alt: 'postcss',
+            title: 'postCSS',
+            href: 'https://postcss.org/'
+        },
+        {
+            src: npm,
+            alt: 'npm',
+            title: 'NPM',
+            href: 'https://www.npmjs.com/'
+        },
+        {
+            src: pnpm,
+            alt: 'pnpm',
+            title: 'PNPM',
+            href: 'https://pnpm.io/'
+        },
+        {
+            src: swc,
+            alt: 'swc',
+            title: 'SWC',
+            href: 'https://swc.rs/'
+        }],
+        [{
+            src: vite,
+            alt: 'vite',
+            title: 'vite',
+            href: 'https://vitejs.dev/'
+        },
+        {
+            src: typescript,
+            alt: 'typescript',
+            title: 'typescript',
+            href: 'https://www.typescriptlang.org/'
+        },
+        {
+            src: react,
+            alt: 'react',
+            title: 'react',
+            href: 'https://react.dev/'
+        },
+        {
+            src: reacticons,
+            alt: 'reacticons',
+            title: 'icons',
+            href: 'https://react.dev/'
+        },
+        {
+            src: tailwindcss,
+            alt: 'tailwindcss',
+            title: 'tailwind',
+            href: 'https://tailwindcss.com/'
+        },
+        {
+            src: autoprefixer,
+            alt: 'autoprefixer',
+            title: 'autoprefixer',
+            href: 'https://github.com/postcss/autoprefixer'
+        },
+        {
+            src: postcss,
+            alt: 'postcss',
+            title: 'postCSS',
+            href: 'https://postcss.org/'
+        },
+        {
+            src: npm,
+            alt: 'npm',
+            title: 'NPM',
+            href: 'https://www.npmjs.com/'
+        },
+        {
+            src: pnpm,
+            alt: 'pnpm',
+            title: 'PNPM',
+            href: 'https://pnpm.io/'
+        },
+        {
+            src: swc,
+            alt: 'swc',
+            title: 'SWC',
+            href: 'https://swc.rs/'
+        }],
+        [{
+            src: vite,
+            alt: 'vite',
+            title: 'vite',
+            href: 'https://vitejs.dev/'
+        },
+        {
+            src: typescript,
+            alt: 'typescript',
+            title: 'typescript',
+            href: 'https://www.typescriptlang.org/'
+        },
+        {
+            src: qwik,
+            alt: 'qwik',
+            title: 'qwik',
+            href: 'https://qwik.builder.io/'
+        },
+        {
+            src: tailwindcss,
+            alt: 'tailwindcss',
+            title: 'tailwind',
+            href: 'https://tailwindcss.com/'
+        },
+        {
+            src: eslint,
+            alt: 'eslint',
+            title: 'eslint',
+            href: 'https://eslint.org/'
+        },
+        {
+            src: prettier,
+            alt: 'prettier',
+            title: 'prettier',
+            href: 'https://prettier.io/'
+        },
+        {
+            src: autoprefixer,
+            alt: 'autoprefixer',
+            title: 'autoprefixer',
+            href: 'https://github.com/postcss/autoprefixer'
+        },
+        {
+            src: postcss,
+            alt: 'postcss',
+            title: 'postCSS',
+            href: 'https://postcss.org/'
+        },
+        {
+            src: npm,
+            alt: 'npm',
+            title: 'NPM',
+            href: 'https://www.npmjs.com/'
+        },
+        {
+            src: pnpm,
+            alt: 'pnpm',
+            title: 'PNPM',
+            href: 'https://pnpm.io/'
+        },
+        {
+            src: swc,
+            alt: 'swc',
+            title: 'SWC',
+            href: 'https://swc.rs/'
+        }],
+        [{
+            src: canva,
+            alt: 'canva',
+            title: 'canva',
+            href: 'https://icons8.com/icon/iWw83PVcBpLw/canva'
+        },
+        {
+            src: figma,
+            alt: 'figma',
+            title: 'figma',
+            href: 'https://www.figma.com/'
+        },
+        {
+            src: gimp,
+            alt: 'gimp',
+            title: 'gimp',
+            href: 'https://www.gimp.org/'
+        },
+        {
+            src: photos,
+            alt: 'Microsoft photos',
+            title: 'photos',
+            href: 'https://icons8.com/icon/QdAGIsBAJMG7/photos'
+        },
+        {
+            src: office,
+            alt: 'office',
+            title: 'office',
+            href: 'https://icons8.com/icon/vIbsCQXkSp6l/microsoft-office-2019'
+        }],
+        [{
+            src: react,
+            alt: 'react native',
+            title: 'native',
+            href: 'https://reactnative.dev/'
+        },
+        {
+            src: spiro,
+            alt: 'react navigation',
+            title: 'navigation',
+            href: 'https://reactnavigation.org/'
+        },
+        {
+            src: typescript,
             alt: 'Typescript logo',
             title: 'typescript',
             href: 'https://www.typescriptlang.org/'
         },
         {
-            src: qwikLogo,
-            alt: 'Qwik logo',
-            title: 'qwik',
-            href: 'https://qwik.builder.io/'
+            src: babel,
+            alt: 'babel',
+            title: 'babel',
+            href: 'https://babeljs.io/'
         },
         {
-            src: reactLogo,
-            alt: 'React logo',
-            title: 'react',
-            href: 'https://react.dev/'
-        }
+            src: evaicons,
+            alt: 'eva icons',
+            title: 'Icons',
+            href: 'https://akveo.github.io/eva-icons/#/'
+        },
+        {
+            src: uikitten,
+            alt: 'ui kitten',
+            title: 'Kitten',
+            href: 'https://akveo.github.io/react-native-ui-kitten/'
+        },
+        {
+            src: expo,
+            alt: 'expo',
+            title: 'expo',
+            href: 'https://expo.dev/'
+        },
+        {
+            src: zustand,
+            alt: 'zustand',
+            title: 'zustand',
+            href: 'https://zustand-demo.pmnd.rs/'
+        },
+        {
+            src: flashlist,
+            alt: 'flashlist',
+            title: 'flashlist',
+            href: 'https://shopify.github.io/flash-list/'
+        },
+        {
+            src: stripe,
+            alt: 'stripe',
+            title: 'stripe',
+            href: 'https://stripe.com/'
+        }]
     ]
 
     return <div className='w-full h-full flex flex-col justify-center items-center text-white' >
-        <div className='rounded-lg z-10 py-2 w-full flex justify-between items-center'>
-            <h1 className='w-[60%] uppercase font-bold text-left text-2xl text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-600 to-[royalblue] drop-shadow-[0_0_50px_10px_black]'>
+        <div className='rounded-lg z-10 py-2 w-full flex justify-center items-center'>
+            <h1 className='w-[60%] uppercase font-bold text-center text-2xl text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-600 to-[royalblue] drop-shadow-[0_0_50px_10px_black]'>
                 {text.page2.slides[props.activeIndex].title}
             </h1>
-            <p className='text-justify'>{text.page2.slides[props.activeIndex].desc}</p>
         </div>
         <div className='flex-1 flex flex-col justify-center items-center'>
-            <ul className='w-full flex flex-wrap justify-around items-center'>
-                {logos.map((logo, i) => (
-                    <li
+            <ul className='w-full px-20 flex flex-wrap justify-center items-center'>
+                {logos[props.activeIndex].map((logo, i) => (
+                    <motion.li
                         key={i}
-                        className='w-[60px] h-[60px] flex flex-col justify-center items-center mx-2 p-2 rounded-sm bg-white dark:bg-[#242424] hover:shadow-[0_0_2px_1px_white]'
+                        className='w-[65px] h-[50px] flex flex-col justify-center items-center m-2 p-2 rounded-sm bg-white dark:bg-[#242424] hover:shadow-[0_0_2px_1px_white]'
+                        whileHover={{ scale: 0.9 }}
                         onClick={(e) => { e.stopPropagation(); window.open(logo.href, '_blank', 'noopener noreferrer') }}
                     >
-                        <div className='flex-1 flex p-1'>
+                        <div className='box-border w-full h-full p-1'>
                             <img className='object-contain w-full h-full' src={logo.src} alt={logo.alt} />
                         </div>
                         <p className='capitalize text-[.7rem] px-1'>{logo.title}</p>
-                    </li>
+                    </motion.li>
                 ))}
             </ul>
         </div>
         <ul className='w-full flex flex-row-reverse justify-center items-center'>
             <li className='px-4'>
-                <a
-                    className='rounded-xl px-4 flex justify-end items-center bg-[royalblue] hover:opacity-50 hover:underline'
+                <motion.a
+                    className='rounded-xl px-4 flex justify-end items-center bg-[royalblue]'
                     href={text.page2.slides[props.activeIndex].demo}
                     target="_blank"
                     rel="noopener noreferrer"
+                    whileHover={{ scale: .9 }}
                     onClick={(e) => e.stopPropagation()}
                 >
                     <h2 className='mx-1'>{text.page2.slideTitle}</h2><ExternalLinkIcon />
-                </a>
+                </motion.a>
             </li>
             <li className='px-4'>
-                <a
-                    className='rounded-xl px-4 flex justify-end items-center bg-[crimson] hover:opacity-50'
+                <motion.a
+                    className='rounded-xl px-4 flex justify-end items-center bg-[crimson]'
                     href={text.page2.slides[props.activeIndex].repo}
                     target="_blank"
                     rel="noopener noreferrer"
+                    whileHover={{ scale: .9 }}
                     onClick={(e) => e.stopPropagation()}
                 >
                     <h2 className='mx-1'>Repo</h2><GitHubLogoIcon />
-                </a>
+                </motion.a>
             </li>
         </ul>
     </div>
