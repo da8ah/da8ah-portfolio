@@ -11,15 +11,27 @@ import slide3 from "/page2/slides/digency.png";
 import slide2 from "/page2/slides/krypto.png";
 import slide1 from "/page2/slides/space.png";
 import animate from '/tooling/animate.ico';
+import jsonwebtoken from '/tooling/auth0.svg';
 import autoprefixer from '/tooling/autoprefixer.svg';
+import azure from '/tooling/azure.svg';
 import babel from '/tooling/babel.svg';
+import dotenv from '/tooling/dotenv.svg';
 import eslint from '/tooling/eslint.svg';
+import expo from '/tooling/expo.svg';
+import express from '/tooling/express.svg';
 import figma from '/tooling/figma.svg';
+import flashlist from '/tooling/flashlist.png';
 import gimp from '/tooling/gimp.svg';
+import evaicons from '/tooling/heart.svg';
 import canva from '/tooling/icons8-canva-96.png';
 import office from '/tooling/icons8-microsoft-office-2019-96.png';
 import photos from '/tooling/icons8-photos-96.png';
+import jest from '/tooling/jest.svg';
+import mongodb from '/tooling/mongodb.svg';
+import mongoose from '/tooling/mongoose.svg';
+import nodejs from '/tooling/nodejs.svg';
 import npm from '/tooling/npm.svg';
+import passport from '/tooling/passport.svg';
 import pnpm from '/tooling/pnpm.svg';
 import postcss from '/tooling/postcss.svg';
 import prettier from '/tooling/prettier.png';
@@ -27,17 +39,15 @@ import qwik from '/tooling/qwik.svg';
 import radix from '/tooling/radix.svg';
 import reacticons from '/tooling/react-icons.svg';
 import react from '/tooling/react.svg';
+import spiro from '/tooling/spiro.svg';
+import stripe from '/tooling/stripe.png';
 import swc from '/tooling/swc.svg';
 import tailwindcss from '/tooling/tailwindcss.svg';
 import typescript from '/tooling/typescript.svg';
-import vite from '/tooling/vite.svg';
-import spiro from '/tooling/spiro.svg';
-import evaicons from '/tooling/heart.svg';
 import uikitten from '/tooling/uikitten.png';
-import expo from '/tooling/expo.svg';
+import vite from '/tooling/vite.svg';
 import zustand from '/tooling/zustand.ico';
-import flashlist from '/tooling/flashlist.png';
-import stripe from '/tooling/stripe.png';
+
 
 export default function Slider(props: { inView: boolean, isPlaying: boolean, setPlay: (value: boolean) => void, setPause: (value: boolean) => void }) {
 
@@ -453,6 +463,60 @@ function Modal(props: { activeIndex: number }) {
             alt: 'stripe',
             title: 'stripe',
             href: 'https://stripe.com/'
+        },
+        {
+            src: nodejs,
+            alt: 'nodejs',
+            title: 'nodeJS',
+            href: 'https://nodejs.org/'
+        },
+        {
+            src: express,
+            alt: 'expressjs',
+            title: 'express',
+            href: 'https://expressjs.com/'
+        },
+        {
+            src: dotenv,
+            alt: 'dotenv',
+            title: 'dotenv',
+            href: 'https://www.dotenv.org/'
+        },
+        {
+            src: passport,
+            alt: 'passportjs',
+            title: 'passport',
+            href: 'https://www.passportjs.org/'
+        },
+        {
+            src: jsonwebtoken,
+            alt: 'jsonwebtoken',
+            title: 'JWT',
+            href: 'https://github.com/auth0/node-jsonwebtoken'
+        },
+        {
+            src: jest,
+            alt: 'jest',
+            title: 'jest',
+            href: 'https://jestjs.io/'
+        },
+        {
+            src: mongoose,
+            alt: 'mongoose',
+            title: 'mongoose',
+            href: 'https://mongoosejs.com/'
+        },
+        {
+            src: mongodb,
+            alt: 'mongodb',
+            title: 'mongoDB',
+            href: 'https://www.mongodb.com/'
+        },
+        {
+            src: azure,
+            alt: 'azure',
+            title: 'azure',
+            href: 'https://azure.microsoft.com/'
         }]
     ]
 
