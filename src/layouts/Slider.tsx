@@ -1,6 +1,6 @@
 import { LangContext } from "@/context/LangProvider";
 import { BocheAnimations, BookStoreAnimations, DigencyAnimations, KryptoAnimations, SpaceAnimations } from "@/layouts/SlideAnimations";
-import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import { CodeIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from 'framer-motion';
 import { useContext, useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
@@ -10,7 +10,7 @@ import slide5 from "/page2/slides/bookstore.png";
 import slide3 from "/page2/slides/digency.png";
 import slide2 from "/page2/slides/krypto.png";
 import slide1 from "/page2/slides/space.png";
-import animate from '/tooling/animate.ico';
+import animate from '/tooling/animate.png';
 import jsonwebtoken from '/tooling/auth0.svg';
 import autoprefixer from '/tooling/autoprefixer.svg';
 import azure from '/tooling/azure.svg';
@@ -39,6 +39,7 @@ import qwik from '/tooling/qwik.svg';
 import radix from '/tooling/radix.svg';
 import reacticons from '/tooling/react-icons.svg';
 import react from '/tooling/react.svg';
+import rome from '/tooling/rome.svg';
 import spiro from '/tooling/spiro.svg';
 import stripe from '/tooling/stripe.png';
 import swc from '/tooling/swc.svg';
@@ -50,6 +51,7 @@ import zustand from '/tooling/zustand.ico';
 
 
 export default function Slider(props: { inView: boolean, isPlaying: boolean, setPlay: (value: boolean) => void, setPause: (value: boolean) => void }) {
+    const { text } = useContext(LangContext)
 
     useEffect(() => { if (props.isPlaying) setModalState(false) }, [props.isPlaying])
 
@@ -133,6 +135,23 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                     />
                     :
                     <>
+                        <ul className={`z-[100] ${isModalOpen ? 'cursor-zoom-out' : 'cursor-zoom-in'} absolute w-full top-0 flex flex-row-reverse justify-between items-center`}>
+                            {[text.page2.slides[activeIndex].demo, text.page2.slides[activeIndex].repo].map((href, i) => (
+                                <li className='cursor-pointer'>
+                                    <motion.a
+                                        className={`${i === 0 ? 'rounded-[2px_10px_2px_2px]' : 'rounded-[10px_2px_2px_2px]'} m-1 w-[70px] h-[40px] px-4 flex justify-center items-center bg-white dark:bg-black bg-opacity-90`}
+                                        title={i === 0 ? text.page2.slideTitle : 'Repo'}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: .9 }}
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        {i === 0 ? <ExternalLinkIcon width={30} height={30} /> : <CodeIcon width={30} height={30} />}
+                                    </motion.a>
+                                </li>
+                            ))}
+                        </ul>
                         <motion.img
                             key={`slide-img-${activeIndex}`}
                             className='object-contain rounded-[10px] shadow-[inset_2px_2px_2px_5px_black]'
@@ -159,7 +178,7 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                             }
                         </AnimatePresence>
                         <motion.div
-                            className={`absolute ${isModalOpen ? "bg-opacity-80 hover:bg-opacity-90" : "opacity-0 z-[-1]"} rounded-[10px] z-[10] cursor-pointer w-full h-full bg-black p-2 shadow-[0_0_5px_2px_black]`}
+                            className={`absolute ${isModalOpen ? "cursor-zoom-out bg-opacity-90" : "cursor-zoom-in opacity-0 z-[-1]"} rounded-[10px] z-[10] w-full h-full bg-black p-2 shadow-[0_0_5px_2px_black]`}
                             animate={isModalOpen ? "open" : "close"}
                             variants={variants}
                             transition={{ duration: 0.5 }}
@@ -517,38 +536,18 @@ function Modal(props: { activeIndex: number }) {
             alt: 'azure',
             title: 'azure',
             href: 'https://azure.microsoft.com/'
+        },
+        {
+            src: rome,
+            alt: 'rome',
+            title: 'rome',
+            href: 'https://github.com/rome/tools'
         }]
     ]
 
     return <div className='w-full h-full flex flex-col justify-center items-center text-white' >
-        <ul className='w-full flex flex-row-reverse justify-between items-center'>
-            <li className='px-4'>
-                <motion.a
-                    className='rounded-xl px-4 flex justify-end items-center bg-[royalblue]'
-                    href={text.page2.slides[props.activeIndex].demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: .9 }}
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    <h2 className='mx-1'>{text.page2.slideTitle}</h2><ExternalLinkIcon />
-                </motion.a>
-            </li>
-            <li className='px-4'>
-                <motion.a
-                    className='rounded-xl px-4 flex justify-end items-center bg-[crimson]'
-                    href={text.page2.slides[props.activeIndex].repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: .9 }}
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    <h2 className='mx-1'>Repo</h2><GitHubLogoIcon />
-                </motion.a>
-            </li>
-        </ul>
-        <div className='rounded-lg z-10 py-2 w-full flex justify-center items-center'>
-            <h1 className='w-[60%] uppercase font-bold text-center text-2xl text-transparent bg-clip-text bg-gradient-to-bl from-[deepskyblue] to-[royalblue] dark:from-[crimson] dark:to-[darkred] drop-shadow-[0_0_50px_10px_black]'>
+        <div className='rounded-lg z-10 w-full flex justify-center items-center'>
+            <h1 className='w-[60%] rounded-lg uppercase font-bold text-center text-2xl text-white'>
                 {text.page2.slides[props.activeIndex].title}
             </h1>
         </div>
@@ -561,7 +560,7 @@ function Modal(props: { activeIndex: number }) {
                     {logos[props.activeIndex].slice(i * 10, i * 10 + 10).map((logo, i) => (
                         <motion.div
                             key={i}
-                            className='w-[65px] h-[65px] flex flex-col justify-center items-center m-2 p-2 rounded-sm bg-[#242424] hover:shadow-[0_0_2px_1px_white]'
+                            className='cursor-pointer w-[65px] h-[65px] flex flex-col justify-center items-center m-2 p-2 rounded-sm bg-gray-700 hover:shadow-[0_0_2px_1px_white]'
                             whileHover={{ scale: 0.9 }}
                             onClick={(e) => { e.stopPropagation(); window.open(logo.href, '_blank', 'noopener noreferrer') }}
                         >

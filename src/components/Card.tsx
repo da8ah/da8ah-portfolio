@@ -22,7 +22,7 @@ export default function Card(props: {
     return (
         <div
             style={{ backgroundImage: `url(${imgURL})` }}
-            className='relative rounded-lg overflow-hidden bg-cover bg-no-repeat w-[300px] h-[200px] text-white'
+            className='relative rounded-[5px] overflow-hidden bg-cover bg-no-repeat w-[300px] h-[200px] text-white'
             onMouseEnter={() => setOpenState(true)}
             onMouseLeave={() => setOpenState(false)}
         >
