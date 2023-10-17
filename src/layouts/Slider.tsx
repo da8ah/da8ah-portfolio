@@ -468,7 +468,7 @@ function Modal(props: { activeIndex: number }) {
             src: nodejs,
             alt: 'nodejs',
             title: 'nodeJS',
-            href: 'https://nodejs.org/'
+            href: 'https://nodejs.org/about/'
         },
         {
             src: express,
@@ -521,29 +521,7 @@ function Modal(props: { activeIndex: number }) {
     ]
 
     return <div className='w-full h-full flex flex-col justify-center items-center text-white' >
-        <div className='rounded-lg z-10 py-2 w-full flex justify-center items-center'>
-            <h1 className='w-[60%] uppercase font-bold text-center text-2xl text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-600 to-[royalblue] drop-shadow-[0_0_50px_10px_black]'>
-                {text.page2.slides[props.activeIndex].title}
-            </h1>
-        </div>
-        <div className='flex-1 flex flex-col justify-center items-center'>
-            <ul className='w-full px-20 flex flex-wrap justify-center items-center'>
-                {logos[props.activeIndex].map((logo, i) => (
-                    <motion.li
-                        key={i}
-                        className='w-[65px] h-[50px] flex flex-col justify-center items-center m-2 p-2 rounded-sm bg-white dark:bg-[#242424] hover:shadow-[0_0_2px_1px_white]'
-                        whileHover={{ scale: 0.9 }}
-                        onClick={(e) => { e.stopPropagation(); window.open(logo.href, '_blank', 'noopener noreferrer') }}
-                    >
-                        <div className='box-border w-full h-full p-1'>
-                            <img className='object-contain w-full h-full' src={logo.src} alt={logo.alt} />
-                        </div>
-                        <p className='capitalize text-[.7rem] px-1'>{logo.title}</p>
-                    </motion.li>
-                ))}
-            </ul>
-        </div>
-        <ul className='w-full flex flex-row-reverse justify-center items-center'>
+        <ul className='w-full flex flex-row-reverse justify-between items-center'>
             <li className='px-4'>
                 <motion.a
                     className='rounded-xl px-4 flex justify-end items-center bg-[royalblue]'
@@ -569,5 +547,32 @@ function Modal(props: { activeIndex: number }) {
                 </motion.a>
             </li>
         </ul>
+        <div className='rounded-lg z-10 py-2 w-full flex justify-center items-center'>
+            <h1 className='w-[60%] uppercase font-bold text-center text-2xl text-transparent bg-clip-text bg-gradient-to-bl from-[deepskyblue] to-[royalblue] dark:from-[crimson] dark:to-[darkred] drop-shadow-[0_0_50px_10px_black]'>
+                {text.page2.slides[props.activeIndex].title}
+            </h1>
+        </div>
+        <div className={`relative scroll-smooth ${Math.ceil(logos[props.activeIndex].length / 10) > 1 ? 'overflow-x-scroll' : 'overflow-x-hidden'} snap-x snap-mandatory w-full h-full mt-4 flex flex-col justify-center items-center`}>
+            {Array(Math.ceil(logos[props.activeIndex].length / 10)).fill(null).map((_, i) => (
+                <div
+                    style={{ width: '100%', translate: `${i * 100}%` }}
+                    className='absolute snap-center w-full h-full px-20 grid grid-rows-2 grid-cols-5'
+                >
+                    {logos[props.activeIndex].slice(i * 10, i * 10 + 10).map((logo, i) => (
+                        <motion.div
+                            key={i}
+                            className='w-[65px] h-[65px] flex flex-col justify-center items-center m-2 p-2 rounded-sm bg-[#242424] hover:shadow-[0_0_2px_1px_white]'
+                            whileHover={{ scale: 0.9 }}
+                            onClick={(e) => { e.stopPropagation(); window.open(logo.href, '_blank', 'noopener noreferrer') }}
+                        >
+                            <div className='box-border w-full h-full p-1'>
+                                <img className='object-contain w-full h-full' src={logo.src} alt={logo.alt} />
+                            </div>
+                            <p className='capitalize text-[.7rem] px-1'>{logo.title}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            ))}
+        </div>
     </div>
 }
