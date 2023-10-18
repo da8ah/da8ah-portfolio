@@ -144,7 +144,10 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                                         href={href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        whileHover={{ scale: .9 }}
+                                        initial={{ opacity: 1 }}
+                                        animate={{ opacity: isModalOpen ? 1 : 0.2 }}
+                                        whileHover={{ opacity: 1 }}
+                                        transition={{ duration: 1 }}
                                         onClick={(e) => e.stopPropagation()}
                                     >
                                         {i === 0 ? <ExternalLinkIcon width={30} height={30} /> : <CodeIcon width={30} height={30} />}
