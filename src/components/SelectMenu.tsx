@@ -15,7 +15,8 @@ export default function SelectMenu(props: {
                 const index = props.data.indexOf(value)
                 if (props.selected > index) props.handlers.left(index)
                 else props.handlers.right(index)
-            }}>
+            }}
+        >
             <Select.Trigger
                 asChild
                 className="cursor-pointer w-full"
@@ -38,6 +39,7 @@ export default function SelectMenu(props: {
             <Select.Content
                 className="z-[100] w-[255px] p-1 rounded-[5px] text-black dark:text-white ring-1 ring-black dark:ring-0 bg-gradient-to-b from-white to-gray-200 dark:from-[#242424] dark:to-gray-800 dark:shadow-[0_0_5px_0_black]"
                 align="center"
+                position="popper"
                 defaultValue={props.data[props.selected]}
             >
                 <Select.Viewport>

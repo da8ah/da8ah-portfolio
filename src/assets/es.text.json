@@ -1,4 +1,11 @@
 {
+    "conn": {
+        "buttons": [
+            "Enviar Mail",
+            "Currículum"
+        ],
+        "resume": "/resumes/CV2023-es.pdf"
+    },
     "page1": {
         "roles": [
             [

@@ -12,7 +12,7 @@ export default function Configuration() {
     return <div className='z-[100] top-5 left-10 fixed flex flex-row justify-center items-center'>
         {cycle !== undefined && <motion.span
             key={cycle}
-            className='cursor-pointer fixed top-5 left-10 w-[50px] h-[50px] rounded-full bg-white'
+            className='cursor-pointer fixed top-5 left-10 w-[50px] h-[50px] rounded-full bg-white bg-opacity-90'
             animate={{
                 display: ['block', 'none'],
                 transform: ['scale(0)', 'scale(100)', 'scale(0)']
@@ -21,17 +21,19 @@ export default function Configuration() {
                 duration: 1
             }}
         />}
-        <button
+        <motion.button
+            key={`conf-${cycle}`}
             type='button'
             title='theme'
             className='w-[50px] h-[50px] rounded-[80px] dark:shadow-[0_0_5px_0_black] text-white bg-[#242424] flex justify-center items-center'
+            whileHover={{ rotate: 360, transition: { duration: 2 } }}
             onClick={() => {
                 toggleCycle(prev => prev === 0 ? 1 : 0)
                 setTimeout(() => {
                     toggleThemeMode()
                 }, 200)
             }}
-        >{themeMode === 'dark' ? <SunIcon height={30} width={30} /> : <MoonIcon height={30} width={30} />}</button>
+        >{themeMode === 'dark' ? <SunIcon height={30} width={30} /> : <MoonIcon height={30} width={30} />}</motion.button>
         <button
             disabled
             type='button'

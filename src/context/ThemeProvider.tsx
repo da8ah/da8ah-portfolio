@@ -8,7 +8,7 @@ export const ThemeContext = createContext({
 })
 
 export default function ThemeProvider(props: { children: JSX.Element }) {
-    const [themeMode, setThemeMode] = useState<ThemeType>(localStorage.getItem('theme') as ThemeType || 'dark')
+    const [themeMode, setThemeMode] = useState<ThemeType>(localStorage.getItem('theme') as ThemeType || 'light')
 
     useEffect(() => { themeMode === 'dark' && document.documentElement.classList.add('dark') }, [])
 

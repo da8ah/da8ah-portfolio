@@ -87,7 +87,7 @@ export default function Abilities() {
                 </motion.div>
                 <div className='w-full h-full p-1 flex flex-col justify-center items-center'>
                     <img
-                        className='object-contain cursor-help w-[40px] h-[40px]' src={ability.src} alt={ability.alt}
+                        className='object-contain w-[40px] h-[40px]' src={ability.src} alt={ability.alt}
                         onAuxClick={() => window.open(ability.href, '_blank', 'noopener noreferrer')}
                     />
                     <h1 className='flex justify-start items-center px-2 text-center'>
@@ -97,7 +97,7 @@ export default function Abilities() {
                         {text.page1.abilities.desc[index].map((item, i) => (
                             <div className='w-full flex justify-between items-center'>
                                 <img
-                                    className='mx-1 rounded-[1px] dark:shadow-[0_0_5px_0_black] p-1 object-contain cursor-help w-[40px] h-[40px]' src={ability.icons[i].src} alt={ability.icons[i].alt}
+                                    className='mx-1 rounded-[1px] dark:shadow-[0_0_5px_0_black] p-1 object-contain w-[40px] h-[40px]' src={ability.icons[i].src} alt={ability.icons[i].alt}
                                     onAuxClick={() => window.open(ability.icons[i].href, '_blank', 'noopener noreferrer')}
                                 />
                                 <p className={`w-full p-1 ${index === 0 && i === 0 ? 'text-[0.6rem]' : 'text-sm'}`}>{item}</p>
