@@ -1,8 +1,8 @@
 import { LangContext } from '@/context/LangProvider'
 import { ThemeContext } from '@/context/ThemeProvider'
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
 import { useContext, useState } from 'react'
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 
 export default function Configuration() {
     const { themeMode, toggleThemeMode } = useContext(ThemeContext)

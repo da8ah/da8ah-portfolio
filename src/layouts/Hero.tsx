@@ -17,7 +17,7 @@ export default function Hero(props: { index: number, animation: MotionProps }) {
             </video>
             :
             <>
-                <div className='absolute overflow-hidden z-[10] top-0 w-[50%] h-[50%] flex justify-center items-center'>
+                <div className='absolute z-[1] top-0 w-[50%] h-[50%] flex justify-center items-center'>
                     <img className='object-cover rounded-[10px] w-[120px] h-[150px]' src={bgPfp} alt='pfp' />
                 </div>
                 <img className='z-0 absolute object-contain w-full h-[80%]' src={bgImg} alt='library' />
