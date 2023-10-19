@@ -41,6 +41,29 @@
                 ]
             ]
         },
+        "toolkits": [
+            [
+                "web",
+                "frontend",
+                "backend",
+                "despliegue"
+            ],
+            [
+                "app",
+                "libs & frameworks",
+                "backend",
+                "despliegue"
+            ],
+            [
+                "lenguajes",
+                "herramientas"
+            ],
+            [
+                "software",
+                "conexión remota",
+                "respaldo, limpieza"
+            ]
+        ],
         "skills": {
             "titles": [
                 "Habilidades Técnicas",
@@ -53,7 +76,7 @@
                         "Bocetado, maquetación y diseño de páginas web responsivas mantieniendo altos estándares de calidad para su construcción."
                     ],
                     [
-                        "Programación",
+                        "Programación Full-Stack",
                         "Traducción del diseño web a código mediante los lenguajes de programación, bibliotecas y frameworks estándares para la Web."
                     ],
                     [

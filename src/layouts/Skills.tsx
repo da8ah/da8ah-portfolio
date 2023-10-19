@@ -37,7 +37,7 @@ export default function Skills(props: { index: number, animation: MotionProps })
                         >
                             <Skill key={`skill-hard-item-${j}`}>
                                 <motion.div
-                                    className='cursor-help w-[250px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b hover:from-[#f0463a] hover:to-[#ff284c]'
+                                    className='cursor-help w-[250px] p-2 flex flex-row items-end rounded-[5px] bg-gradient-to-b from-white to-gray-300 dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b hover:from-[#f0463a] hover:to-[#ff284c]'
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     <IconLeft i={props.index} j={j} />
@@ -70,7 +70,7 @@ export default function Skills(props: { index: number, animation: MotionProps })
                         >
                             <Skill key={`skill-soft-item-${j}`}>
                                 <motion.div
-                                    className='cursor-help w-[200px] p-2 flex flex-row items-end rounded-[5px] dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b hover:from-[#516dca] hover:to-[#3054ce]'
+                                    className='cursor-help w-[200px] p-2 flex flex-row items-end rounded-[5px] bg-gradient-to-b from-white to-gray-300 dark:shadow-[0_0_5px_0_black] hover:text-white hover:bg-gradient-to-b hover:from-[#516dca] hover:to-[#3054ce]'
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     <IconRight j={j} />
