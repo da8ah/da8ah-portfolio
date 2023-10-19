@@ -24,7 +24,6 @@ export default function Configuration() {
         <motion.button
             key={`conf-${cycle}`}
             type='button'
-            title='theme'
             className='w-[50px] h-[50px] rounded-[80px] dark:shadow-[0_0_5px_0_black] text-white bg-[#242424] flex justify-center items-center'
             whileHover={{ rotate: 360, transition: { duration: 2 } }}
             onClick={() => {
@@ -37,7 +36,6 @@ export default function Configuration() {
         <button
             disabled
             type='button'
-            title='lang'
             className='-z-[1] w-[50px] h-[25px] -ml-1 dark:bg-white dark:text-black dark:shadow-[0_0_5px_0_white] text-white bg-[#242424] rounded-[0_10px_10px_0] uppercase'
             onClick={() => changeLang(lang === 'es' ? 'en' : 'es')}
         >{lang}</button>

@@ -127,7 +127,7 @@
                         "Elaboración de pruebas para verificar que el código desarrollado esté controlado y evitar fallos inesperados."
                     ],
                     [
-                        "Construcción de Ejecutables",
+                        "Ejecutables",
                         "Compilación y construcción de archivos ejecutables para usarlos directamente en el sistema operativo mediante un click."
                     ]
                 ],
@@ -209,7 +209,7 @@
         "cards": [
             {
                 "title": "Mantenimiento de Sitio Web",
-                "desc": "Adecuación de sitio web mediante CSS para la actualización de marca (Branding) tanto de colores como de imágenes."
+                "desc": "Adecuación de sitio web mediante CSS para la actualización de marca (branding) tanto de colores como de imágenes."
             },
             {
                 "title": "Restauración de Documentos",

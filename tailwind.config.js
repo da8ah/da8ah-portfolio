@@ -8,7 +8,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'keania': ['Keania One', 'sans-serif'],
+      'roboto': ['Roboto Condensed', 'sans-serif'],
+      'mono': ['ui-monospace', 'SFMono-Regular', 'sans-serif']
+    }
   },
   plugins: [scrollbar({ nocompatible: true }),],
 }

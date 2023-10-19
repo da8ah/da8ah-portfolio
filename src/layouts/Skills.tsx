@@ -27,7 +27,7 @@ export default function Skills(props: { index: number, animation: MotionProps })
     return <div className='w-full'>
         <div className='flex flex-row justify-evenly items-center'>
             <div className='w-[50%] flex flex-col items-center'>
-                <h1 className='flex italic'><DotFilledIcon color='red' />{text.page1.skills.titles[0]}</h1>
+                <h1 className='flex font-bold'><DotFilledIcon color='red' />{text.page1.skills.titles[0]}</h1>
                 <ul className="py-2 text-left">
                     {text.page1.skills.hard[props.index].map((item, j) => (
                         <motion.li
@@ -61,7 +61,7 @@ export default function Skills(props: { index: number, animation: MotionProps })
                 </ul>
             </div>
             <div className='w-[50%] flex flex-col items-center'>
-                <h1 className='flex italic'><DotFilledIcon color='royalblue' />{text.page1.skills.titles[1]}</h1>
+                <h1 className='flex font-bold'><DotFilledIcon color='royalblue' />{text.page1.skills.titles[1]}</h1>
                 <ul className="py-2 text-left">
                     {text.page1.skills.soft.map((item, j) => (
                         <li

@@ -12,10 +12,10 @@ export default function Build(props: { index: number, animation: MotionProps, on
 
     return <div className='w-full flex flex-col'>
         <div className='py-2'>
-            <h1 className='uppercase font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-b from-red-600 via-orange-500 to-yellow-500 drop-shadow-[0_0_50px_10px_black]'>
+            <h1 className='uppercase font-bold dark:font-keania text-4xl dark:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-red-600 via-orange-500 to-yellow-500 drop-shadow-[0_0_50px_10px_black]'>
                 Danilo Ochoa Hidalgo
                 <br />
-                <span className={`text-lg ${themeMode === 'dark' ? 'capitalize' : 'lowercase'}`}>({themeMode === 'dark' ? 'Tiber' : 'da8ah'})</span>
+                <span className={`text-xl font-mono ${themeMode === 'dark' ? 'capitalize' : 'lowercase'}`}>({themeMode === 'dark' ? 'Tiber' : 'da8ah'})</span>
             </h1>
             <div className='py-5 flex flex-col justify-around items-center'>
                 <div className='w-full flex flex-row justify-center items-center'>

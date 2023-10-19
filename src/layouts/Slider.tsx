@@ -555,7 +555,7 @@ function Modal(props: { activeIndex: number }) {
 
     return <div className='w-full h-full flex flex-col justify-center items-center text-white' >
         <div className='rounded-lg z-10 w-full flex justify-center items-center'>
-            <h1 className='w-[60%] rounded-lg uppercase font-bold text-center text-2xl text-white'>
+            <h1 className='w-[60%] rounded-lg uppercase font-bold text-center text-2xl text-white font-roboto'>
                 {text.page2.slides[props.activeIndex].title}
             </h1>
         </div>

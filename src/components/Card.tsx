@@ -45,10 +45,10 @@ export default function Card(props: {
                 }}
             >
                 <div className='w-full bg-gradient-to-bl from-[deepskyblue] to-[royalblue] dark:from-[crimson] dark:to-[darkred]'>
-                    <h4 className="my-1 text-xl font-bold">{title}</h4>
+                    <h4 className="my-1 text-xl font-bold font-mono">{title}</h4>
                 </div>
                 <div className='flex-1 flex w-full p-2 bg-opacity-20 hover:bg-opacity-90 bg-black'>
-                    <p className="tracking-wider text-justify">
+                    <p className="tracking-wider text-justify font-roboto">
                         {description}
                         {index === 0 &&
                             (<>
