@@ -4,7 +4,8 @@ import Toolkit from "@/layouts/Toolkit";
 import { MotionProps } from "framer-motion";
 import { useContext } from "react";
 import bgVideo from "/page1/bg-magician.mp4";
-import bgImg from "/page1/library.jpg";
+import bgImg from "/page1/library.png";
+import bgPfp from "/page1/pfp.png";
 
 export default function Hero(props: { index: number, animation: MotionProps }) {
     const { themeMode } = useContext(ThemeContext)
@@ -15,7 +16,12 @@ export default function Hero(props: { index: number, animation: MotionProps }) {
                 <source src={bgVideo} type="video/mp4" />
             </video>
             :
-            <img className='z-0 absolute object-contain w-full h-[80%]' src={bgImg} alt='library' />
+            <>
+                <div className='absolute overflow-hidden z-[10] top-0 w-[50%] h-[50%] flex justify-center items-center'>
+                    <img className='object-cover rounded-[10px] w-[120px] h-[150px]' src={bgPfp} alt='pfp' />
+                </div>
+                <img className='z-0 absolute object-contain w-full h-[80%]' src={bgImg} alt='library' />
+            </>
         }
         <div className='relative box-border w-full p-10 flex flex-col justify-between'>
             <div className='z-[1] flex-1 p-5'>

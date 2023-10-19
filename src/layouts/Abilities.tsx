@@ -77,7 +77,7 @@ export default function Abilities() {
                 side='left'
             >
                 <motion.div
-                    className='rounded-full w-[60px] h-[60px] my-2 p-2 flex justify-center items-center bg-gradient-to-b from-white to-gray-300 dark:bg-[#242424] dark:shadow-[0_0_5px_0_black] hover:dark:shadow-[0_0_5px_0_yellow]'
+                    className='rounded-full w-[60px] h-[60px] my-2 p-2 flex justify-center items-center bg-gradient-to-b from-white to-gray-300 hover:shadow-[0_0_5px_3px_deepskyblue] dark:bg-[#242424] dark:from-transparent dark:to-transparent dark:shadow-[0_0_5px_0_black] hover:dark:shadow-[0_0_5px_2px_crimson]'
                     whileHover={{ scale: 1.1 }}
                 >
                     <img

@@ -1,4 +1,5 @@
 import { LangContext } from "@/context/LangProvider";
+import { ThemeContext } from "@/context/ThemeProvider";
 import { BocheAnimations, BookStoreAnimations, DigencyAnimations, KryptoAnimations, SpaceAnimations } from "@/layouts/SlideAnimations";
 import { CodeIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from 'framer-motion';
@@ -51,6 +52,7 @@ import zustand from '/tooling/zustand.ico';
 
 
 export default function Slider(props: { inView: boolean, isPlaying: boolean, setPlay: (value: boolean) => void, setPause: (value: boolean) => void }) {
+    const { themeMode } = useContext(ThemeContext)
     const { text } = useContext(LangContext)
 
     useEffect(() => { if (props.isPlaying) setModalState(false) }, [props.isPlaying])
@@ -128,11 +130,14 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                 }}
             >
                 {activeIndex !== i ?
-                    <img
-                        className='pointer-events-none object-contain rounded-[10px] opacity-80 dark:opacity-10'
-                        src={img.src}
-                        alt={img.alt}
-                    />
+                    <>
+                        {themeMode !== 'dark' && <span className='absolute w-full h-[90%] bg-black bg-opacity-70' />}
+                        <img
+                            className='pointer-events-none object-contain w-full h-full dark:rounded-[10px] dark:opacity-10'
+                            src={img.src}
+                            alt={img.alt}
+                        />
+                    </>
                     :
                     <>
                         <ul className={`z-[100] ${isModalOpen ? 'cursor-zoom-out' : 'cursor-zoom-in'} absolute w-full top-0 flex flex-row-reverse justify-between items-center`}>
