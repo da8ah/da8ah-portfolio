@@ -33,11 +33,11 @@ export default function Configuration() {
                 }, 200)
             }}
         >{themeMode === 'dark' ? <SunIcon height={30} width={30} /> : <MoonIcon height={30} width={30} />}</motion.button>
-        <button
-            disabled
+        <motion.button
             type='button'
             className='-z-[1] w-[50px] h-[25px] -ml-1 dark:bg-white dark:text-black dark:shadow-[0_0_5px_0_white] text-white bg-[#242424] rounded-[0_10px_10px_0] uppercase'
+            whileHover={{ scale: 1.1 }}
             onClick={() => changeLang(lang === 'es' ? 'en' : 'es')}
-        >{lang}</button>
+        >{lang}</motion.button>
     </div>
 }

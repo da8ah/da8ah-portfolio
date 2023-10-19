@@ -1,35 +1,244 @@
 {
+    "conn": {
+        "buttons": [
+            "Send Email",
+            "Resume"
+        ],
+        "resume": "/resumes/CV2023-en.pdf"
+    },
     "page1": {
-        "title": "Welcome!",
         "roles": [
-            "Developer",
-            "Designer",
-            "Technical Support"
+            [
+                "💻",
+                "📱",
+                "👨‍💻",
+                "🧰"
+            ],
+            [
+                "Web Developer",
+                "App Developer",
+                "Programmer",
+                "Technical Support"
+            ]
         ],
         "profiles": [
-            "El software y el diseño son dos de mis tantas pasiones. Me gusta que las cosas funcionen y el software es el perfecto medio para lograrlo. Si necesitas que la información se mueva conozco los medios por los cuales se puede materializar en la realidad lo que tanto anhelas.",
-            "El diseño requiere de una visualización precisa de lo que la imaginación quiere manifestar en la realidad. En el plano abstracto yace el perfecto espacio para construir en la imaginación el perfecto producto constituido de la forma más precisa que logre manifestarse de forma artística.",
-            "El soporte técnico es algo que siempre se necesita. Se averió algo dentro de tu arsenal. Tienes problemas con tus dispositivos, o necesitas de algún sabio consejo, pues has llegado al lugar perfecto. Permíteme ser tu guía y consejero acerca de lo que para ti no es familiar."
+            "Building web pages, sites, or applications. Collaborating with teams and freelance work to create or translate designs into code.",
+            "Designing and developing Android mobile applications using hybrid technologies. Deploying applications in the Google Play Store.",
+            "Development and guidance for modeling and building programs and scripts. Mastery of various programming languages, both visual and coded.",
+            "Training in programming and IT. Assisting in program installation and management, data backup, and physical and logical computer maintenance."
+        ],
+        "abilities": {
+            "titles": [
+                "Certifications",
+                "Talents",
+                "Attributes"
+            ],
+            "desc": [
+                [
+                    "Computer Systems and Computing (to graduate)",
+                    "Advanced English"
+                ],
+                [
+                    "Creativity",
+                    "Innovation"
+                ],
+                [
+                    "Persistence",
+                    "Perfectionism"
+                ]
+            ]
+        },
+        "toolkits": [
+            [
+                "web",
+                "frontend",
+                "backend",
+                "deployment"
+            ],
+            [
+                "app",
+                "libs & frameworks",
+                "backend",
+                "deployment"
+            ],
+            [
+                "languages",
+                "tools"
+            ],
+            [
+                "software",
+                "remote connection",
+                "backup, cleaning"
+            ]
         ],
         "skills": {
             "titles": [
-                "Habilidades Técnicas",
-                "Habilidades Blandas"
+                "Hard Skills",
+                "Soft Skills"
             ],
-            "items": [
+            "hard": [
                 [
-                    "Informática",
-                    "Programación",
-                    "Diseño",
-                    "Base de Datos"
+                    [
+                        "Web Design",
+                        "Sketching, layout, and design of responsive web pages while maintaining high-quality construction standards."
+                    ],
+                    [
+                        "Full-Stack Programming",
+                        "Translating web designs into code using standard programming languages, libraries, and frameworks for the web."
+                    ],
+                    [
+                        "Database Design",
+                        "Designing structures for proper storage of information in SQL and NoSQL databases with due security."
+                    ],
+                    [
+                        "Deployment",
+                        "Exposing the product to the Internet through different deployment or hosting services, with custom domains: https://www.mydomain.com/"
+                    ]
                 ],
                 [
-                    "Atención a detalles",
-                    "Creatividad",
-                    "Paciencia",
-                    "Ética Laboral"
+                    [
+                        "UI/UX Design",
+                        "Sketching, layout, and design of user interface (UI) and user experience (UX) for mobile applications."
+                    ],
+                    [
+                        "Programming",
+                        "Translating designs into code using hybrid programming languages, libraries, and frameworks for Android devices."
+                    ],
+                    [
+                        "Animations",
+                        "Animated interactions that engage users with the mobile application to provide a sense of familiarity."
+                    ],
+                    [
+                        "Deployment",
+                        "Publishing mobile applications in the Google Play Store, with automated updates."
+                    ]
+                ],
+                [
+                    [
+                        "Program Design",
+                        "Analysis and design of programs to solve specific problems in various ICT fields."
+                    ],
+                    [
+                        "Programming",
+                        "Using various programming languages to provide the required solutions for specific problems."
+                    ],
+                    [
+                        "Testing",
+                        "Creating tests to ensure that the developed code is under control and to prevent unexpected failures."
+                    ],
+                    [
+                        "Executables",
+                        "Compiling and building executable files for direct use in the operating system with a single click."
+                    ]
+                ],
+                [
+                    [
+                        "IT Advisory",
+                        "Training in the use of office, design, or programming software."
+                    ],
+                    [
+                        "Remote Assistance",
+                        "Remote assistance using applications like Team Viewer or Any Desk to provide personalized support."
+                    ],
+                    [
+                        "Diagnostics and Backup",
+                        "Analyzing the status of your computer to ensure there are no errors in the software or settings."
+                    ],
+                    [
+                        "Physical and Logical Cleaning",
+                        "Preventive maintenance of your equipment, both physical and logical, for thorough cleaning."
+                    ]
+                ]
+            ],
+            "soft": [
+                [
+                    "Attention to Detail",
+                    "Keen observation to identify imperceptible details and provide polished solutions."
+                ],
+                [
+                    "Responsibility",
+                    "Meticulous fulfillment of assigned responsibilities, ensuring quality in results."
+                ],
+                [
+                    "Organization",
+                    "Proper task distribution and scheduling over time to meet responsibilities."
+                ],
+                [
+                    "Work Ethics",
+                    "Work conducted according to company values, principles, and, most importantly, professional ethics."
                 ]
             ]
         }
+    },
+    "page2": {
+        "slides": [
+            {
+                "title": "Space Portfolio",
+                "demo": "https://da8ah.github.io/react-space-portfolio/",
+                "repo": "https://github.com/da8ah/react-space-portfolio",
+                "desc": "Portfolio with a space theme developed using React and animation libraries."
+            },
+            {
+                "title": "Krypto Website",
+                "demo": "https://da8ah.github.io/react-krypto-home/",
+                "repo": "https://github.com/da8ah/react-krypto-home",
+                "desc": "Portfolio with a space theme developed using React and animation libraries."
+            },
+            {
+                "title": "Digency Website",
+                "demo": "https://da8ah.github.io/qwik-digency-home/",
+                "repo": "https://github.com/da8ah/qwik-digency-home",
+                "desc": "Portfolio with a space theme developed using React and animation libraries."
+            },
+            {
+                "title": "Bochecito Website",
+                "demo": "https://bochecitomusical.com/",
+                "repo": "https://www.canva.com/",
+                "desc": "Portfolio with a space theme developed using React and animation libraries."
+            },
+            {
+                "title": "BookStore App (Demo)",
+                "demo": "https://play.google.com/store/apps/details?id=com.daochoa6.bookstoreapp",
+                "repo": "https://github.com/da8ah/UTPL-TT-BookStoreApp",
+                "desc": "Portfolio with a space theme developed using React and animation libraries."
+            }
+        ],
+        "slideTitle": "Open"
+    },
+    "page3": {
+        "cards": [
+            {
+                "title": "Website Maintenance",
+                "desc": "Adaptation of a website using CSS for brand updates, including colors and images."
+            },
+            {
+                "title": "Document Restoration",
+                "desc": "Use of office software and image editing tools to restore physical documents into digital formats."
+            },
+            {
+                "title": "Intermediate Excel",
+                "desc": "Guidance on proper formula usage in Excel for report creation, automation, and cross-sheet usage."
+            },
+            {
+                "title": "MS Office Assistance",
+                "desc": "Assistance with various MS Office suite programs (Word, PowerPoint, Excel, etc.) for tasks, theses, and projects."
+            },
+            {
+                "title": "Computer Setup",
+                "desc": "Physical cleaning, formatting, and basic software installation for the computer lab at 'El Tesoro del Saber' institution."
+            },
+            {
+                "title": "Logical Computer Cleaning",
+                "desc": "Cleaning of desktop and laptop computers using antivirus and programs like Malwarebytes and CCleaner."
+            },
+            {
+                "title": "Software Usage Assistance",
+                "desc": "Support for various software programs or packages for configuration and use in project development."
+            },
+            {
+                "title": "Account Security",
+                "desc": "Assistance in secure account recovery and configuration for various online services (Microsoft, Google, and social media)."
+            }
+        ]
     }
 }
