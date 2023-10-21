@@ -6,7 +6,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: 'css',
-  base: "/da8ah-portfolio/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src/"),
