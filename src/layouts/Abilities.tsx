@@ -2,15 +2,15 @@ import Tooltip from '@/components/Tooltip';
 import { LangContext } from '@/context/LangProvider';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
-import innovation from '/page1/abilities/icons8-build-64.png';
-import intelligence from '/page1/abilities/icons8-creativity-64.png';
-import creativity from '/page1/abilities/icons8-creativity-96.png';
-import diploma from '/page1/abilities/icons8-diploma-96.png';
-import usa from '/page1/abilities/icons8-first-flag-of-the-usa-96.png';
-import focus from '/page1/abilities/icons8-focus-64.png';
-import graduation from '/page1/abilities/icons8-graduation-96.png';
-import hiking from '/page1/abilities/icons8-hiking-64.png';
-import strength from '/page1/abilities/icons8-strength-96.png';
+const innovation = '/page1/abilities/icons8-build-64.png';
+const intelligence = '/page1/abilities/icons8-creativity-64.png';
+const creativity = '/page1/abilities/icons8-creativity-96.png';
+const diploma = '/page1/abilities/icons8-diploma-96.png';
+const usa = '/page1/abilities/icons8-first-flag-of-the-usa-96.png';
+const focus = '/page1/abilities/icons8-focus-64.png';
+const graduation = '/page1/abilities/icons8-graduation-96.png';
+const hiking = '/page1/abilities/icons8-hiking-64.png';
+const strength = '/page1/abilities/icons8-strength-96.png';
 
 export default function Abilities() {
     const { text } = useContext(LangContext)
@@ -72,7 +72,8 @@ export default function Abilities() {
     return <>
         {abilities.map((ability, index) => (
             <Tooltip
-                key={`ability-${index}`}
+                key={`ability-${ability.alt}`}
+                tooltipKey={`ability-${index}`}
                 align='start'
                 side='left'
             >
@@ -95,7 +96,7 @@ export default function Abilities() {
                     </h1>
                     <div className='w-full flex-1 flex flex-col justify-around items-center'>
                         {text.page1.abilities.desc[index].map((item, i) => (
-                            <div className='w-full flex justify-between items-center'>
+                            <div key={`ability-desc-${i}`} className='w-full flex justify-between items-center'>
                                 <img
                                     className='mx-1 rounded-[1px] dark:shadow-[0_0_5px_0_black] p-1 object-contain w-[40px] h-[40px]' src={ability.icons[i].src} alt={ability.icons[i].alt}
                                     onAuxClick={() => window.open(ability.icons[i].href, '_blank', 'noopener noreferrer')}
@@ -106,7 +107,6 @@ export default function Abilities() {
                     </div>
                 </div>
             </Tooltip>
-        ))
-        }
+        ))}
     </>
 }

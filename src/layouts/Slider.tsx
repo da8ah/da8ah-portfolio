@@ -6,52 +6,52 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useContext, useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import slide4 from "/page2/slides/boche.png";
-import slide5 from "/page2/slides/bookstore.png";
-import slide3 from "/page2/slides/digency.png";
-import slide2 from "/page2/slides/krypto.png";
-import slide1 from "/page2/slides/space.png";
-import animate from '/tooling/animate.png';
-import jsonwebtoken from '/tooling/auth0.svg';
-import autoprefixer from '/tooling/autoprefixer.svg';
-import azure from '/tooling/azure.svg';
-import babel from '/tooling/babel.svg';
-import dotenv from '/tooling/dotenv.svg';
-import eslint from '/tooling/eslint.svg';
-import expo from '/tooling/expo.svg';
-import express from '/tooling/express.svg';
-import figma from '/tooling/figma.svg';
-import flashlist from '/tooling/flashlist.png';
-import gimp from '/tooling/gimp.svg';
-import evaicons from '/tooling/heart.svg';
-import canva from '/tooling/icons8-canva-96.png';
-import office from '/tooling/icons8-microsoft-office-2019-96.png';
-import photos from '/tooling/icons8-photos-96.png';
-import jest from '/tooling/jest.svg';
-import mongodb from '/tooling/mongodb.svg';
-import mongoose from '/tooling/mongoose.svg';
-import nodejs from '/tooling/nodejs.svg';
-import npm from '/tooling/npm.svg';
-import passport from '/tooling/passport.svg';
-import pnpm from '/tooling/pnpm.svg';
-import postcss from '/tooling/postcss.svg';
-import prettier from '/tooling/prettier.png';
-import qwik from '/tooling/qwik.svg';
-import radix from '/tooling/radix.svg';
-import reacticons from '/tooling/react-icons.svg';
-import react from '/tooling/react.svg';
-import rome from '/tooling/rome.svg';
-import spiro from '/tooling/spiro.svg';
-import stripe from '/tooling/stripe.png';
-import swc from '/tooling/swc.svg';
-import tailwindcss from '/tooling/tailwindcss.svg';
-import typescript from '/tooling/typescript.svg';
-import uikitten from '/tooling/uikitten.png';
-import vite from '/tooling/vite.svg';
-import zustand from '/tooling/zustand.ico';
+const slide4 = "/page2/slides/boche.png";
+const slide5 = "/page2/slides/bookstore.png";
+const slide3 = "/page2/slides/digency.png";
+const slide2 = "/page2/slides/krypto.png";
+const slide1 = "/page2/slides/space.png";
+const animate = '/tooling/animate.png';
+const jsonwebtoken = '/tooling/auth0.svg';
+const autoprefixer = '/tooling/autoprefixer.svg';
+const azure = '/tooling/azure.svg';
+const babel = '/tooling/babel.svg';
+const dotenv = '/tooling/dotenv.svg';
+const eslint = '/tooling/eslint.svg';
+const expo = '/tooling/expo.svg';
+const express = '/tooling/express.svg';
+const figma = '/tooling/figma.svg';
+const flashlist = '/tooling/flashlist.png';
+const gimp = '/tooling/gimp.svg';
+const evaicons = '/tooling/heart.svg';
+const canva = '/tooling/icons8-canva-96.png';
+const office = '/tooling/icons8-microsoft-office-2019-96.png';
+const photos = '/tooling/icons8-photos-96.png';
+const jest = '/tooling/jest.svg';
+const mongodb = '/tooling/mongodb.svg';
+const mongoose = '/tooling/mongoose.svg';
+const nodejs = '/tooling/nodejs.svg';
+const npm = '/tooling/npm.svg';
+const passport = '/tooling/passport.svg';
+const pnpm = '/tooling/pnpm.svg';
+const postcss = '/tooling/postcss.svg';
+const prettier = '/tooling/prettier.png';
+const qwik = '/tooling/qwik.svg';
+const radix = '/tooling/radix.svg';
+const reacticons = '/tooling/react-icons.svg';
+const react = '/tooling/react.svg';
+const rome = '/tooling/rome.svg';
+const spiro = '/tooling/spiro.svg';
+const stripe = '/tooling/stripe.png';
+const swc = '/tooling/swc.svg';
+const tailwindcss = '/tooling/tailwindcss.svg';
+const typescript = '/tooling/typescript.svg';
+const uikitten = '/tooling/uikitten.png';
+const vite = '/tooling/vite.svg';
+const zustand = '/tooling/zustand.ico';
 
 
-export default function Slider(props: { inView: boolean, isPlaying: boolean, setPlay: (value: boolean) => void, setPause: (value: boolean) => void }) {
+export default function Slider(props: { centerMode: boolean, inView: boolean, isPlaying: boolean, setPlay: (value: boolean) => void, setPause: (value: boolean) => void }) {
     const { themeMode } = useContext(ThemeContext)
     const { text } = useContext(LangContext)
 
@@ -109,8 +109,9 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
     }
 
     return <Carousel
+        key='carousel'
         infinite
-        centerMode
+        centerMode={props.centerMode}
         autoPlay={props.inView && props.isPlaying && !isModalOpen}
         responsive={responsive}
         className="w-full h-[70%] owl-carousel owl-theme text-center"
@@ -120,7 +121,7 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
         {images.map((img, i) => (
             <div
                 key={`slide-${i}`}
-                className={`relative ${activeIndex !== i ? "w-[90%]" : "w-full"} h-full rounded-[10px] flex justify-center items-center bg-transparent dark:shadow-[10px_40px_10px_5px_black]`}
+                className={`relative ${activeIndex !== i ? "w-[90%]" : "w-full"} h-full rounded-[10px] flex justify-center items-center bg-transparent shadow-none lg:dark:shadow-[10px_40px_10px_5px_black]`}
                 onClick={() => {
                     if (activeIndex === i) {
                         setModalState(prev => !prev)
@@ -133,6 +134,7 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                     <>
                         {themeMode !== 'dark' && <span className='absolute w-full h-[90%] bg-black bg-opacity-70' />}
                         <img
+                            key={`slide-img-${i}`}
                             className='pointer-events-none object-contain w-full h-full dark:rounded-[10px] dark:opacity-10'
                             src={img.src}
                             alt={img.alt}
@@ -172,7 +174,7 @@ export default function Slider(props: { inView: boolean, isPlaying: boolean, set
                             {!isModalOpen &&
                                 <motion.div
                                     key={activeIndex}
-                                    className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px] flex justify-center items-center'
+                                    className='absolute bg-transparent w-[200px] h-[200px] -left-[100px] -bottom-[50px] hidden lg:flex justify-center items-center'
                                     initial={{ opacity: 0.5 }}
                                     animate={{ opacity: 1, scale: [0.5, 1] }}
                                     exit={{
@@ -559,7 +561,7 @@ function Modal(props: { activeIndex: number }) {
                 {text.page2.slides[props.activeIndex].title}
             </h1>
         </div>
-        <div className={`relative scroll-smooth ${Math.ceil(logos[props.activeIndex].length / 10) > 1 ? 'overflow-x-scroll' : 'overflow-x-hidden'} snap-x snap-mandatory w-full h-full mt-4 flex flex-col justify-center items-center`}>
+        <div className={`relative scroll-smooth ${Math.ceil(logos[props.activeIndex].length / 10) > 1 ? 'overflow-x-scroll' : 'overflow-x-hidden'} snap-x snap-mandatory w-full h-full mt-4 hidden lg:flex flex-col justify-center items-center`}>
             {Array(Math.ceil(logos[props.activeIndex].length / 10)).fill(null).map((_, i) => (
                 <div
                     style={{ width: '100%', translate: `${i * 100}%` }}

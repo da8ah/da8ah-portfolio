@@ -6,7 +6,7 @@ import Page2 from './pages/Page2'
 import Page3 from './pages/Page3'
 
 export default function App() {
-  const pagesClassName = 'relative w-full h-screen flex flex-col justify-center items-center font-roboto dark:font-mono'
+  const pagesClassName = 'relative px-1 md:px-0 w-full lg:h-screen flex flex-col justify-center items-center font-roboto dark:font-mono'
   return (
     <div className='relative box-border w-full flex flex-col justify-center items-center'>
       <Configuration />

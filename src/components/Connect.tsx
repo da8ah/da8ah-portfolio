@@ -1,9 +1,9 @@
+import { LangContext } from "@/context/LangProvider"
 import { Link1Icon, MinusCircledIcon } from "@radix-ui/react-icons"
 import { AnimatePresence, motion } from 'framer-motion'
 import { useContext, useState } from "react"
-import plane from '/page1/icons8-paper-plane-100.png'
-import resume from '/page1/icons8-resume-100.png'
-import { LangContext } from "@/context/LangProvider"
+const plane = '/page1/icons8-paper-plane-100.png'
+const resume = '/page1/icons8-resume-100.png'
 
 
 export default function Connect() {
@@ -23,7 +23,7 @@ export default function Connect() {
         }
     }
 
-    return <div className='z-[100] bottom-5 right-10 fixed flex flex-row justify-center items-center'>
+    return <div className='z-[100] bottom-1 right-1 lg:bottom-5 lg:right-10 fixed flex flex-row justify-center items-center'>
         <motion.button
             type='button'
             title='conn'
@@ -48,7 +48,7 @@ export default function Connect() {
                         animate={{
                             left: '-110%',
                             rotate: -45,
-                            transition: { duration: .5 }
+                            transition: { duration: .2 }
                         }}
                         exit={{
                             left: 0,

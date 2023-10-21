@@ -1,45 +1,45 @@
-import styles from '@/assets/animations.module.css'
 import Logo from '@/components/Logo'
 import Tooltip from '@/components/Tooltip'
 import { LangContext } from '@/context/LangProvider'
 import { MotionProps, motion } from 'framer-motion'
 import { useContext } from 'react'
-import store from '/page1/skills/hard/icons8-play-store-96.png'
-import android from '/tooling/android.svg'
-import azure from '/tooling/azure.svg'
-import bash from '/tooling/bash.svg'
-import cplusplus from '/tooling/cplusplus.svg'
-import css3 from '/tooling/css3.svg'
-import expo from '/tooling/expo.svg'
-import express from '/tooling/express.svg'
-import figma from '/tooling/figma.svg'
-import gimp from '/tooling/gimp.svg'
-import git from '/tooling/git.svg'
-import google from '/tooling/google.svg'
-import html5 from '/tooling/html5.svg'
-import anydesk from '/tooling/icons8-anydesk-96.png'
-import canva from '/tooling/icons8-canva-96.png'
-import ccleaner from '/tooling/icons8-ccleaner-96.png'
-import malware from '/tooling/icons8-malwarebytes-96.png'
-import office from '/tooling/icons8-microsoft-office-2019-96.png'
-import viewer from '/tooling/icons8-teamviewer-96.png'
-import windows from '/tooling/icons8-windows-96.png'
-import java from '/tooling/java.svg'
-import js from '/tooling/javascript.svg'
-import mongodb from '/tooling/mongodb.svg'
-import mysql from '/tooling/mysql.svg'
-import nextjs from '/tooling/nextjs.svg'
-import nodejs from '/tooling/nodejs.svg'
-import python from '/tooling/python.svg'
-import qwik from '/tooling/qwik.svg'
-import react from '/tooling/react.svg'
-import spiro from '/tooling/spiro.svg'
-import tailwind from '/tooling/tailwindcss.svg'
-import ts from '/tooling/typescript.svg'
-import ubuntu from '/tooling/ubuntu.svg'
-import vite from '/tooling/vite.svg'
-import vscode from '/tooling/vscode.svg'
-import zustand from '/tooling/zustand.ico'
+import '@/assets/animations.css'
+const store = '/page1/skills/hard/icons8-play-store-96.png'
+const android = '/tooling/android.svg'
+const azure = '/tooling/azure.svg'
+const bash = '/tooling/bash.svg'
+const cplusplus = '/tooling/cplusplus.svg'
+const css3 = '/tooling/css3.svg'
+const expo = '/tooling/expo.svg'
+const express = '/tooling/express.svg'
+const figma = '/tooling/figma.svg'
+const gimp = '/tooling/gimp.svg'
+const git = '/tooling/git.svg'
+const google = '/tooling/google.svg'
+const html5 = '/tooling/html5.svg'
+const anydesk = '/tooling/icons8-anydesk-96.png'
+const canva = '/tooling/icons8-canva-96.png'
+const ccleaner = '/tooling/icons8-ccleaner-96.png'
+const malware = '/tooling/icons8-malwarebytes-96.png'
+const office = '/tooling/icons8-microsoft-office-2019-96.png'
+const viewer = '/tooling/icons8-teamviewer-96.png'
+const windows = '/tooling/icons8-windows-96.png'
+const java = '/tooling/java.svg'
+const js = '/tooling/javascript.svg'
+const mongodb = '/tooling/mongodb.svg'
+const mysql = '/tooling/mysql.svg'
+const nextjs = '/tooling/nextjs.svg'
+const nodejs = '/tooling/nodejs.svg'
+const python = '/tooling/python.svg'
+const qwik = '/tooling/qwik.svg'
+const react = '/tooling/react.svg'
+const spiro = '/tooling/spiro.svg'
+const tailwind = '/tooling/tailwindcss.svg'
+const ts = '/tooling/typescript.svg'
+const ubuntu = '/tooling/ubuntu.svg'
+const vite = '/tooling/vite.svg'
+const vscode = '/tooling/vscode.svg'
+const zustand = '/tooling/zustand.ico'
 
 
 export default function Toolkit(props: { index: number, animation: MotionProps }) {
@@ -89,7 +89,7 @@ export default function Toolkit(props: { index: number, animation: MotionProps }
 
     return <>
         <Tooltip
-            key='toolkit'
+            tooltipKey='toolkit'
             align='center'
             side='top'
         >
@@ -117,10 +117,10 @@ export default function Toolkit(props: { index: number, animation: MotionProps }
                         key={`logo-${index}`}
                         style={{ '--i': index } as React.CSSProperties}
                         duration={30}
-                        className={styles.SpinnerItem}
+                        className='SpinnerItem'
                         img={{
                             ...logo,
-                            className: styles.SpinnerImage,
+                            className: 'SpinnerImage',
                             style: { '--i': index } as React.CSSProperties
                         }}
                     />
@@ -170,7 +170,7 @@ function Modal(props: { index: number, logos: { src: string, alt: string, href: 
     ]
 
     return <>
-        {text.page1.toolkits[props.index].map((title, i) => (
+        {text.page1.toolkits[props.index].map((title: string, i: number) => (
             <div className='w-full flex flex-col justify-center items-center'>
                 <h1 className='w-full text-xs text-left italic capitalize'>{title}</h1>
                 <div className='w-full flex justify-start items-center'>

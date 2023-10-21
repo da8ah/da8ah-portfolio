@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion';
-import slide4Brick from "/page2/slides/boche/icons8-brick-94.png";
-import slide4Horse from "/page2/slides/boche/icons8-rocking-horse-94.png";
-import slide4Bear from "/page2/slides/boche/icons8-teddy-bear-94.png";
-import slide5Coffee from "/page2/slides/bookstore/icons8-coffee-cup-64.png";
-import slide5Like from "/page2/slides/bookstore/icons8-like-64.png";
-import slide3Bell from "/page2/slides/digency/icons8-bell-94.png";
-import slide3Megaphone from "/page2/slides/digency/icons8-megaphone-94.png";
-import slide3Movie from "/page2/slides/digency/icons8-movie-94.png";
-import slide3Wedding from "/page2/slides/digency/icons8-wedding-day-94.png";
-import slide3Youtube from "/page2/slides/digency/icons8-youtube-94.png";
-import slide2Wallet from "/page2/slides/krypto/icons8-digital-wallet-64.png";
-import slide2Ethereum from "/page2/slides/krypto/icons8-ethereum-96.png";
-import slide2Nft from "/page2/slides/krypto/icons8-nft-60.png";
-import slide1Clouds from "/page2/slides/space/clouds.png";
-import slide1Planet from "/page2/slides/space/planet.png";
-import slide1Rocket from "/page2/slides/space/rocket.png";
+const slide4Brick = "/page2/slides/boche/icons8-brick-94.png";
+const slide4Horse = "/page2/slides/boche/icons8-rocking-horse-94.png";
+const slide4Bear = "/page2/slides/boche/icons8-teddy-bear-94.png";
+const slide5Coffee = "/page2/slides/bookstore/icons8-coffee-cup-64.png";
+const slide5Like = "/page2/slides/bookstore/icons8-like-64.png";
+const slide3Bell = "/page2/slides/digency/icons8-bell-94.png";
+const slide3Megaphone = "/page2/slides/digency/icons8-megaphone-94.png";
+const slide3Movie = "/page2/slides/digency/icons8-movie-94.png";
+const slide3Wedding = "/page2/slides/digency/icons8-wedding-day-94.png";
+const slide3Youtube = "/page2/slides/digency/icons8-youtube-94.png";
+const slide2Wallet = "/page2/slides/krypto/icons8-digital-wallet-64.png";
+const slide2Ethereum = "/page2/slides/krypto/icons8-ethereum-96.png";
+const slide2Nft = "/page2/slides/krypto/icons8-nft-60.png";
+const slide1Clouds = "/page2/slides/space/clouds.png";
+const slide1Planet = "/page2/slides/space/planet.png";
+const slide1Rocket = "/page2/slides/space/rocket.png";
 
 export const SpaceAnimations = () => {
     return <>

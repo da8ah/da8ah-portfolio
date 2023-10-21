@@ -37,9 +37,9 @@ export default function Page1(props: { className: string }) {
     }
 
     return <section className={props.className}>
-        <div className='relative overflow-hidden w-full h-screen rounded-[20px] flex flex-row justify-center items-center'>
+        <div className='relative overflow-hidden w-full lg:h-screen md:rounded-[20px] flex flex-row justify-center items-center'>
             {themeMode === 'dark' && <motion.span
-                className='absolute z-0 w-[200%] h-[50%] content-none bg-gradient-to-r from-[#ff284c] to-[#ac0e0e]'
+                className='hidden lg:block absolute z-0 w-[200%] h-[50%] content-none bg-gradient-to-r from-[#ff284c] to-[#ac0e0e]'
                 animate={{
                     rotate: 360
                 }}
@@ -49,11 +49,11 @@ export default function Page1(props: { className: string }) {
                     easeInOut: "linear"
                 }}
             />}
-            <div className='relative z-[1] w-[99.5%] h-[99%] rounded-[20px] flex flex-row justify-center items-center bg-white dark:bg-[#242424]'>
-                <div className='z-[1] w-[60%] flex flex-col justify-center items-center'>
+            <div className='relative z-[1] w-screen lg:w-[99.5%] lg:h-[99%] lg:rounded-[20px] flex flex-col-reverse lg:flex-row justify-center items-center bg-white dark:bg-[#242424]'>
+                <div className='z-[1] px-1 lg:px-0 w-full lg:w-[60%] flex flex-col justify-center items-center'>
                     <Build index={index} animation={animation} onLeftPress={onLeftPress} onRightPress={onRightPress} />
                 </div>
-                <div className='relative box-border w-[40%] h-full py-2 flex flex-col justify-center items-center'>
+                <div className='relative box-border w-full lg:w-[40%] lg:h-full py-2 flex flex-col justify-center items-center'>
                     <Hero index={index} animation={animation} />
                 </div>
             </div>

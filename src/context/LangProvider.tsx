@@ -8,7 +8,7 @@ export const LangContext = createContext({
     lang: "es",
     text: textES,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    changeLang: (lang: LangType) => { }
+    changeLang: (_lang: LangType) => { }
 })
 
 export default function LangProvider(props: { children: JSX.Element }) {

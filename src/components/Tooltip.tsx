@@ -1,12 +1,12 @@
 import * as HoverCard from '@radix-ui/react-hover-card';
 
 export default function Tooltip(props: {
-    key: string,
+    tooltipKey: string,
     children: [JSX.Element, JSX.Element],
     align?: "center" | "end" | "start",
     side?: "left" | "top" | "right" | "bottom"
 }) {
-    return <HoverCard.Root key={props.key} openDelay={1} closeDelay={0}>
+    return <HoverCard.Root key={`tooltip-${props.tooltipKey}`} openDelay={1} closeDelay={0}>
         <HoverCard.Trigger asChild>
             {props.children[0]}
         </HoverCard.Trigger>

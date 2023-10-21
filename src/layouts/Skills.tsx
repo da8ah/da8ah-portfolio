@@ -3,29 +3,29 @@ import { LangContext } from "@/context/LangProvider";
 import { DotFilledIcon } from "@radix-ui/react-icons";
 import { MotionProps, motion } from 'framer-motion';
 import { useContext } from "react";
-import clean from '/page1/skills/hard/icons8-clean-96.png';
-import database from '/page1/skills/hard/icons8-database-96.png';
-import design from '/page1/skills/hard/icons8-design-96.png';
-import diagram from '/page1/skills/hard/icons8-diagram-96.png';
-import lab from '/page1/skills/hard/icons8-lab-96.png';
-import laptop from '/page1/skills/hard/icons8-laptop-coding-96.png';
-import support from '/page1/skills/hard/icons8-online-support-96.png';
-import photo from '/page1/skills/hard/icons8-photo-editor-96.png';
-import store from '/page1/skills/hard/icons8-play-store-96.png';
-import remote from '/page1/skills/hard/icons8-remote-desktop-96.png';
-import save from '/page1/skills/hard/icons8-save-all-96.png';
-import cloud from '/page1/skills/hard/icons8-upload-to-the-cloud-96.png';
-import file from '/page1/skills/hard/icons8-video-file-96.png';
-import video from '/page1/skills/hard/icons8-video-gallery-96.png';
-import eye from '/page1/skills/soft/icons8-eye-64.png';
-import justice from '/page1/skills/soft/icons8-justice-96.png';
-import medal from '/page1/skills/soft/icons8-medal-96.png';
-import schedule from '/page1/skills/soft/icons8-schedule-96.png';
+const clean = '/page1/skills/hard/icons8-clean-96.png';
+const database = '/page1/skills/hard/icons8-database-96.png';
+const design = '/page1/skills/hard/icons8-design-96.png';
+const diagram = '/page1/skills/hard/icons8-diagram-96.png';
+const lab = '/page1/skills/hard/icons8-lab-96.png';
+const laptop = '/page1/skills/hard/icons8-laptop-coding-96.png';
+const support = '/page1/skills/hard/icons8-online-support-96.png';
+const photo = '/page1/skills/hard/icons8-photo-editor-96.png';
+const store = '/page1/skills/hard/icons8-play-store-96.png';
+const remote = '/page1/skills/hard/icons8-remote-desktop-96.png';
+const save = '/page1/skills/hard/icons8-save-all-96.png';
+const cloud = '/page1/skills/hard/icons8-upload-to-the-cloud-96.png';
+const file = '/page1/skills/hard/icons8-video-file-96.png';
+const video = '/page1/skills/hard/icons8-video-gallery-96.png';
+const eye = '/page1/skills/soft/icons8-eye-64.png';
+const justice = '/page1/skills/soft/icons8-justice-96.png';
+const medal = '/page1/skills/soft/icons8-medal-96.png';
+const schedule = '/page1/skills/soft/icons8-schedule-96.png';
 
 export default function Skills(props: { index: number, animation: MotionProps }) {
     const { text } = useContext(LangContext)
     return <div className='w-full'>
-        <div className='flex flex-row justify-evenly items-center'>
+        <div className='flex flex-col md:flex-row justify-evenly items-center'>
             <div className='w-[50%] flex flex-col items-center'>
                 <h1 className='flex font-bold'><DotFilledIcon color='red' />{text.page1.skills.titles[0]}</h1>
                 <ul className="py-2 text-left">
@@ -35,7 +35,7 @@ export default function Skills(props: { index: number, animation: MotionProps })
                             key={`skill-${props.index}-item-${j}`}
                             className="py-1"
                         >
-                            <Skill key={`skill-hard-item-${j}`}>
+                            <Skill skillKey={`skill-hard-item-${j}`}>
                                 <motion.div
                                     className='cursor-help w-[250px] p-2 flex flex-row items-end rounded-[5px] bg-gradient-to-b from-white to-gray-300 hover:text-white hover:bg-gradient-to-b hover:from-[#f0463a] hover:to-[#ff284c] dark:bg-[#242424] dark:from-transparent dark:to-transparent dark:shadow-[0_0_5px_0_black] dark:hover:from-[#f0463a] dark:hover:to-[#ff284c]'
                                     whileHover={{ scale: 1.1 }}
@@ -68,7 +68,7 @@ export default function Skills(props: { index: number, animation: MotionProps })
                             key={`skill-${props.index}-item-${j}`}
                             className="py-1"
                         >
-                            <Skill key={`skill-soft-item-${j}`}>
+                            <Skill skillKey={`skill-soft-item-${j}`}>
                                 <motion.div
                                     className='cursor-help w-[200px] p-2 flex flex-row items-end rounded-[5px] bg-gradient-to-b from-white to-gray-300 hover:text-white hover:bg-gradient-to-b hover:from-[#516dca] hover:to-[#3054ce] dark:bg-[#242424] dark:from-transparent dark:to-transparent dark:shadow-[0_0_5px_0_black] dark:hover:from-[#516dca] dark:hover:to-[#3054ce]'
                                     whileHover={{ scale: 1.1 }}
@@ -96,9 +96,9 @@ export default function Skills(props: { index: number, animation: MotionProps })
     </div>
 }
 
-function Skill(props: { key: string, children: [JSX.Element, JSX.Element] }) {
+function Skill(props: { skillKey: string, children: [JSX.Element, JSX.Element] }) {
     return <Tooltip
-        key={props.key}
+        tooltipKey={`skill-${props.skillKey}`}
     >
         {props.children}
     </Tooltip>

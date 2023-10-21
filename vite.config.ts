@@ -5,9 +5,11 @@ import { defineConfig } from 'vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  assetsInclude: 'css',
+  base: "/da8ah-portfolio/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src/"),
     },
-  },
+  }
 })
