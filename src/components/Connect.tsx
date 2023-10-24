@@ -44,7 +44,7 @@ export default function Connect() {
                         href="mailto:danilo.ochoa.hidalgo@outlook.com"
                         title='conn'
                         rel='noopener noreferrer'
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.2 }}
                         animate={{
                             left: '-110%',
                             rotate: -45,
@@ -68,7 +68,7 @@ export default function Connect() {
                         title='conn'
                         target='_blank'
                         rel='noopener noreferrer'
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.2 }}
                         variants={variants}
                         animate={'open'}
                         exit={'close'}

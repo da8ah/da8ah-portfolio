@@ -37,7 +37,7 @@ export default function SelectMenu(props: {
                 </div>
             </Select.Trigger>
             <Select.Content
-                className="z-[100] w-[255px] p-1 rounded-[5px] dark:font-roboto text-black dark:text-white ring-1 ring-black dark:ring-0 bg-gradient-to-b from-white to-gray-200 dark:from-[#242424] dark:to-gray-800 dark:shadow-[0_0_5px_0_black]"
+                className="z-[100] w-[255px] p-1 rounded-[5px] text-black dark:text-white ring-1 ring-black dark:ring-0 bg-gradient-to-b from-white to-gray-200 dark:from-[#242424] dark:to-gray-800 dark:shadow-[0_0_5px_0_black]"
                 align="center"
                 position="popper"
                 defaultValue={props.data[props.selected]}

@@ -15,7 +15,7 @@ export default function Build(props: { index: number, animation: MotionProps, on
             <h1 className='uppercase font-bold dark:font-keania text-3xl lg:text-4xl lg:dark:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-red-600 via-orange-500 to-yellow-500 drop-shadow-[0_0_50px_10px_black]'>
                 Danilo Ochoa Hidalgo
                 <br />
-                <span className={`text-xl font-mono ${themeMode === 'dark' ? 'capitalize' : 'lowercase'}`}>({themeMode === 'dark' ? 'Tiber' : 'da8ah'})</span>
+                <span className={`text-2xl dark:text-xl ${themeMode === 'dark' ? 'capitalize' : 'lowercase'}`}>({themeMode === 'dark' ? 'Tiber' : 'da8ah'})</span>
             </h1>
             <div className='py-5 flex flex-col justify-around items-center'>
                 <div className='w-full flex flex-row justify-center items-center'>
