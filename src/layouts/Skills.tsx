@@ -70,7 +70,7 @@ export default function Skills(props: { index: number, animation: MotionProps })
                         >
                             <Skill skillKey={`skill-soft-item-${j}`}>
                                 <motion.div
-                                    className='cursor-help w-[200px] p-2 flex flex-row items-end rounded-[5px] bg-gradient-to-b from-white to-gray-300 hover:text-white hover:bg-gradient-to-b hover:from-[#516dca] hover:to-[#3054ce] dark:bg-[#242424] dark:from-transparent dark:to-transparent dark:shadow-[0_0_5px_0_black] dark:hover:from-[#516dca] dark:hover:to-[#3054ce]'
+                                    className='cursor-help w-[250px] p-2 flex flex-row items-end rounded-[5px] bg-gradient-to-b from-white to-gray-300 hover:text-white hover:bg-gradient-to-b hover:from-[#516dca] hover:to-[#3054ce] dark:bg-[#242424] dark:from-transparent dark:to-transparent dark:shadow-[0_0_5px_0_black] dark:hover:from-[#516dca] dark:hover:to-[#3054ce]'
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     <IconRight j={j} />
