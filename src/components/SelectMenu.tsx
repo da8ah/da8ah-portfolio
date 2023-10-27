@@ -10,7 +10,7 @@ export default function SelectMenu(props: {
 }) {
     return <div className='w-full'>
         <Select.Root
-            defaultValue={props.data[props.selected]}
+            value={props.data[props.selected]}
             onValueChange={(value) => {
                 const index = props.data.indexOf(value)
                 if (props.selected > index) props.handlers.left(index)
