@@ -6,6 +6,22 @@
 @tailwind utilities;
 
 
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+body[style] {
+  margin-right: 0px !important;
+  overflow-y: scroll !important;
+}
+
 :root.dark {
   background-color: #242424;
   color: white;
@@ -26,13 +42,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 @media (prefers-color-scheme: light) {
